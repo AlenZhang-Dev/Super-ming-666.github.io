@@ -111,7 +111,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p15.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p13.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p14.png">
-<meta property="og:updated_time" content="2020-02-25T15:46:30.557Z">
+<meta property="og:updated_time" content="2020-03-03T11:22:46.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p1.jpg">
 
@@ -435,12 +435,12 @@
 <p>1.0 版本 MapReduce框架的功能过于复杂，效率低下。</p>
 <p>2.0 版本 将MapReduce下的资源调度提取出来，新建一个<strong>YARN框架</strong>进行资源调度。HDFS也发生变化，对可扩展性进行改进。</p>
 <blockquote>
-<p>衍生版本：<strong>Cloudera</strong>、MapR、Hortonwork、星环</p>
+<p>Hadoop衍生版本：<strong>Cloudera</strong>、MapR、Hortonwork、星环</p>
 </blockquote>
 <p><strong>Hadoop项目结构</strong>「需深入」</p>
 <p>Spark基于内存计算，MapReduce基于内存，Spark性能高。Hive，Hadoop上的数据仓库。Pig进行轻量级的数据处理「可以嵌套Sql，基于Haaoop的大规模数据分析平台」，Oozie工作流管理，ZooKeeper，提供分布式协调一致性服务，Hbase非关系型的数据库。Flume进行数据收集，Sqoop进行数据导入导出「关系数据库的数据导出的Hadoop中」，Ambari，快速部署工具，支持Apache Hadoop集群的供应。</p>
 <p><strong>Hadoop部署与使用</strong></p>
-<p>HDFS：NameNode[名称节点]] + DataNode[数据节点] 一起构成分布式文件节点系统。NameNode很多数据都保存在内存中。</p>
+<p>HDFS：NameNode[名称节点] + DataNode[数据节点] 一起构成分布式文件节点系统。NameNode很多数据都保存在内存中。</p>
 <p>MapReduce：JobTracker[作业管家，进行协调] + TaskTracker[部署在不同机器中，负责跟踪和执行分配给自己的作业]</p>
 <p>一个MapReduce做作业时由一个总管家JobTracker来协调很多个位于不同机器上的若干个TaskTracker完成一个大的作业。</p>
 <p>冷备份，SecondaryNameNode：NameNode故障后需要恢复过程顶上去。</p>
@@ -680,6 +680,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" rel="prev" title="Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解">
+                Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -762,7 +766,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -784,7 +788,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -903,7 +907,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.1k字</span>
+  <span class="post-count">博客全站共15.8k字</span>
 </div>
 
 <script 
