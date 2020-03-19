@@ -452,6 +452,234 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SuperMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superming's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/04/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/" itemprop="url">02-分布式文件系统HDFS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-04T00:11:44+08:00">
+                2020-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/04/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/04/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/04/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/" class="leancloud_visitors" data-flag-title="02-分布式文件系统HDFS">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="分布式文件系统HDFS"><a href="#分布式文件系统HDFS" class="headerlink" title="分布式文件系统HDFS"></a>分布式文件系统HDFS</h1><h2 id="1-HDFS概述："><a href="#1-HDFS概述：" class="headerlink" title="1. HDFS概述："></a>1. HDFS概述：</h2><p>HDFS（Hadoop Distributed File Syetem），Hadoop框架的核心组件之一。<strong>HDFS是为以流式数据访问模式存储超大文件而设计的文件系统。</strong>主要解决数据分布式存储问题。</p>
+<p>HDFS是个高度容错性的系统，适合部署在廉价的机器上，能提供高吞吐量的数据访问，非常适合大规模数据集上的应用。</p>
+<h3 id="1-1-设计目标"><a href="#1-1-设计目标" class="headerlink" title="1.1 设计目标"></a>1.1 设计目标</h3><p>设计目标即设计初衷，理解其为何诞生对我们掌握并使用它具有很大帮助。</p>
+<p><strong>流式数据访问</strong>：“一次写入，多次读取”，HDFS建立在这个思想之上，简化了数据一致性问题。HDFS设计中考虑了数据批处理，而不是用户交互处理。HDFS为了达到高数据吞吐量从而牺牲了数据访问的延时。</p>
+<p><strong>硬件故障</strong>：由于Hadoop适合部署在廉价硬件集群上，而非昂贵且高可靠的硬件上，不可避免会产生硬件错误，HDFS面对硬件故障时，其快速检错与自动恢复时是HDFS架构最核心的目标。</p>
+<h3 id="1-2-HDFS设计优劣"><a href="#1-2-HDFS设计优劣" class="headerlink" title="1.2 HDFS设计优劣"></a>1.2 HDFS设计优劣</h3><p>优点：高容错性、适合大量数据批处理、模型简单、成本低…</p>
+<p>缺点：流式数据读取拥有很高的数据吞吐率，但导致了很高的延时，不适合低延时数据访问；不适合大量小文件存储，过多小文件会严重影响系统性能；不支持多用户并发写入及修改文件。</p>
+<h2 id="2-HDFS架构"><a href="#2-HDFS架构" class="headerlink" title="2. HDFS架构"></a>2. HDFS架构</h2><p><img src="/2020/03/04/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS.gif" alt="分布式文件系统HDFS"></p>
+<h3 id="2-1-数据存储与组织"><a href="#2-1-数据存储与组织" class="headerlink" title="2.1 数据存储与组织"></a>2.1 数据存储与组织</h3><p>HDFS采用块作为存储单位，默认为128MB，是HDFS读写数据数据的最小单位。注意：<strong>HDFS中小于一个块大小的文件不会占据整个块的空间。</strong></p>
+<p><strong>为什么分布式文件系统中采用抽象块来存储数据？</strong></p>
+<ol>
+<li><p>抽象的扩大了单个文件所能存储的最大值。假设要存储一个20G的文件，可以采用分布式文件系统存储在10个2G的磁盘上，而使用文件系统，即使你有10个2G的磁盘，你能存储的<strong>最大单个文件大小</strong>为2G。</p>
+</li>
+<li><p>简化存储子系统。存储子系统控制的是块，<strong>简化了存储管理</strong>。「可以很容易的计算出一个磁盘分为了多少块」，同时也消除了对元数据（MetaData）的顾虑，「块仅仅作为一部分存储数据，而文件的元数据，不需要与块一同存储，<u>其他系统就可以正交地管理元数据</u>」</p>
+</li>
+<li><p>应对损坏的块或机器的故障，每个块会在其他分散机器复制副本，<strong>提高容错性和实用性</strong>。块很适合做这样的复制操作。</p>
+</li>
+</ol>
+<p><strong>为什么HDFS中一个块这么大？</strong></p>
+<p>影响文件系统存储文件的事件有两个因素，一是寻址时间，二是数据传输时间。</p>
+<p>寻址时间主要取决于数据块的数量，而数据块越大，相对而言寻址事件就越小。</p>
+<p>数据传输时间取决于数据大小及磁盘读写速率。</p>
+<p><strong>T(存储时间) = T(寻址时间)  + T(传输时间)</strong></p>
+<p>如果数据传输时间远远大于数据的寻址时间，那么公式可以简化为<strong>T(存储时间) ≈ T(传输时间)</strong>，而HDFS要的就是这个效果。</p>
+<h3 id="2-2-Namenode-和-Datanode"><a href="#2-2-Namenode-和-Datanode" class="headerlink" title="2.2 Namenode 和 Datanode"></a>2.2 Namenode 和 Datanode</h3><p><strong>Namenode</strong>管理文件系统的命名空间（namespace）以及客户端对文件的访问「比如打开、关闭、重命名等」。将信息通过fsimag（命名空间镜像）和edits（编辑日志）的形式永久保存在<strong>本地磁盘</strong>中，Namenode会记录每个文件的每个块所在的数据节点，但不会永久保存，因为信息会在系统启动时由数据节点重建。</p>
+<blockquote>
+<p>Namespace：支持传统层次型文件组织结构，用户可以创建、删除、移动文件等，但HDFS不支持用户磁盘配额和访问权限控制。</p>
+<p>Fsimage文件：用于维护文件系统树以及文件树中所有的文 件和文件夹的元数据信息</p>
+<p>Edits文件记录所有针对目录、文件的创建、删除、重命 名等的操作日志。</p>
+</blockquote>
+<p>Namenode工作机制：</p>
+<p><img src="/2020/03/04/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Namenodeworkflow.png" alt="Namenodeworkflow"></p>
+<p><strong>Datanode</strong>负责它所在的节点上的存储，处理客户端的读写请求，在Namenode的统一调度下进行数据块的创建和、删除和复制。</p>
+<p>如果没有Namenode，那么文件系统将无法使用，因为我们无法知道如何通过数据节点上的块来重建文件，故Namenode是HDFS集群中的单点故障(Single point of failure)所在。对于名称节点的保护机制时非常重要的。Hadoop提供了两种方法。</p>
+<ol>
+<li><p>复制那些组成文件系统元数据持久状态的文件。Hadoop可以通过配置使Namenode在多个文件系统上写入其持久化状态。「一般在配置选择：在本地磁盘写入同时，写入一个远程NFS挂载」 <code>Network File System (NFS) is a distributed file system protocol that allows you to share remote directories over a network</code></p>
+</li>
+<li><p>运行Secondary Namenode，主要作用是为了防止Edits日志过大导致的问题，主要通过定期合并Edits和fsimage来减少Edits的数据大小。一般在其他单独的计算机上运行，因为需要占用大量CPU和内存。Secondary Namenode还可以作为Namenode 的冷备份，它会保存合并后的fsimage的副本，在名称节点失效后使用。但因为Secondary Namenode相较Namenode是滞后的，损失难以避免。</p>
+<p>Secondarynode执行过程：</p>
+</li>
+</ol>
+<p>![SecondaryNode workflow](./02-分布式文件系统HDFS/SecondaryNode workflow.png)</p>
+<h3 id="2-3-HDFS-高可用架构（-HDFS-High-Avaiability）"><a href="#2-3-HDFS-高可用架构（-HDFS-High-Avaiability）" class="headerlink" title="2.3 HDFS 高可用架构（ HDFS High Avaiability）"></a>2.3 HDFS 高可用架构（ HDFS High Avaiability）</h3><p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html" target="_blank" rel="noopener">HDFS High Availability Using the Quorum Journal Manager</a></p>
+<p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithNFS.html" target="_blank" rel="noopener">HDFS High Availability With NFS</a></p>
+<p>[后续补充]</p>
+<h3 id="2-4-HDFS-Federation"><a href="#2-4-HDFS-Federation" class="headerlink" title="2.4 HDFS Federation"></a>2.4 HDFS Federation</h3><p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/Federation.html" target="_blank" rel="noopener">HDFS Federation</a></p>
+<p>[后续补充]</p>
+<h2 id="3-HDFS存储"><a href="#3-HDFS存储" class="headerlink" title="3. HDFS存储"></a>3. HDFS存储</h2><h3 id="3-1-数据冗余（Data-redundancy）存储"><a href="#3-1-数据冗余（Data-redundancy）存储" class="headerlink" title="3.1 数据冗余（Data redundancy）存储"></a>3.1 数据冗余（Data redundancy）存储</h3><p>为了保证系统的容错性和可用性，HDFS采用多副本方式对数据进行冗余存储，即一个数据块的内容会放到不同的数据节点上。</p>
+<blockquote>
+<p>当多个客户访问统一文件时，可以从不同副本中读取数据，加快了数据传输速度。</p>
+<p>HDFS节点之间通过网络传输数据，多副本可以很<strong>容易判断数据是否出错。</strong></p>
+<p>保证了数据的可靠，避免了单点故障。</p>
+</blockquote>
+<h3 id="3-2-数据存储策略"><a href="#3-2-数据存储策略" class="headerlink" title="3.2 数据存储策略"></a>3.2 数据存储策略</h3><blockquote>
+<p>简单介绍一下HDFS数据读写的相关类。</p>
+<p>FileSystem时一个通用文件系统的抽象基类，可被分布式文件系统继承。</p>
+<p>DistributedFileSystem是FileSystem在HDFS文件系统中的实现，是Hadoop为FileSystem这个抽象类提供的具体实现之一。</p>
+<p>FileSystem的open( )方法返回一个输入流FSDataInputStream对象，create（）方法返回一个输出流FSDataOutputStream对象。「即HDFS文件系统中的具体输入输出流」</p>
+<p>Hadoop文件API的起点是FileSysem类，可以通过调用FileSystem.get(Configuration conf)来得到所需的FileSystem实例。</p>
+<p>Configuration类的默认实例化方法是以HDFS系统的资源配置为基础。</p>
+<p>![Hadoop Filesystem](./02-分布式文件系统HDFS/Hadoop Filesystem.png)</p>
+</blockquote>
+<h4 id="3-2-1-数据存放"><a href="#3-2-1-数据存放" class="headerlink" title="3.2.1 数据存放"></a>3.2.1 数据存放</h4><p>HDFS默认每个数据节点都是在不同的机架上，会带来一个问题：<strong>写入数据时不能充分利用同一机架内部机器之间的带宽</strong>。但更容易实现系统内部的负载均衡和错误处理。</p>
+<p>HDFS默认冗余复制因子为3，每一个文件块被同时保存到三个地方，两个副本放在同一机架不同机器上，第三个副本放在不同机架的机器上面。可以保证机架发生异常时的数据恢复，也可以提高读写性能。</p>
+<p><code>hdfs-site.xml</code>配置文件<code>dfs.replication</code>用于修改冗余复制因子</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-2-2-数据读取"><a href="#3-2-2-数据读取" class="headerlink" title="3.2.2 数据读取"></a>3.2.2 数据读取</h4><p>HDFS提供了一个API可以确定一个数据节点所属的机架ID，客户端也可以调用API获取自己所属的机架ID。</p>
+<p>利用Java API读数据：</p>
+<p>![Java Api Read](./02-分布式文件系统HDFS/Java Api Read.png)</p>
+<h4 id="3-2-3-数据写入与复制"><a href="#3-2-3-数据写入与复制" class="headerlink" title="3.2.3 数据写入与复制"></a>3.2.3 数据写入与复制</h4><p>HDFS采用流水线复制的策略。</p>
+<p>当客户端要向HDFS写入文件时，这个文件首先根据块大小划分成若干块并写入本地，每个块都向HDFS集群中的Namenode发起写请求，Namenode返回一个最佳数据节点返回客户端，客户端把数据写入第一个数据节点，同时把列表传给第一个数据节点，第一个数据节点将数据写入本地，同时向第二个数据节点发送数据和列表，以此类推。</p>
+<p>![HDFS DataWriteIn](./02-分布式文件系统HDFS/HDFS DataWrite.png)</p>
+<p>使用Java API写数据：</p>
+<p>![Java Api Write](./02-分布式文件系统HDFS/Java Api Write.png)</p>
+<h3 id="3-3-数据错误与恢复"><a href="#3-3-数据错误与恢复" class="headerlink" title="3.3 数据错误与恢复"></a>3.3 数据错误与恢复</h3><h4 id="3-3-1-Namenode出错"><a href="#3-3-1-Namenode出错" class="headerlink" title="3.3.1 Namenode出错"></a>3.3.1 Namenode出错</h4><p>Namenode保存了所有元数据信息，若文件损坏，整个系统宕机。HDFS的两种补救措施在2.2.2 Namenode 和 Datanode 中已提到。</p>
+<h4 id="3-3-2-Datanode出错"><a href="#3-3-2-Datanode出错" class="headerlink" title="3.3.2 Datanode出错"></a>3.3.2 Datanode出错</h4><p>每个Datanode会定期向Namenode发送“心跳”，向Namenode报告“我还活着”。一旦Namenode没有接收到定期的心跳信息，默认该Datanode宕机，不会对其进行任何读写等操作。同时Namenode会定期检查Datanode数据块副本数量，若小于冗余因子，则启动数据的冗余复制。</p>
+<h4 id="3-3-3-数据错误"><a href="#3-3-3-数据错误" class="headerlink" title="3.3.3 数据错误"></a>3.3.3 数据错误</h4><p>数据错误主要集中在网络传输和磁盘错误。客户端采用md5和sha1对数据块进行校验，确保读取到正确的数据。</p>
+<blockquote>
+<p>文件被创建时，客户端会对每一个文件进行信息摘录，把信息写入同一个路径的隐藏文件中。当客户端读取文件时，先读取该信息文件，利用信息文件对每个信息读取的数据块进行校验，校验出错，客户端请求到另一个数据节点读取文件块，并向Namenode报告错误。</p>
+</blockquote>
+<h2 id="4-HDFS-实践"><a href="#4-HDFS-实践" class="headerlink" title="4. HDFS 实践"></a>4. HDFS 实践</h2><p>HDFS交互的方式有很多种，但相对而言使用命令行是最简单的。</p>
+<p>如果在一台机器上运行HDFS，需要将Hadoop配置为为分布模式。</p>
+<p>HDFS实践参考下面文章：<a href="https://juejin.im/entry/58a57f12128fe1006cafc8d9" target="_blank" rel="noopener">HDFS实践</a>  [注：此文章有几个错误，实践后可发现]</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_design.html" target="_blank" rel="noopener">Hadoop分布式文件系统：架构和设计</a> </p>
+<p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html" target="_blank" rel="noopener">HDFS command 官方文档</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/01-Hadoop-Configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1202,7 +1430,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1327,7 +1555,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.8k字</span>
+  <span class="post-count">博客全站共18.5k字</span>
 </div>
 
 <script 
