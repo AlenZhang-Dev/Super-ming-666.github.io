@@ -80,6 +80,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Superming's Blog" type="application/atom+xml" />
 
@@ -88,24 +90,24 @@
 
 
 
-<meta name="description" content="Hbase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase  默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和">
+<meta name="description" content="HBase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase  默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="03-Hbase">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;index.html">
 <meta property="og:site_name" content="Superming&#39;s Blog">
-<meta property="og:description" content="Hbase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase  默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和">
+<meta property="og:description" content="HBase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase  默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;flow.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;Hbase-relenvent.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;table.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HbaseLayer.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;RegionLocation.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;Hbasestructure.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HBaseData.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HRegion.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;Store.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HbaseLayer.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;RegionLocation.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HLog.png">
-<meta property="og:updated_time" content="2020-04-02T04:42:28.984Z">
+<meta property="og:updated_time" content="2020-04-09T05:49:03.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;flow.png">
 
@@ -368,14 +370,14 @@
       
 
       
-        <h1 id="Hbase"><a href="#Hbase" class="headerlink" title="Hbase"></a>Hbase</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
+        <h1 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
 <p>MacOS 10.15.3    /    Hadoop 3.2.1    /    Hbase  1.3.5</p>
 </blockquote>
 <p>使用shell命令安装Hbase</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew install Hbase</span></pre></td></tr></table></figure>
 
 <p>默认安装的hbase1.3.5，安装目录如下：<code>/usr/local/Cellar/hbase/1.3.5</code>。</p>
-<p>配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和完全分布式，下面配置伪分布式模式。其余配置请参考<a href="https://hbase.apache.org/book.html" target="_blank" rel="noopener">Hbase文档</a>。</p>
+<p>配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和完全分布式，下面配置伪分布式模式。其余配置请参考<a href="https://hbase.apache.org/book.html" target="_blank" rel="noopener">HBase文档</a>。</p>
 <p><code>在确保Hbase停止的情况下进行如下配置。</code></p>
 <ul>
 <li>修改hbase-env.sh</li>
@@ -402,7 +404,7 @@
 
 
 
-<h2 id="Hbase-1"><a href="#Hbase-1" class="headerlink" title="Hbase"></a>Hbase</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>HBase是一种构建在HDFS之上的分布式、面向列的存储系统，是一个高可靠、高性能、面向列、可伸缩的分布式数据库，用于存储非结构化和半结构化的松散数据，在需要实时读写、随机访问超大数据集时具有极大优势。</p>
+<h2 id="HBase-1"><a href="#HBase-1" class="headerlink" title="HBase"></a>HBase</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>HBase是一种构建在HDFS之上的分布式、面向列的存储系统，是一个高可靠、高性能、面向列、可伸缩的分布式数据库，用于存储非结构化和半结构化的松散数据，在需要实时读写、随机访问超大数据集时具有极大优势。</p>
 <h3 id="生态关系"><a href="#生态关系" class="headerlink" title="生态关系"></a>生态关系</h3><p>HBase在Hadoop生态中与其他部分的关系。</p>
 <blockquote>
 <p>HBase利用Hadoop MapReduce来处理HBase中的海量数据，实现<strong>高性能计算</strong>。</p>
@@ -419,7 +421,7 @@
 <thead>
 <tr>
 <th>对比</th>
-<th>Hbase</th>
+<th>HBase</th>
 <th>传统关系数据库</th>
 </tr>
 </thead>
@@ -455,7 +457,7 @@
 </tr>
 </tbody></table>
 <p>局限：Hbase不支持事务，无法实现跨行原子性。</p>
-<h3 id="数据模型概述"><a href="#数据模型概述" class="headerlink" title="数据模型概述"></a>数据模型概述</h3><p>Hbase是一个稀疏、多维度、排序的映射表，索引是行键、列族、列限定符和时间戳。每个值是未经解释的字符串，没有数据类型。<strong>每一行都有一个可排序的行键和任意多的列。</strong></p>
+<h3 id="数据模型概述"><a href="#数据模型概述" class="headerlink" title="数据模型概述"></a>数据模型概述</h3><p>HBase是一个稀疏、多维度、排序的映射表，索引是行键、列族、列限定符和时间戳。每个值是未经解释的字符串，没有数据类型。<strong>每一行都有一个可排序的行键和任意多的列。</strong></p>
 <p><strong>数据模型相关概念</strong></p>
 <p><img src="/2020/03/24/03-Hbase/table.png" alt="table"></p>
 <p>Hbase可以对允许保留的版本数量进行设置。</p>
@@ -472,11 +474,11 @@
 </tr>
 <tr>
 <td>行</td>
-<td>每个Hbase由若干行组成，每个行由行键（row key）标示</td>
+<td>每个HBase由若干行组成，每个行由行键（row key）标示</td>
 </tr>
 <tr>
 <td>列族</td>
-<td>一个Hbase表被分组为许多“列族”(Column Family)的集合，它是基本的访问控制单元</td>
+<td>一个HBase表被分组为许多“列族”(Column Family)的集合，它是基本的访问控制单元</td>
 </tr>
 <tr>
 <td>列限定符</td>
@@ -484,7 +486,7 @@
 </tr>
 <tr>
 <td>单元格</td>
-<td>在Hbase表中，通过行键、列族和列限定符确定一个“单元格”（cell），单元格中存书的数据没有数据类型，视为字节数据byte[]</td>
+<td>在HBase表中，通过行键、列族和列限定符确定一个“单元格”（cell），单元格中存书的数据没有数据类型，视为字节数据byte[]</td>
 </tr>
 <tr>
 <td>时间戳</td>
@@ -496,25 +498,9 @@
 </tr>
 </tbody></table>
 <blockquote>
-<p>Hbase按单元格插数据，或按照单元格删除数据</p>
+<p>HBase按单元格插数据，或按照单元格删除数据</p>
 </blockquote>
-<h2 id="Hbase原理与系统架构"><a href="#Hbase原理与系统架构" class="headerlink" title="Hbase原理与系统架构"></a>Hbase原理与系统架构</h2><h3 id="表和Region"><a href="#表和Region" class="headerlink" title="表和Region"></a>表和Region</h3><p>开始只有一个Region， 后来不断分裂。</p>
-<p>Region拆分操作非常快，拆分后Region读取的仍是原存储文件，直到“分裂”过程把存储文件异步写到独立的文件之后，才会读取新文件</p>
-<p>需要根据行键的值对表中的行进行分区，每个行区间构成一个分区，称为“Region”</p>
-<p>每个Region最佳大小取决于单台服务器的有效处理能力，建议1GB-2GB</p>
-<p>同一Region不会被分拆到多个Region服务器，每个Region服务器存储10-1000个Region「每个Region服务器负责管理一个Region集合」</p>
-<blockquote>
-<p>每个Region都有一个RegionID来标识其唯一性，一个Region标识符“表名 + 开始主键 + RegionID”‘</p>
-<p>元数据表(.META表)：这个映射表包含关于Region的元数据，为了加快访问速度，数据存放在Region位置</p>
-<p>-ROOT-表：当HBase中Region非常庞大的时候，一个服务器保存不了.MATA.表的条目，就需要存储到不同服务器上，此时.MATA.分裂成多个Region，于是构建了一个新的映射表即：“-ROOT-表”</p>
-</blockquote>
-<p><img src="/2020/03/24/03-Hbase/HbaseLayer.png" alt="HbaseLayer"></p>
-<h4 id="Region定位"><a href="#Region定位" class="headerlink" title="Region定位"></a>Region定位</h4><p>客户端查找zookeeper的meta-region-server节点查询HBase：meta表在哪台HRegionServer上</p>
-<p>客户端连接含有HBase:meta表的HRegionServer该表存储了所有Region的行键范围信息,可以查询出需要存取的行键属于那个Region，以及这个Region属于那个HRegionServer</p>
-<p>此后，客户端就可以直接连接拥有存取行键Region的HRegionServer，并对其操作</p>
-<p>客户端吧meta信息缓存起来，下次进行相同操作就不用加载HBase:meta操作了</p>
-<p><img src="/2020/03/24/03-Hbase/RegionLocation.png" alt="Region Location"></p>
-<h3 id="HBase各组件"><a href="#HBase各组件" class="headerlink" title="HBase各组件"></a>HBase各组件</h3><p><img src="/2020/03/24/03-Hbase/Hbasestructure.png" alt="Hbase structure"></p>
+<h2 id="HBase原理与系统架构"><a href="#HBase原理与系统架构" class="headerlink" title="HBase原理与系统架构"></a>HBase原理与系统架构</h2><h3 id="HBase各组件"><a href="#HBase各组件" class="headerlink" title="HBase各组件"></a>HBase各组件</h3><p><img src="/2020/03/24/03-Hbase/Hbasestructure.png" alt="Hbase structure"></p>
 <p>HBase系统架构如上图，包含客户端、Zookeeper服务器、Master服务器、Region服务器。</p>
 <p><strong>客户端</strong></p>
 <p>包含HBase接口，在缓存中维护已经访问过的Region位置信息以加快后续数据访问。使用RPC机制与Master和Region服务器进行通信。<strong>对于管理类操作，客户端与Master进行RPC；对于数据读写，客户端与Region服务器进行RPC。</strong></p>
@@ -538,7 +524,7 @@
 <p>一台机器上只运行一个RegionServer。</p>
 <h3 id="Region服务器工作原理"><a href="#Region服务器工作原理" class="headerlink" title="Region服务器工作原理"></a>Region服务器工作原理</h3><p><img src="/2020/03/24/03-Hbase/HBaseData.png" alt="HBase Data"></p>
 <p>上图描述了Region服务器向HDFS文件系统读写数据的基本原理。</p>
-<p>Region服务器内部管理了一些列Region对象，每个Region对象由多个Store组成，每个Store对应表中一个列族。同时每个Store包含一个MemStore和多个StoreFile。</p>
+<p>Region服务器内部管理了一系列Region对象和一个HLog文件，每个Region对象由多个Store组成，每个Store对应表中一个列族。同时每个Store包含一个MemStore和多个StoreFile。</p>
 <blockquote>
 <p>HLog：磁盘上的记录文件，记录所有更新操作。</p>
 <p>MemStore时内存中的缓存，保存最近更新的数据。</p>
@@ -560,6 +546,25 @@
 <blockquote>
 <p>注意：合并操作是由文件数量触发的，分裂操作由单个文件大小触发。</p>
 </blockquote>
+<h3 id="表和Region"><a href="#表和Region" class="headerlink" title="表和Region"></a>表和Region</h3><blockquote>
+<p>Region服务器是HBase最核心的模块。</p>
+</blockquote>
+<p>开始只有一个Region， 后来不断分裂。</p>
+<p>Region拆分操作非常快，拆分后Region读取的仍是原存储文件，直到“分裂”过程把存储文件异步写到独立的文件之后，才会读取新文件</p>
+<p>需要根据行键的值对表中的行进行分区，每个行区间构成一个分区，称为“Region”</p>
+<p>每个Region最佳大小取决于单台服务器的有效处理能力，建议1GB-2GB</p>
+<p>同一Region不会被分拆到多个Region服务器，每个Region服务器存储10-1000个Region「每个Region服务器负责管理一个Region集合」</p>
+<blockquote>
+<p>每个Region都有一个RegionID来标识其唯一性，一个Region标识符“表名 + 开始主键 + RegionID”‘</p>
+<p>元数据表(.META表)：这个映射表包含关于Region的元数据，为了加快访问速度，数据存放在Region位置</p>
+<p>-ROOT-表：当HBase中Region非常庞大的时候，一个服务器保存不了.MATA.表的条目，就需要存储到不同服务器上，此时.MATA.分裂成多个Region，于是构建了一个新的映射表即：“-ROOT-表”</p>
+</blockquote>
+<p><img src="/2020/03/24/03-Hbase/HbaseLayer.png" alt="HbaseLayer"></p>
+<h4 id="Region定位"><a href="#Region定位" class="headerlink" title="Region定位"></a>Region定位</h4><p>客户端查找zookeeper的meta-region-server节点查询HBase：meta表在哪台HRegionServer上</p>
+<p>客户端连接含有HBase:meta表的HRegionServer该表存储了所有Region的行键范围信息,可以查询出需要存取的行键属于那个Region，以及这个Region属于那个HRegionServer</p>
+<p>此后，客户端就可以直接连接拥有存取行键Region的HRegionServer，并对其操作</p>
+<p>客户端吧meta信息缓存起来，下次进行相同操作就不用加载HBase:meta操作了</p>
+<p><img src="/2020/03/24/03-Hbase/RegionLocation.png" alt="Region Location"></p>
 <h3 id="HLog工作原理"><a href="#HLog工作原理" class="headerlink" title="HLog工作原理"></a>HLog工作原理</h3><p><strong>HLog实际是为了保证系统容错性而存在的。</strong></p>
 <p>HLog文件格式：</p>
 <p><img src="/2020/03/24/03-Hbase/HLog.png" alt="HLog"></p>
@@ -581,6 +586,11 @@
 <blockquote>
 <p>需要强调的是：HBase中，每个Region服务器只需要维护一个HLog文件，所有<strong>Region对象</strong>共用一个HLog。多个Region对象的更新操作导致的日志修改，只需要对HLog进行文件追加即可。缺点在于，当一个Region服务器故障时，需要将HLog按照所属的Region对象进行拆分并分发。</p>
 </blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>主要介绍HBase数据库相关内容。HBase数据库是BigTable的开源实现，和BigTable一样，支持大规模海量数据，分布式并发数据处理效率很高，易于扩展且支持动态伸缩。</p>
+<p>HBase实际是一个稀疏、多维、持久化存储的映射表，采用行键、列键和时间戳进行索引，每个值都是未经解释的字符串。</p>
+<p>HBase采用分区存储，一个大的表会被拆分为多个Region，这些Region会被分发到不同的服务器上实现分布式存储。</p>
+<p>HBase的系统架构包括客户端、Zookeeper服务器、Master、Region服务器。客户端包含访问HBase的接口；Zookeeper服务器负责稳定、可靠的协同服务；Master主要负责表和Region的管理工作；Region服务器负责维护分配给自己的Region，并响应用户的读写请求。</p>
+<p>对于HBase实现与编程受限于文章长度并未涉及。</p>
 
       
     </div>
@@ -799,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hbase"><span class="nav-number">1.</span> <span class="nav-text">Hbase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hbase-1"><span class="nav-number">1.2.</span> <span class="nav-text">Hbase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生态关系"><span class="nav-number">1.2.2.</span> <span class="nav-text">生态关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要HBase"><span class="nav-number">1.2.3.</span> <span class="nav-text">为什么需要HBase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据模型概述"><span class="nav-number">1.2.4.</span> <span class="nav-text">数据模型概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hbase原理与系统架构"><span class="nav-number">1.3.</span> <span class="nav-text">Hbase原理与系统架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表和Region"><span class="nav-number">1.3.1.</span> <span class="nav-text">表和Region</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Region定位"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Region定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase各组件"><span class="nav-number">1.3.2.</span> <span class="nav-text">HBase各组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Region服务器工作原理"><span class="nav-number">1.3.3.</span> <span class="nav-text">Region服务器工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HLog工作原理"><span class="nav-number">1.3.4.</span> <span class="nav-text">HLog工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据恢复"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">数据恢复</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase"><span class="nav-number">1.</span> <span class="nav-text">HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase-1"><span class="nav-number">1.2.</span> <span class="nav-text">HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生态关系"><span class="nav-number">1.2.2.</span> <span class="nav-text">生态关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要HBase"><span class="nav-number">1.2.3.</span> <span class="nav-text">为什么需要HBase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据模型概述"><span class="nav-number">1.2.4.</span> <span class="nav-text">数据模型概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase原理与系统架构"><span class="nav-number">1.3.</span> <span class="nav-text">HBase原理与系统架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase各组件"><span class="nav-number">1.3.1.</span> <span class="nav-text">HBase各组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Region服务器工作原理"><span class="nav-number">1.3.2.</span> <span class="nav-text">Region服务器工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表和Region"><span class="nav-number">1.3.3.</span> <span class="nav-text">表和Region</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Region定位"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Region定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HLog工作原理"><span class="nav-number">1.3.4.</span> <span class="nav-text">HLog工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据恢复"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">数据恢复</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.4.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -838,7 +848,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共23.2k字</span>
+  <span class="post-count">博客全站共23.5k字</span>
 </div>
 
 <script 
