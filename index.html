@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%20--%20MacOS%20+%20Ubuntu%20%E5%B0%9D%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SuperMing">
@@ -286,7 +286,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%20--%20MacOS%20+%20Ubuntu%20%E5%B0%9D%E8%AF%95/" itemprop="url">Hadoop集群配置安装：MacOS+Ubuntu 尝试</a></h1>
+                <a class="post-title-link" href="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/" itemprop="url">Hadoop集群配置安装：MacOS+Ubuntu尝试</a></h1>
         
 
         <div class="post-meta">
@@ -317,8 +317,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%20--%20MacOS%20+%20Ubuntu%20%E5%B0%9D%E8%AF%95/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%20--%20MacOS%20+%20Ubuntu%20%E5%B0%9D%E8%AF%95/" itemprop="commentCount"></span>
+                <a href="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -326,7 +326,7 @@
 
           
           
-             <span id="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%20--%20MacOS%20+%20Ubuntu%20%E5%B0%9D%E8%AF%95/" class="leancloud_visitors" data-flag-title="Hadoop集群配置安装：MacOS+Ubuntu 尝试">
+             <span id="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/" class="leancloud_visitors" data-flag-title="Hadoop集群配置安装：MacOS+Ubuntu尝试">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,7 +370,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hostname</span></pre></td></tr></table></figure>
 
 <p>在文件hostname文件中写入自己指定的机器名称并保存即可。</p>
-<p>![hadoop4](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/hadoop4.png)</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/hadoop4.png" alt="hadoop4"></p>
 <h3 id="域名映射"><a href="#域名映射" class="headerlink" title="域名映射"></a>域名映射</h3><p>在每台机器上修改节点对应的IP映射。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span></pre></td></tr></table></figure>
 
@@ -393,7 +393,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cat ./id_rsa.pub &gt;&gt; ./authorized_keys</span></pre></td></tr></table></figure>
 
 <p>将本机的SSH公钥保存到本机的anthoroized_keys文件中，执行<code>ssh ZKM-Master</code>免密码访问本机，详情如下：</p>
-<p>![1](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/1.png)</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/1.png" alt="1"></p>
 <p>然后将本机的SSH公钥加入从节点的授权中：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_rsa.pub superming@superming:./ #发送公钥至从机器./目录下  解释：&lt;superming:superming&gt;:机器名：用户名 scp为ssh的传输命令，即通过ssh传输文件。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 以下在从机执行</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh       # 如果不存在该文件夹需先创建，若已存在则忽略</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">rm ~/id_rsa.pub    # 用完就可以删掉了</span></pre></td></tr></table></figure>
 
@@ -403,7 +403,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd .ssh/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">touch config</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">vim config</span></pre></td></tr></table></figure>
 
 <p>config文件内容如下，Host指定访问名称，Hostname指定访问IP地址，User指定访问用户。</p>
-<p>![1](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/2.png)</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/2.png" alt="1"></p>
 <p>经过以上配置后，在Master执行<code>ssh superming</code>就指定用户superming访问Hostname为<code>192.168.1.101</code>。</p>
 <h2 id="分布式集群环境配置"><a href="#分布式集群环境配置" class="headerlink" title="分布式集群环境配置"></a>分布式集群环境配置</h2><p>一共需要配置五个文件，配置文件目录在<code>/usr/local/hadoop/etc/hadoop</code>下</p>
 <p><code>Slave</code>文件：</p>
@@ -437,7 +437,7 @@
 <blockquote>
 <p>本来想根据报错一个个解决的，修改Master上寻找Datanode路径的配置的，但操作过于麻烦，还是选择了相对简单的方法。</p>
 </blockquote>
-<p>![1](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/3.png)</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/3.png" alt="1"></p>
 <p>如上，在启动datanode节点时不能找到对应目录<code>/usr/local/haoop/etc/hadoop</code>目录，就是因为Mac的目录冲突导致的。所以作为Datanode，需要确保有/usr/local/hadoop/这个目录能够让Master节点访问到，如果没有就创建一个。</p>
 <p>解决：将原本安装于<code>/usr/local/Cellar/hadoop/3.2.1</code>下的Hadoop相关文件复制到该目录下<code>/usr/local/hadoop/</code>下。同时又因为ubuntu的hadoop配置文件在<code>./etc/hadoop/</code>下，而Mac在<code>./libexec/share/hadoop/</code>下，故需要在hadoop目录下创建etc文件，将<code>./libexec/share/hadoop/</code>下的配置文件复制到etc文件下。</p>
 <blockquote>
@@ -454,19 +454,19 @@
 <blockquote>
 <p>hdfs dfsadmin -report 用于查看节点状态。</p>
 </blockquote>
-<p>![1](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/4.png)</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/4.png" alt="1"></p>
 <p>Slave节点上应该有Datanode运行：</p>
-<p>![1](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/5.png)</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/5.png" alt="1"></p>
 <p>开启成功后。可以在web页面查看节点状态：<code>localhost:9870</code></p>
-<p>![1](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/web.png)`</p>
-<p>![web2](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/web2.png)执行分布式例子：</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/web.png" alt="1">`</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/web2.png" alt="web2">执行分布式例子：</p>
 <p>创建HDFS用户目录：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir -p /user/hadoop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir input</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -put /usr/local/hadoop/etc/hadoop/*.xml input</span></pre></td></tr></table></figure>
 
 <p>执行MapReduce作业：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output 'dfs[a-z.]+'</span></pre></td></tr></table></figure>
 
-<p>![hadoop2](./Hadoop集群配置安装 – MacOS + Ubuntu 尝试/hadoop2.png)</p>
+<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/hadoop2.png" alt="hadoop2"></p>
 <p>节点关闭也是在Master上执行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">stop-yarn.sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">stop-dfs.sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mr-jobhistory-daemon.sh stop historyserver</span></pre></td></tr></table></figure>
 
@@ -2203,7 +2203,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.8k字</span>
+  <span class="post-count">博客全站共31.6k字</span>
 </div>
 
 <script 
