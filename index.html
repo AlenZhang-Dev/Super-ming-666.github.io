@@ -358,127 +358,20 @@
 
       
         
-          
-            <h1 id="Hadoop集群配置安装：MacOS-Ubuntu-尝试"><a href="#Hadoop集群配置安装：MacOS-Ubuntu-尝试" class="headerlink" title="Hadoop集群配置安装：MacOS+Ubuntu 尝试"></a>Hadoop集群配置安装：MacOS+Ubuntu 尝试</h1><p>关于Hadoop集群配置，教程基本都是都是Ubuntu之间的相互配置，很少MacOs与Ubuntu之间的分布式教程，相信很多同学为了做实验受限于机器等条件限制，本文可能会有所帮助。</p>
+          <h1 id="Hadoop集群配置安装：MacOS-Ubuntu-尝试"><a href="#Hadoop集群配置安装：MacOS-Ubuntu-尝试" class="headerlink" title="Hadoop集群配置安装：MacOS+Ubuntu 尝试"></a>Hadoop集群配置安装：MacOS+Ubuntu 尝试</h1><p>关于Hadoop集群配置，教程基本都是都是Ubuntu之间的相互配置，很少MacOs与Ubuntu之间的分布式教程，相信很多同学为了做实验受限于机器等条件限制，本文可能会有所帮助。</p>
 <h2 id="环境准备："><a href="#环境准备：" class="headerlink" title="环境准备："></a>环境准备：</h2><p>MacOS 【Catalina 10.15.3 】： 作为从节点，节点名称为superming。</p>
 <p>Ubuntu 【19.04】：作为主节点，节点命名ZKM-Master。【为方便理解，文章中使用Master替换】</p>
 <p>两者位于同一网络环境下，ZKM-Master 节点局域网IP为<strong>192.168.1.106</strong>，superming节点局域网IP为<strong>192.1.1.101</strong>。</p>
 <p><strong>说明：</strong></p>
 <p>两者安装的Hadoop版本均为3.2.1。</p>
 <p>Ubuntu机器使用hadoop用户进行hadoop的相关操作，而Mac机器上为了方便使用，并未创建hadoop用户，而是使用我原来的用户superming进行相关操作，在配置集群之前，所有机器上的hadoop配置均按照伪分布式配置，并可以运行。</p>
-<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><p>为了便于区分节点名称，修改Master的主机名</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hostname</span></pre></td></tr></table></figure>
-
-<p>在文件hostname文件中写入自己指定的机器名称并保存即可。</p>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/hadoop4.png" alt="hadoop4"></p>
-<h3 id="域名映射"><a href="#域名映射" class="headerlink" title="域名映射"></a>域名映射</h3><p>在每台机器上修改节点对应的IP映射。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span></pre></td></tr></table></figure>
-
-<p>按照我的机器命名及IP，添加如下映射：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">192.168.1.106 ZKM-Master</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">192.168.1.101 superming</span></pre></td></tr></table></figure>
-
-
-
-<h2 id="SSH配置"><a href="#SSH配置" class="headerlink" title="SSH配置"></a>SSH配置</h2><blockquote>
-<p>⚠️：SSH是配置中需要变通的一处，因为我的机器之间的用户等配置并不完全对等，需要进行一些多余配置消除这些影响。</p>
-</blockquote>
-<p>SSH主要是让Master节点可以通过SSH无密码登录到各Slave节点上。</p>
-<p>本步骤用于Master可以通过SSH无密码访问各Slave节点。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd ~/.ssh               # 如果没有该目录，先执行一次ssh localhost</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">rm ./id_rsa*            # 删除之前生成的公匙「因为主机名修改了」</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa       # 回车到底</span></pre></td></tr></table></figure>
-
-<p>截止该步骤，SSH密钥生成完毕，需要SSH能够免密访问机器，需要将生成的公钥保存到Anutorized_key文件中。</p>
-<blockquote>
-<p>扩展：<a href="https://abcdabcd987.com/ssh/" target="_blank" rel="noopener">SSH基本用法</a></p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cat ./id_rsa.pub &gt;&gt; ./authorized_keys</span></pre></td></tr></table></figure>
-
-<p>将本机的SSH公钥保存到本机的anthoroized_keys文件中，执行<code>ssh ZKM-Master</code>免密码访问本机，详情如下：</p>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/1.png" alt="1"></p>
-<p>然后将本机的SSH公钥加入从节点的授权中：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_rsa.pub superming@superming:./ #发送公钥至从机器./目录下  解释：&lt;superming:superming&gt;:机器名：用户名 scp为ssh的传输命令，即通过ssh传输文件。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 以下在从机执行</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh       # 如果不存在该文件夹需先创建，若已存在则忽略</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">rm ~/id_rsa.pub    # 用完就可以删掉了</span></pre></td></tr></table></figure>
-
-<p>如果有多余节点，按照以上步骤进行传输并授权。该操作后，Master节点可以无密码访问各从节点。</p>
-<p><strong>问题解决</strong>：以上配置后，在Master 节点执行<code>ssh superming</code>，默认使用hadoop用户访问ssh，而我的从节点使用的是superming用户，因此需要为SSH配置别名以确定默认登录用户名。</p>
-<p>需要在.ssh/文件下创建一个config文件，用来指定ssh指定的访问方式。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd .ssh/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">touch config</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">vim config</span></pre></td></tr></table></figure>
-
-<p>config文件内容如下，Host指定访问名称，Hostname指定访问IP地址，User指定访问用户。</p>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/2.png" alt="1"></p>
-<p>经过以上配置后，在Master执行<code>ssh superming</code>就指定用户superming访问Hostname为<code>192.168.1.101</code>。</p>
-<h2 id="分布式集群环境配置"><a href="#分布式集群环境配置" class="headerlink" title="分布式集群环境配置"></a>分布式集群环境配置</h2><p>一共需要配置五个文件，配置文件目录在<code>/usr/local/hadoop/etc/hadoop</code>下</p>
-<p><code>Slave</code>文件：</p>
-<p>注：3.2.1版本slave文件即worker，编辑该文件即可。</p>
-<p>Slave文件需要列出节点名称，默认为<code>localhost</code>，本节点仅有一个Datanode，名称为superming，故删除原来的localhost文件并添加superming。</p>
-<p>修改<code>core-site.xml</code>文件:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://Master:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">description</span>&gt;</span>Abase for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<p>注：以上为<strong>标准格式</strong>，需要根据个人情况进行修改，比如我的机器名为<code>ZKM-Master</code>，需要将fs.defaultFS的值改为<code>hdfs://ZKM-Master:9000</code>。</p>
-<p>修改<code>hdfs-site.xml</code>文件，集群中有几个slave节点，将<code>dfs.replication</code>的值改为多少：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.secondary.http-address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:50090<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<p>修改<code>mapred-site.xml</code>文件：【第一次设置需要将<code>mapred-site.xml.template</code>文件重命名】</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.jobhistory.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:10020<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.jobhistory.webapp.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:19888<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<p>修改<code>yarn-site.xml</code>文件：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果是两台ubuntu机器，按以下命令即可将配置好的文件分发到各个节点上，并完成配置。</p>
-</blockquote>
-<p>因为以前跑过伪分布式模式，在切换到集群模式前删除之前的临时文件，<strong>并在Master节点上执行</strong>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd /usr/local</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo rm -r ./hadoop/tmp     # 删除 Hadoop 临时文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">sudo rm -r ./hadoop/logs/*   # 删除日志文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">tar -zcf ~/hadoop.master.tar.gz ./hadoop   # 先压缩再复制</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd ~</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">scp ./hadoop.master.tar.gz superming:/home/hadoop # superming为从节点用户名称，根据自己配置情况修改</span></pre></td></tr></table></figure>
-
-<p><strong>Slave节点执行：</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo rm -r /usr/local/hadoop    # 删掉旧的（如果存在）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo tar -zxf ~/hadoop.master.tar.gz -C /usr/local</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">sudo chown -R hadoop /usr/local/hadoop</span></pre></td></tr></table></figure>
-
-<p>以上，Hadoop节点的配置基本完成。</p>
-<h2 id="启动测试"><a href="#启动测试" class="headerlink" title="启动测试"></a>启动测试</h2><p>问题解决：</p>
-<p>因为Hadoop在Mac上的文件以及安装目录与Ubuntu上有很大不同，按以上配置启动，在Ubuntu上启动的Namenode启动正常，但是在Mac上启动的Datanode会碰到很多问题，很多报错忘记截图了，总结了一下大致上是默认安装目录的冲突引起的问题。</p>
-<blockquote>
-<p>本来想根据报错一个个解决的，修改Master上寻找Datanode路径的配置的，但操作过于麻烦，还是选择了相对简单的方法。</p>
-</blockquote>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/3.png" alt="1"></p>
-<p>如上，在启动datanode节点时不能找到对应目录<code>/usr/local/haoop/etc/hadoop</code>目录，就是因为Mac的目录冲突导致的。所以作为Datanode，需要确保有/usr/local/hadoop/这个目录能够让Master节点访问到，如果没有就创建一个。</p>
-<p>解决：将原本安装于<code>/usr/local/Cellar/hadoop/3.2.1</code>下的Hadoop相关文件复制到该目录下<code>/usr/local/hadoop/</code>下。同时又因为ubuntu的hadoop配置文件在<code>./etc/hadoop/</code>下，而Mac在<code>./libexec/share/hadoop/</code>下，故需要在hadoop目录下创建etc文件，将<code>./libexec/share/hadoop/</code>下的配置文件复制到etc文件下。</p>
-<blockquote>
-<p>截止该步，将Mac的配置文件与Ubuntu文件的冲突解决。</p>
-</blockquote>
-<p>在该目录下创建tmp文件，用于存储数据。tmp文件下创建<code>dfs/data/</code>目录以及<code>dfs/name/</code>目录。</p>
-<blockquote>
-<p>综上，Mac作为数据节点配置完毕。</p>
-</blockquote>
-<p>在Master节点上使用以下命令启动集群：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hdfs namenode -format       # 首次运行需要执行初始化</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">start-yarn.sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mr-jobhistory-daemon.sh start historyserver</span></pre></td></tr></table></figure>
-
-<p>如下图，Master上的执行过程：</p>
-<blockquote>
-<p>hdfs dfsadmin -report 用于查看节点状态。</p>
-</blockquote>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/4.png" alt="1"></p>
-<p>Slave节点上应该有Datanode运行：</p>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/5.png" alt="1"></p>
-<p>开启成功后。可以在web页面查看节点状态：<code>localhost:9870</code></p>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/web.png" alt="1">`</p>
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/web2.png" alt="web2">执行分布式例子：</p>
-<p>创建HDFS用户目录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir -p /user/hadoop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir input</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -put /usr/local/hadoop/etc/hadoop/*.xml input</span></pre></td></tr></table></figure>
-
-<p>执行MapReduce作业：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output 'dfs[a-z.]+'</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/hadoop2.png" alt="hadoop2"></p>
-<p>节点关闭也是在Master上执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">stop-yarn.sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">stop-dfs.sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mr-jobhistory-daemon.sh stop historyserver</span></pre></td></tr></table></figure>
-
-
-
-<hr>
-<p>参考：</p>
-<p><a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/ClusterSetup.html" target="_blank" rel="noopener">Hadoop Cluster Setup</a></p>
-<p><a href="https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/" target="_blank" rel="noopener">How to Install and Set Up a 3-Node Hadoop Cluster</a></p>
-<p><a href="http://dblab.xmu.edu.cn/blog/install-hadoop-cluster/" target="_blank" rel="noopener">Hadoop集群安装配置教程_Hadoop2.6.0_Ubuntu/CentOS</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
