@@ -292,6 +292,34 @@
 
 
       
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/" itemprop="url">
+              
+                <span itemprop="name">Hive MacOS配置</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2020-05-16T09:00:00+08:00"
+              content="2020-05-16" >
+          05-16
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
     </div>
 
   </div>
@@ -347,7 +375,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -472,7 +500,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共36.6k字</span>
+  <span class="post-count">博客全站共38.2k字</span>
 </div>
 
 <script 
@@ -789,29 +817,7 @@ src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 
 </body>
 </html>
-wTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
+item.get('time');
             var element = document.getElementById(url);
 
             $(element).find(COUNT_CONTAINER_REF).text(time);

@@ -267,6 +267,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SuperMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superming's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" itemprop="url">Hexo 个人博客高级配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-21T22:12:37+08:00">
+                2020-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="Hexo 个人博客高级配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本文简单介绍我搭建博客时考虑到或直接用上的几个集成功能。</p>
+<h2 id="访问统计"><a href="#访问统计" class="headerlink" title="访问统计"></a>访问统计</h2><h3 id="站点访问量统计"><a href="#站点访问量统计" class="headerlink" title="站点访问量统计"></a>站点访问量统计</h3><p>访问统计功能由<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a>提供，详细使用参见其个人网站。</p>
+<ul>
+<li><p>效果如下：【前者为uv算法显示，后者为pv算法显示】</p>
+<p><img src="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/busuanzi.png" alt="valine"></p>
+</li>
+</ul>
+<p>我所使用的Next主题已经集成此功能，只需添加脚本和开启功能即可。</p>
+<p>访问主题下的footer.swig文件添加代码，<code>path:themes/next/layout/_partials/footer.swig</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag"><span class="attr">async</span> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag"><span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97-Hexo-Next-GitHub-Pages/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -650,7 +826,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -775,7 +951,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共36.6k字</span>
+  <span class="post-count">博客全站共38.2k字</span>
 </div>
 
 <script 

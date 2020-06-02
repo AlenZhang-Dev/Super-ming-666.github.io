@@ -363,7 +363,7 @@
 <p>分布式并行编程可以大幅提高程序性能，实现高效的批量数据处理。分布式程序运行在大规模计算机集群上，集群中包含大量廉价服务器，能够并行执行大规模数据处理任务，从而获得海量的计算能力。MapReduce就是一种并行编程模型，用于大规模数据集的并行运行，将复杂的，运行于大规模集群上的并行计算高度抽象到两个函数<strong>Map</strong>和<strong>Reduce</strong>，两个函数及其核心思想源自函数式编程语言。</p>
 </blockquote>
 <p>谷歌最先提出了分布式并行编程模型MapRecude，Hadoop MapReduce是其开源实现。前者运行在DFS上，后者运行在HDFS上。</p>
-<p>在MapReduce中，一个存储在分布式文件系统中的大规模数据集会被切分为许多独立的小数据块，这些小数据块可以被多个Map任务并行处理。MapReduce框架会为每个Map任务输入一个<strong>数据子集</strong>，Map任务生成的结果会继续作为Reduce任务的输入，最终由Reduce任务输出最后结果，并写入分布式文件系统。「适合用MapReduce来处理的数据集需要满足一个前提条件：待处理的数据集可以分解成许多小的数据集，而且每个小数据集都可以完全并行进行处理。」</p>
+<p>在MapReduce中，一个存储在分布式文件系统中的大规模数据集会被切分为许多独立的小数据块，这些小数据块可以被多个Map任务并行处理。<u>MapReduce框架会为每个Map任务输入一个<strong>数据子集</strong>，Map任务生成的结果会继续作为Reduce任务的输入，最终由Reduce任务输出最后结果，并写入分布式文件系统。</u>「适合用MapReduce来处理的数据集需要满足一个前提条件：待处理的数据集可以分解成许多小的数据集，而且每个小数据集都可以完全并行进行处理。」</p>
 <p>MapReduce的一个设计理念为<strong>“计算向数据靠拢”</strong>而非“数据向计算靠拢”。主要是因为移动数据需要大量的网络传输开销，尤其在大规模数据环境下，移动计算比移动数据更加经济。所以在集群中，MapReduce框架会将每个Map程序就近在HDFS数据所在的节点运行，即将计算节点和存储节点一起运行，减少移动数据开销。</p>
 <p>综上，MapReduce是一个<strong>基于集群的高性能并行计算平台</strong>，MapReduce是一个<strong>并行计算软件框架</strong>，MapReduce是一个<strong>并行程序设计模型与方法</strong>。</p>
 <h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2><p>MapReduce核心是Map函数和Reduce函数，开发者只需要关注Map和Reduce函数的实现即可，不需要处理其他复杂的问题，比如分布式存储、工作调度、负载均衡等。</p>
@@ -567,6 +567,226 @@
             </a>
           </div>
           <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SuperMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superming's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/" itemprop="url">Hive MacOS配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-16T09:00:00+08:00">
+                2020-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="Hive MacOS配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Hive-MacOS-配置"><a href="#Hive-MacOS-配置" class="headerlink" title="Hive MacOS 配置"></a>Hive MacOS 配置</h2><p>环境：</p>
+<p>Hadoop3.2.1</p>
+<p>Hive 3.1.2</p>
+<h2 id="Hive-3-1-2-安装"><a href="#Hive-3-1-2-安装" class="headerlink" title="Hive 3.1.2 安装"></a>Hive 3.1.2 安装</h2><p>使用brew安装Hive</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew update</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">brew install hive</span></pre></td></tr></table></figure>
+
+<p>Hive的默认安装目录为：<code>/usr/local/Cellar/hive/3.1.2</code></p>
+<p>添加环境变量至shell配置文件, 我使用<code>zshrc</code>，故执行<code>vim .zshrc</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/usr/local/Cellar/hive/3.1.2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:$HIVE_HOME/bin</span></pre></td></tr></table></figure>
+
+<p>保存退出后使配置生效<code>source .zshrc</code>。</p>
+<h3 id="创建Hive的HDFS目录"><a href="#创建Hive的HDFS目录" class="headerlink" title="创建Hive的HDFS目录"></a>创建Hive的HDFS目录</h3><figure class="highlight plain"><figcaption><span>shell</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Create warehouse folder under hive and provide permission</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir -p &#x2F;user&#x2F;hive&#x2F;warehouse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -chmod g+w &#x2F;user&#x2F;hive&#x2F;warehouse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Create tmp folder in root and provide permission</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir -p &#x2F;tmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -chmod g+w &#x2F;tmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir -p &#x2F;tmp&#x2F;hive</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">hdfs dfs -chmod 777 &#x2F;tmp&#x2F;hive</span></pre></td></tr></table></figure>
+
+
+
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd /usr/local/Cellar/hive/3.1.2/libexec/conf</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mv hive-default.xml.template hive-default.xml</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">vim hive-site.xml</span></pre></td></tr></table></figure>
+
+
+
+<p>进入<code>/usr/local/Cellar/hive/3.1.2/libexec/conf</code>目录创建<code>hive-site.xml</code>，在其中添加如下配置信息：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>JDBC connect string for a JDBC metastore<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Driver class name for a JDBC metastore<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionUserName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hive<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>username to use against metastore database<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionPassword<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hive<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>password to use against metastore database<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<p>其中UserName为数据库名称，Password为数据库密码，其中Password与下面mysql创建的hive账户密码一致。</p>
+<h2 id="MySQL配置"><a href="#MySQL配置" class="headerlink" title="MySQL配置"></a>MySQL配置</h2><blockquote>
+<p>本文默认安装MySQL。</p>
+</blockquote>
+<h3 id="jdbc包下载"><a href="#jdbc包下载" class="headerlink" title="jdbc包下载"></a>jdbc包下载</h3><p>下载地址：<a href="https://downloads.mysql.com/archives/c-j/" target="_blank" rel="noopener">地址</a>，选择Platform Independent，下载。</p>
+<p>下载完成后，将mysql的jdbc包移入hive的lib目录下<code>/usr/local/Cellar/hive/3.1.2/libexec/lib</code>。</p>
+<h3 id="创建sql表"><a href="#创建sql表" class="headerlink" title="创建sql表"></a>创建sql表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mysql&gt; create database hive;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mysql&gt; USE hive;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &#39;hive&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;hive&#39;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">mysql&gt; grant SELECT,INSERT,UPDATE,DELETE,ALTER,CREATE ON hive.* TO &#39;hive&#39;@&#39;localhost&#39;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; grant all on hive.* to &#39;hive&#39;@&#39;localhost&#39;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">mysql&gt; FLUSH PRIVILEGES;</span></pre></td></tr></table></figure>
+
+
+
+<h2 id="启动Hive-并测试"><a href="#启动Hive-并测试" class="headerlink" title="启动Hive 并测试"></a>启动Hive 并测试</h2><p>先执行以下命令，使用 schematool工具初始化Hive版本的Metastore架构。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">schematool -initSchema -dbType mysql</span></pre></td></tr></table></figure>
+
+<p>最后会出现<code>Initialization script completed schemaTool completed</code></p>
+<p>启动Hive</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hive</span></pre></td></tr></table></figure>
+
+<p>hive启动完成后会出现如下命令提示符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hive&gt;</span></pre></td></tr></table></figure>
+
+<p>可以简单执行以下命令尝试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hive&gt; show databases;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hive&gt; show tables;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">hive&gt; create table test (id int, name string);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">hive&gt; insert into test values (1, &#39;John Smith&#39;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">hive&gt; select * from test;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">hive&gt; drop table test;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">hive&gt; exit;</span></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/hive.png" alt="hive"></p>
+<p>Hive安装成功后在MySql会有如下表格：</p>
+<p><img src="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/hivetable.png" alt="hivetable"></p>
+<h2 id="Hive常见Bug汇总"><a href="#Hive常见Bug汇总" class="headerlink" title="Hive常见Bug汇总"></a>Hive常见Bug汇总</h2><h3 id="guava版本不一致问题"><a href="#guava版本不一致问题" class="headerlink" title="guava版本不一致问题"></a>guava版本不一致问题</h3><p>在使用hive命令后，出现如下报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">LF4J: Class path contains multiple SLF4J bindings.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">SLF4J: Found binding in [jar:file:/usr/local/Cellar/hive/3.1.2/libexec/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">SLF4J: Found binding in [jar:file:/usr/local/Cellar/hadoop/3.2.1/libexec/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Exception in thread "main" java.lang.NoSuchMethodError: com.google.common.base.Preconditions.checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.conf.Configuration.set(Configuration.java:1357)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.conf.Configuration.set(Configuration.java:1338)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.mapred.JobConf.setJar(JobConf.java:536)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.mapred.JobConf.setJarByClass(JobConf.java:554)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.mapred.JobConf.&lt;init&gt;(JobConf.java:448)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.hive.conf.HiveConf.initialize(HiveConf.java:5141)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.hive.conf.HiveConf.&lt;init&gt;(HiveConf.java:5099)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.hive.common.LogUtils.initHiveLog4jCommon(LogUtils.java:97)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.hive.common.LogUtils.initHiveLog4j(LogUtils.java:81)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:699)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:683)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    at java.lang.reflect.Method.invoke(Method.java:498)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.util.RunJar.run(RunJar.java:323)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    at org.apache.hadoop.util.RunJar.main(RunJar.java:236)</span></pre></td></tr></table></figure>
+
+<p>修复：</p>
+<p>查阅资料后，是因为<code>com.google.common.base.Preconditions.checkArgument</code>依赖包在hive内部以及hadoop内部版本不一致导致的。</p>
+<p>使用如下命令解决：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看版本</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls /usr/<span class="built_in">local</span>/Cellar/hadoop/3.2.1/libexec/share/hadoop/common/lib/guava*</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">/usr/local/Cellar/hadoop/3.2.1/libexec/share/hadoop/common/lib/guava-27.0-jre.jar</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls /usr/<span class="built_in">local</span>/Cellar/hive/3.1.2/libexec/lib/guava* </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">/usr/local/Cellar/hive/3.1.2/libexec/lib/guava-19.0-jre.jar</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> hadoop 版本比 hive 高，替换之</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mv /usr/<span class="built_in">local</span>/Cellar/hive/3.1.2/libexec/lib/guava-19.0.jar /tmp <span class="comment"># 保留下副本</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cp /usr/<span class="built_in">local</span>/Cellar/hadoop/3.2.1/libexec/share/hadoop/common/lib/guava-27.0-jre.jar /usr/<span class="built_in">local</span>/Cellar/hive/3.1.2/libexec/lib/ <span class="comment"># 替换</span></span></span></pre></td></tr></table></figure>
+
+<h3 id="Metastore-Server未正常启动"><a href="#Metastore-Server未正常启动" class="headerlink" title="Metastore Server未正常启动"></a>Metastore Server未正常启动</h3><p>报错如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Exception in thread "main" java.lang.RuntimeException: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:444)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:672)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:616)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        at java.lang.reflect.Method.invoke(Method.java:597)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient</span></pre></td></tr></table></figure>
+
+<p>解决：启动Hive的MetaStoreServer服务进程即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># hive --service metastore &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[1] 52460</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Starting Hive Metastore Server</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">SLF4J: Class path contains multiple SLF4J bindings.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">SLF4J: Found binding in [jar:file:&#x2F;root&#x2F;hadoop&#x2F;hadoop-2.6.0&#x2F;share&#x2F;hadoop&#x2F;common&#x2F;lib&#x2F;slf4j-log4j12-1.7.5.jar!&#x2F;org&#x2F;slf4j&#x2F;impl&#x2F;StaticLoggerBinder.class]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">SLF4J: Found binding in [jar:file:&#x2F;root&#x2F;hadoop&#x2F;apache-hive-0.14.0-bin&#x2F;lib&#x2F;hive-jdbc-0.14.0-standalone.jar!&#x2F;org&#x2F;slf4j&#x2F;impl&#x2F;StaticLoggerBinder.class]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">SLF4J: See http:&#x2F;&#x2F;www.slf4j.org&#x2F;codes.html#multiple_bindings for an explanation.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]</span></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/16/Hive%20MacOS%20%E9%85%8D%E7%BD%AE/metastore.png" alt="metastore"></p>
+<p>Hive启动报错</p>
+<p>参见：<a href="https://stackoverflow.com/questions/52783323/hive-throws-wstxparsingexception-illegal-character-entity-expansion-character" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Exception in thread "main" java.lang.RuntimeException: com.ctc.wstx.exc.WstxParsingException: Illegal character entity: expansion character (code 0x8</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">...</span></pre></td></tr></table></figure>
+
+<p>解决：</p>
+<p>在hive-site.xml中删除下面描述</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">     Ensures commands with OVERWRITE (such as INSERT OVERWRITE) acquire Exclusive locks for </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">     transactional tables. This ensures that inserts (w/o overwrite) running concurrently</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">     are not hidden by the INSERT OVERWRITE.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">description</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/freedomboy319/article/details/44828337" target="_blank" rel="noopener">常见问题汇总</a></p>
+<p><a href="https://www.datageekinme.com/setup/setting-up-my-mac-hive/" target="_blank" rel="noopener">hive configuration</a></p>
+<p><a href="https://luckymrwang.github.io/2018/03/14/Install-hive-on-Mac-with-Homebrew/" target="_blank" rel="noopener">https://luckymrwang.github.io/2018/03/14/Install-hive-on-Mac-with-Homebrew/</a></p>
+<p><a href="https://dbmstutorials.com/hive/hive-setup-on-mac.html" target="_blank" rel="noopener">hive set up on mac</a></p>
+<p><a href="https://www.datageekinme.com/setup/setting-up-my-mac-hive/" target="_blank" rel="noopener">set up hive</a></p>
+
+          
         
       
     </div>
@@ -1749,182 +1969,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SuperMing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/ninja8.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Superming's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" itemprop="url">Hexo 个人博客高级配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-21T22:12:37+08:00">
-                2020-01-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="Hexo 个人博客高级配置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文简单介绍我搭建博客时考虑到或直接用上的几个集成功能。</p>
-<h2 id="访问统计"><a href="#访问统计" class="headerlink" title="访问统计"></a>访问统计</h2><h3 id="站点访问量统计"><a href="#站点访问量统计" class="headerlink" title="站点访问量统计"></a>站点访问量统计</h3><p>访问统计功能由<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a>提供，详细使用参见其个人网站。</p>
-<ul>
-<li><p>效果如下：【前者为uv算法显示，后者为pv算法显示】</p>
-<p><img src="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/busuanzi.png" alt="valine"></p>
-</li>
-</ul>
-<p>我所使用的Next主题已经集成此功能，只需添加脚本和开启功能即可。</p>
-<p>访问主题下的footer.swig文件添加代码，<code>path:themes/next/layout/_partials/footer.swig</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag"><span class="attr">async</span> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag"><span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1979,7 +2023,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2104,7 +2148,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共36.6k字</span>
+  <span class="post-count">博客全站共38.2k字</span>
 </div>
 
 <script 
