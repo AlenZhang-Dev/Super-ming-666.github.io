@@ -267,6 +267,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SuperMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superming's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" itemprop="url">Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-18T00:17:58+08:00">
+                2020-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" class="leancloud_visitors" data-flag-title="Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="HttpServletRequest对象和HttpServeltResponse对象详解"><a href="#HttpServletRequest对象和HttpServeltResponse对象详解" class="headerlink" title="HttpServletRequest对象和HttpServeltResponse对象详解"></a>HttpServletRequest对象和HttpServeltResponse对象详解</h1><h2 id="1-HttpServletRequest简介"><a href="#1-HttpServletRequest简介" class="headerlink" title="1. HttpServletRequest简介"></a>1. HttpServletRequest简介</h2><p>HttpServletRequest代表客户端请求，顾名思义，客户端通过HTTP协议访问服务器时，HTTP相关信息都封装在这个对象中，开发者可以通过这个对象的方法获取客户端请求的所有信息。</p>
+<h2 id="2-Request对象常用方法"><a href="#2-Request对象常用方法" class="headerlink" title="2. Request对象常用方法"></a>2. Request对象常用方法</h2><h3 id="2-1-获取请求行信息「客户机信息」"><a href="#2-1-获取请求行信息「客户机信息」" class="headerlink" title="2.1 获取请求行信息「客户机信息」"></a>2.1 获取请求行信息「客户机信息」</h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getMethod</td>
+<td>获得请求方式</td>
+</tr>
+<tr>
+<td>getRequestURL</td>
+<td>获得客户端发出请求时完整URL</td>
+</tr>
+<tr>
+<td>getRequestURI</td>
+<td>获得请求行中资源名部分</td>
+</tr>
+<tr>
+<td>getServletPath</td>
+<td>获得Servlet路径</td>
+</tr>
+<tr>
+<td>getProtocol</td>
+<td>获得协议和版本</td>
+</tr>
+<tr>
+<td>getQueryString</td>
+<td>获得返回行中的参数部分</td>
+</tr>
+<tr>
+<td>getLocalAddr</td>
+<td>获得Web服务器的IP地址</td>
+</tr>
+<tr>
+<td>getLocalName</td>
+<td>获得Web服务器来的主机名</td>
+</tr>
+</tbody></table>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/01-Hadoop-Configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1021,7 +1206,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1043,7 +1228,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1146,7 +1331,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43k字</span>
+  <span class="post-count">博客全站共50.3k字</span>
 </div>
 
 <script 
