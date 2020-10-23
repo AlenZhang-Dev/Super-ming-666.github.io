@@ -97,7 +97,7 @@
 <meta property="og:description" content="HeapSort「堆排序」堆（Heap） （二叉）堆数据结构是一种数组对象，可以被视为一颗特殊的完全二叉树。 树中每个节点与数组中存放该节点值的那个元素对应。树每一层都是填满的，最后一层除外。 二叉堆有两种：最大堆和最小堆【大根堆和小根堆】。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;15&#x2F;HeapSort&#x2F;DataStructure.png">
-<meta property="og:updated_time" content="2020-10-15T08:31:00.599Z">
+<meta property="og:updated_time" content="2020-10-19T05:28:21.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;15&#x2F;HeapSort&#x2F;DataStructure.png">
 
@@ -395,7 +395,10 @@
 <h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>堆排序是使用堆这种数据结构而设计的一种排序算法，是一种<strong>选择排序</strong>，同时也是一种<strong>不稳定的排序</strong>。</p>
 <p>堆排序主要流程：</p>
 <ol>
-<li>将无需序列构造成一个大根堆，将序列的最大值放到堆顶。【建堆】</li>
+<li>将无序序列构造成一个大根堆，将序列的最大值放到堆顶。【建堆】<ol>
+<li>无序序列构造初始堆时，需要从第一个非叶子结点开始，也就是length / 2 - 1出，然后逐步递减。</li>
+</ol>
+</li>
 <li>将堆顶元素与末尾元素进行交换，末尾元素即为最大值。【依次排序】</li>
 <li>将剩余的n-1个元素重新排列成堆，堆顶再次得到n-1个元素的最大值。</li>
 <li>循环1-3步，直到排成有序数列。</li>
@@ -541,7 +544,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -563,7 +566,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -608,7 +611,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://instagram.com/super_minnng" target="_blank" title="Instagram">
+                    <a href="https://www.instagram.com/alen_zhang_bubble/" target="_blank" title="Instagram">
                       
                         <i class="fa fa-fw fa-instagram"></i></a>
                   </span>
@@ -682,7 +685,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共58k字</span>
+  <span class="post-count">博客全站共62.8k字</span>
 </div>
 
 <script 

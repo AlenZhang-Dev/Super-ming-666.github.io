@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Bigdata," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -88,22 +88,12 @@
 
 
 
-<meta name="description" content="Mapreduce概述 分布式并行编程可以大幅提高程序性能，实现高效的批量数据处理。分布式程序运行在大规模计算机集群上，集群中包含大量廉价服务器，能够并行执行大规模数据处理任务，从而获得海量的计算能力。MapReduce就是一种并行编程模型，用于大规模数据集的并行运行，将复杂的，运行于大规模集群上的并行计算高度抽象到两个函数Map和Reduce，两个函数及其核心思想源自函数式编程语言。  谷歌最先">
-<meta name="keywords" content="Bigdata">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mapreduce">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AlenZhang&#39;s Blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;3&#x2F;index.html">
 <meta property="og:site_name" content="AlenZhang&#39;s Blog">
-<meta property="og:description" content="Mapreduce概述 分布式并行编程可以大幅提高程序性能，实现高效的批量数据处理。分布式程序运行在大规模计算机集群上，集群中包含大量廉价服务器，能够并行执行大规模数据处理任务，从而获得海量的计算能力。MapReduce就是一种并行编程模型，用于大规模数据集的并行运行，将复杂的，运行于大规模集群上的并行计算高度抽象到两个函数Map和Reduce，两个函数及其核心思想源自函数式编程语言。  谷歌最先">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;structure.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;process.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;workflow.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;phase.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;Shuffle1.png">
-<meta property="og:updated_time" content="2020-10-15T08:27:39.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;structure.png">
 
 
 
@@ -133,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/18/Mapreduce/"/>
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
 
 
 
 
 
-  <title>Mapreduce | AlenZhang's Blog</title>
+  <title>AlenZhang's Blog</title>
   
 
 
@@ -158,7 +148,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -261,9 +252,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -276,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/18/Mapreduce/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/27/WhyHumanRunTheWorld/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AlenZhang">
@@ -293,7 +284,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mapreduce</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/27/WhyHumanRunTheWorld/" itemprop="url">WhyHumanRunTheWorld</a></h1>
         
 
         <div class="post-meta">
@@ -305,8 +298,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-18T09:58:58+08:00">
-                2020-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-27T18:15:19+08:00">
+                2019-12-27
               </time>
             
 
@@ -328,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index">
-                    <span itemprop="name">CS</span>
+                  <a href="/categories/Books/" itemprop="url" rel="index">
+                    <span itemprop="name">Books</span>
                   </a>
                 </span>
 
@@ -346,8 +339,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/05/18/Mapreduce/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/18/Mapreduce/" itemprop="commentCount"></span>
+                <a href="/2019/12/27/WhyHumanRunTheWorld/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/27/WhyHumanRunTheWorld/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -355,7 +348,7 @@
 
           
           
-             <span id="/2020/05/18/Mapreduce/" class="leancloud_visitors" data-flag-title="Mapreduce">
+             <span id="/2019/12/27/WhyHumanRunTheWorld/" class="leancloud_visitors" data-flag-title="WhyHumanRunTheWorld">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,67 +379,17 @@
       
 
       
-        <h1 id="Mapreduce"><a href="#Mapreduce" class="headerlink" title="Mapreduce"></a>Mapreduce</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>分布式并行编程可以大幅提高程序性能，实现高效的批量数据处理。分布式程序运行在大规模计算机集群上，集群中包含大量廉价服务器，能够并行执行大规模数据处理任务，从而获得海量的计算能力。MapReduce就是一种并行编程模型，用于大规模数据集的并行运行，将复杂的，运行于大规模集群上的并行计算高度抽象到两个函数<strong>Map</strong>和<strong>Reduce</strong>，两个函数及其核心思想源自函数式编程语言。</p>
-</blockquote>
-<p>谷歌最先提出了分布式并行编程模型MapRecude，Hadoop MapReduce是其开源实现。前者运行在DFS上，后者运行在HDFS上。</p>
-<p>在MapReduce中，一个存储在分布式文件系统中的大规模数据集会被切分为许多独立的小数据块，这些小数据块可以被多个Map任务并行处理。<u>MapReduce框架会为每个Map任务输入一个<strong>数据子集</strong>，Map任务生成的结果会继续作为Reduce任务的输入，最终由Reduce任务输出最后结果，并写入分布式文件系统。</u>「适合用MapReduce来处理的数据集需要满足一个前提条件：待处理的数据集可以分解成许多小的数据集，而且每个小数据集都可以完全并行进行处理。」</p>
-<p>MapReduce的一个设计理念为<strong>“计算向数据靠拢”</strong>而非“数据向计算靠拢”。主要是因为移动数据需要大量的网络传输开销，尤其在大规模数据环境下，移动计算比移动数据更加经济。所以在集群中，MapReduce框架会将每个Map程序就近在HDFS数据所在的节点运行，即将计算节点和存储节点一起运行，减少移动数据开销。</p>
-<p>综上，MapReduce是一个<strong>基于集群的高性能并行计算平台</strong>，MapReduce是一个<strong>并行计算软件框架</strong>，MapReduce是一个<strong>并行程序设计模型与方法</strong>。</p>
-<h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2><p>MapReduce核心是Map函数和Reduce函数，开发者只需要关注Map和Reduce函数的实现即可，不需要处理其他复杂的问题，比如分布式存储、工作调度、负载均衡等。</p>
-<p>MapReduce使用列表和键值对&lt;key, value&gt;作为主要的数据模式。</p>
-<p><img src="/2020/05/18/Mapreduce/structure.png" alt></p>
-<h3 id="Map函数"><a href="#Map函数" class="headerlink" title="Map函数"></a>Map函数</h3><p>Map函数的输入来自分布式文件系统的文件快，这些文件块的格式是任意的，可以是文档，也可以是二进制格式的。文件块是一系列元素的集合，这些元素也是任意类型的。Map函数将输入元素转化为键值对，<strong>键和值的类型也是任意的</strong>，其中键不同于一般的标志属性，键没有唯一性，不能作为输出身份标识。即使是同一输入元素也可以通过Map任务生成具有相同键的多个&lt;key, value&gt;。</p>
-<h3 id="Reduce函数"><a href="#Reduce函数" class="headerlink" title="Reduce函数"></a>Reduce函数</h3><p>Reduce函数的任务就是将输入的一系列具有相同键的键值对以某种方式组合起来，输出处理后的键值对，输出结果会合并成一个文件。用户可指定Reduce任务个数，通知实现系统，然后主控进程通常选择一个Hash函数，Map任务输出的每个键都会经过Hash函数计算，并更具哈希结果将该键值对输入相应的Reduce任务处理。</p>
-<p><img src="/2020/05/18/Mapreduce/process.png" alt></p>
-<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><p><img src="/2020/05/18/Mapreduce/workflow.png" alt></p>
-<p>MapReduce的核心思想可以用“分而治之”描述，如上流程图可知，即将一个大的数据集拆分成多个小数据块在多台机器上并行处理。Map任务一般在数据节点上运行，以减少多余开销。只有在Map任务结束后，中间结果会被分发到多个Reduce中。</p>
-<p>需要注意的是：不同的Map任务之间不会进行通讯，不同的Reduce任务之间也不会发生任何信息交换；用户不能显式地从一台机器向另一台机器发送消息，所有数据交换都通过MapReduce自身去实现的。</p>
-<p>在执行过程中，Map任务输入文件，Reduce任务的处理结果保存在分布式文件系统中，而Map任务处理得到的中间结果则保存在本地磁盘中，只有Map任务处理结束后，Reduce过程才开始；所以Map任务需要考虑到数据的局部性。</p>
-<h3 id="任务执行"><a href="#任务执行" class="headerlink" title="任务执行"></a>任务执行</h3><p>MapReduce执行阶段如下：</p>
-<p><img src="/2020/05/18/Mapreduce/phase.png" alt></p>
-<ol>
-<li>MapReduce使用<strong>InputFormat</strong>模块作为Map的预处理；然后将输入文件切分为逻辑上的多个<strong>InputSplit</strong>，<em>InputSplit是MapReduce对文件进行处理和运算的输入单位。</em>「实际上InputSplit并没有对文件进行切割，而是记录了需要处理数据的位置和长度」</li>
-<li>通过<strong>RecordReader</strong>（RR）根据InputSplit里面的信息处理具体数据，加载数据并转换为适合的Map任务读取的键值对，输入给Map任务。</li>
-<li>Map根据用户自定义的映射规则，输出一些列键值对作为中间结果。</li>
-<li>为了让Reduce可以并行处理Map的结果，需要对Map的输出进行一定的分区(Portition)、排序(Sort)、合并(Combine)、归并(Merge)等操作，得到中间结果，然后交给对应的Reduce处理，该过程为<strong>Shuffle</strong>。从无序的键值对到有序的键值对。</li>
-<li>Reduce以一系列中间结果作为输入，执行用户定义的逻辑，输出结果给OutputFormat模块。</li>
-<li><strong>OutputFormat</strong>模块验证输出目录是否已经存在以及输出结果类型是否符合配置文件中的配置类型，如果都满足，就输出Reduce结果到分布式文件系统。</li>
-</ol>
-<h3 id="Shuffle过程"><a href="#Shuffle过程" class="headerlink" title="Shuffle过程"></a>Shuffle过程</h3><p>Shuffle是MapReduce的核心环节。Shuffle过程即对Map输出结果进行分区、排序、合并等处理交给Reduce过程，故分为Map端操作和Reduce端操作，Shuffle过程如下图。</p>
-<p><img src="/2020/05/18/Mapreduce/Shuffle1.png" alt></p>
-<p>Map的输出结果首先被写入缓存，缓存满后进行溢写操作，即把缓存中的数据写入磁盘文件，清空缓存。当启动溢写操作时，首先把缓存中的数据写入分区，然后对每个分区的数据进行排序、合并，之后再写入磁盘文件。每次溢写操作生成一个新的磁盘文件，随着Map任务执行，磁盘中就会有多个溢写文件，任务结束后，这些文件被归并（Merge）为一个大的磁盘文件。然后通知Reduce任务领取属于自己处理的数据。Reduce任务领取数据后，将其归并写入磁盘后交给Reduce处理。</p>
-<h4 id="Map端的Shuffle过程"><a href="#Map端的Shuffle过程" class="headerlink" title="Map端的Shuffle过程"></a>Map端的Shuffle过程</h4><ol>
-<li>输入数据和执行Map任务</li>
-</ol>
-<p>Map任务的输入数据保存在分布式文件系统的文件块中，文件格式任意。Map任务接收&lt;key , value&gt;作为输入后，按一定的映射规则转换成一批&lt;key , value&gt;进行输出。</p>
-<ol start="2">
-<li>写入缓存</li>
-</ol>
-<p>每个Map任务都会分配一个缓存，Map输出结果先写入缓存中，在缓存满后才写入磁盘。可以大大降低开销。</p>
-<ol start="3">
-<li>溢写（分区、排序和合并）</li>
-</ol>
-<p>提供给MapReduce的缓存容量时有限的，一旦占满缓存就执行溢写（Spill）操作，把缓存中的内容一次性写入磁盘并清空缓存。在溢写到磁盘前，缓存中的数据先被分区（Partition），以键值对形式存储；对于每个分区的键值对，后台线程根据其Key对其进行内存排序（Sort），排序是MapReduce默认操作，排序结束后执行合并（Combine）操作，合并操作根据用户定义的执行。</p>
-<ol start="4">
-<li>文件归并</li>
-</ol>
-<p>在Map任务全部结束之前，系统会对所有溢写文件中的数据进行归并（Merge），生成一个大的溢写文件。这个大的溢写文件中所有键值对也是经过分区和排序的。</p>
-<p>综上，Map端的Shuffle过程全部完成，最终生成一个大文件存放在本地磁盘上。其中JobTracker会一直检测Map任务执行，当检测到一个Map任务完成后，立即通知相关Reduce任务来领取数据。</p>
-<h4 id="Reduce端的Shuffle过程"><a href="#Reduce端的Shuffle过程" class="headerlink" title="Reduce端的Shuffle过程"></a>Reduce端的Shuffle过程</h4><p>Reduce端的Shuffle过程相对简单，从Map端读取Map结果，然后进行归并，最后输送给Reduce进行处理。</p>
-<ol>
-<li>领取数据</li>
-</ol>
-<p>Map端的Shuffle过程结束后，Reduce任务把这些数据领取回来，</p>
-<ol start="2">
-<li>归并数据</li>
-</ol>
-<p>归并过程与Map端类似</p>
-<ol start="3">
-<li>把数据给Reduce任务</li>
-</ol>
-<p>磁盘经过多轮归并后得到若干大文件，不再继续归并，直接输入给Reduce任务，减少磁盘读写开销。</p>
-
+        
+          <p>尤瓦尔赫拉利写了三本简史系列，《人类简史》、《未来简史》以及《今日简史》，分别于14年、17年和18年。成书时间越来越短，不可避免质量也打了很多的折扣、很多观点也是旧瓶新酒。总结下来，《人类简史》终究还是三本中最值得的一本。</p>
+<p>并不像《时简》那样，各种干货填充。仅仅作为普普通通的大众科普读物，更多起到的是抛砖引玉的作用。作者也表明自己写书的目标学者是对世界充满好奇的青年，而非专业人士。所以会有很多人说这本书结论的支撑论点很薄弱。的确如此，我认为这本书最大的价值在于作者用宏观视角去审视人类历史，结合心理学、历史学、社会学、基因学、哲学……用庞大的知识体系探讨人类从诞生至今，对自然、对人类本身、对人类未来的影响。作者把自己思考后得出的一些结论进行简单的论证分享给读者，多数知识点仅仅点到为止，不刻意论证，有意留白给读者探索的空间，比如在讲到文化宗教相关问题时，作者的相关论述极大的勾起了我的兴趣，在书海中找到了亨廷顿的《文明的冲突》，深入了解相关问题的论述。这些小细节正是这本书的价值所在。<strong>它给你提供一个看世界的角度，剩下的，交给你的好奇心去完成。</strong>不多bb，谈书中我挺喜欢的三个观点探讨一下。「智人想象的能力，为什么会产生人权，幸福是什么」</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/27/WhyHumanRunTheWorld/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -461,40 +404,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Bigdata/" rel="tag"># Bigdata</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/05/16/JDBC%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="next" title="JDBC基本概念">
-                <i class="fa fa-chevron-left"></i> JDBC基本概念
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/29/Apple%E4%BF%9D%E4%BF%AE%E6%94%BF%E7%AD%96/" rel="prev" title="Apple保修政策">
-                Apple保修政策 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -504,11 +421,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -516,13 +436,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
 
         </div>
         
@@ -543,17 +456,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -664,22 +568,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mapreduce"><span class="nav-number">1.</span> <span class="nav-text">Mapreduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型介绍"><span class="nav-number">1.2.</span> <span class="nav-text">模型介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">Map函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">Reduce函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作流程"><span class="nav-number">1.2.3.</span> <span class="nav-text">工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务执行"><span class="nav-number">1.2.4.</span> <span class="nav-text">任务执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shuffle过程"><span class="nav-number">1.2.5.</span> <span class="nav-text">Shuffle过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Map端的Shuffle过程"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">Map端的Shuffle过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduce端的Shuffle过程"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">Reduce端的Shuffle过程</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -837,10 +725,6 @@ src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
