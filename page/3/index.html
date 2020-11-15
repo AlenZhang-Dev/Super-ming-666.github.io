@@ -267,6 +267,223 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/01-Hadoop-Configuration/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlenZhang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/25/01-Hadoop-Configuration/" itemprop="url">01-Hadoop Configuration</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-25T23:31:35+08:00">
+                2020-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index">
+                    <span itemprop="name">CS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/25/01-Hadoop-Configuration/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/25/01-Hadoop-Configuration/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/02/25/01-Hadoop-Configuration/" class="leancloud_visitors" data-flag-title="01-Hadoop Configuration">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Hadoop-配置【一】：macOS-10-15-3-Hadoop-3-2-1"><a href="#Hadoop-配置【一】：macOS-10-15-3-Hadoop-3-2-1" class="headerlink" title="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1"></a>Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1</h1><h2 id="云计算平台"><a href="#云计算平台" class="headerlink" title="云计算平台"></a>云计算平台</h2><p>服务层次：基础设施即服务（IaaS）/ 平台即服务（PaaS）/ 软件即服务（SaaS）</p>
+<h2 id="资料选择"><a href="#资料选择" class="headerlink" title="资料选择"></a>资料选择</h2><p><a href="http://dblab.xmu.edu.cn/post/5663/" target="_blank" rel="noopener">《大数据技术原理与应用》</a>：作为入门教材使用</p>
+<p><a href="https://dblab.xmu.edu.cn/post/bigdatapractice/" target="_blank" rel="noopener">《大数据基础编程、实验和案例教程》</a>：配套实验指导书</p>
+<p><a href="https://book.douban.com/subject/10464777/" target="_blank" rel="noopener">《Hadoop》</a>:作为深入研究的书籍</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>大数据计算的几种模式</p>
+<table>
+<thead>
+<tr>
+<th align="left">大数据计算模式</th>
+<th align="left">解决问题</th>
+<th align="left">代表产品</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">批处理计算</td>
+<td align="left">大规模数据的<strong>批</strong>处理</td>
+<td align="left">MapReduce、Spark等</td>
+</tr>
+<tr>
+<td align="left">流计算</td>
+<td align="left">针对流数据的<strong>实时</strong>计算</td>
+<td align="left">Storm、S4、Flume、Streams等</td>
+</tr>
+<tr>
+<td align="left">图计算</td>
+<td align="left">针对大规模<strong>图结构</strong>数据的处理</td>
+<td align="left">Pregel、GraphX、Giraph、PowerGraph等</td>
+</tr>
+<tr>
+<td align="left">查询分析计算</td>
+<td align="left">大规模数据的<strong>存储管理和查询</strong></td>
+<td align="left">Dremel、Hive、Cassandra等</td>
+</tr>
+</tbody></table>
+<p>扩展：大数据与云计算、物联网的关系</p>
+<p>云计算概述：</p>
+<blockquote>
+<p>解决两个核心问题：</p>
+<p>解决海量数据的<strong>分布式存储和分布式处理问题</strong> / 虚拟化和多租户</p>
+<p>三个核心缩写：</p>
+<p>SaaS： Software as a Service    「从集中的系统部署软件，使之在一台本地计算机上运行的一个模型，SaaS允许出租一个应用程序」</p>
+<p>PaaS：Platform as a Service    「类似IaaS，包括操作系统和围绕特定应用必须的服务」</p>
+<p>IaaS：Infrastructure as a Service    「将基础设施（计算资源和存储）作为服务出租」</p>
+</blockquote>
+<p>物联网：</p>
+<blockquote>
+<p>感知层    -&gt; 网络层    -&gt;    处理层    -&gt;    应用层</p>
+</blockquote>
+<p>云计算为大数据提供技术基础、大数据为云计算提供用武之地。</p>
+<p>物联网是大数据重要来源，大数据为物联网数据分析提供支撑。</p>
+<p>云计算为互联网提供海量数据存储能力，物联网为云计算技术提供广阔的应用空间。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/25/01-Hadoop-Configuration/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -826,7 +1043,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -951,7 +1168,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共65.8k字</span>
+  <span class="post-count">博客全站共67.8k字</span>
 </div>
 
 <script 
