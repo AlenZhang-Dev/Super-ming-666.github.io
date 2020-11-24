@@ -286,7 +286,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/11/24/Part%201%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" itemprop="url">Part 1 深度学习基础</a></h1>
+                <a class="post-title-link" href="/2020/11/24/Part%201%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" itemprop="url">Part1：深度学习基础</a></h1>
         
 
         <div class="post-meta">
@@ -298,7 +298,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-24T05:50:54+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-24T14:00:00+08:00">
                 2020-11-24
               </time>
             
@@ -308,6 +308,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index">
+                    <span itemprop="name">CS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -326,7 +348,7 @@
 
           
           
-             <span id="/2020/11/24/Part%201%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" class="leancloud_visitors" data-flag-title="Part 1 深度学习基础">
+             <span id="/2020/11/24/Part%201%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" class="leancloud_visitors" data-flag-title="Part1：深度学习基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -358,8 +380,7 @@
 
       
         
-          
-            <h1 id="Part-1-深度学习基础"><a href="#Part-1-深度学习基础" class="headerlink" title="Part 1 深度学习基础"></a>Part 1 深度学习基础</h1><h1 id="简单概述"><a href="#简单概述" class="headerlink" title="简单概述"></a>简单概述</h1><p>深度学习应用于计算机视觉的两个关键思想：卷积神经网络和反向传播。</p>
+          <h1 id="Part-1-深度学习基础"><a href="#Part-1-深度学习基础" class="headerlink" title="Part 1 深度学习基础"></a>Part 1 深度学习基础</h1><h1 id="简单概述"><a href="#简单概述" class="headerlink" title="简单概述"></a>简单概述</h1><p>深度学习应用于计算机视觉的两个关键思想：卷积神经网络和反向传播。</p>
 <p>总的来说，以下三种力量在推动机器学习。</p>
 <ol>
 <li><p>硬件</p>
@@ -374,274 +395,13 @@
 <p> 更好的优化方案</p>
 </li>
 </ol>
-<h1 id="神经网络的数学基础"><a href="#神经网络的数学基础" class="headerlink" title="神经网络的数学基础"></a>神经网络的数学基础</h1><p>理解神经网络需要有很扎实的数学基础：张量，张量运算，微分，梯度下降等。因此对于神经网络的应用和理解需要分开进行，两种学习层级不在一个Level。</p>
-<ul>
-<li>侧重与应用，并尽量避免数学论证。</li>
-</ul>
-<h2 id="神经网络数据表示"><a href="#神经网络数据表示" class="headerlink" title="神经网络数据表示"></a>神经网络数据表示</h2><p><strong>张量</strong></p>
-<p><strong>张量（Tensor）</strong>，张量是机器学习的基本数据结构。它是一个数据容器，包含的数据几乎总是数值数据，因此它是数字的容器。张量是矩阵向任意纬度的推【纬度dimension 也叫轴axis】</p>
-<p><strong>标量（0D张量）</strong></p>
-<p>仅包含一个数字的张量叫做标量（scalar）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array(<span class="number">12</span>)</span></pre></td></tr></table></figure>
-
-<p><strong>向量（1D张量）</strong></p>
-<p>数字组成的数据叫做向量（vector）。矩阵有一个轴。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array([<span class="number">12</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>])</span></pre></td></tr></table></figure>
-
-<p><strong>矩阵（2D张量）</strong></p>
-<p>向量组成的数组叫做矩阵或者二维张量。矩阵有两个轴。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array([[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">						  [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">						  [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span></pre></td></tr></table></figure>
-
-<p><strong>3D张量与更高维张量</strong></p>
-<p>将多个矩阵组合成一个新数组，得到一个3D张量，也就是立方体。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array([[[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">							[[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]])</span></pre></td></tr></table></figure>
-
-<p>深度学习一般处理0-4D的张量，处理视频的时候可能会遇到5D张量。</p>
-<p><strong>关键属性</strong></p>
-<p>张量是由以下三个属性定义的：</p>
-<p><strong>轴的个数（阶）</strong>：例如，3D张量中有3个轴，矩阵有两个轴。在Numpy等Python库中叫张量的ndim。</p>
-<p><strong>形状</strong>：表示张量沿着每个轴的纬度大小（元素个数）。例如，矩阵示例形状为（3，5），3D张量示例形状为（3，3，5）…</p>
-<p><strong>数据类型：</strong>（在Python库中叫做dtype）。这是张量中所包含的数据类型【float 32 、uint 8、float 64等】，极少数情况下会遇到字符（char）张量。</p>
-<p><strong>在Numpy中操作张量</strong></p>
-<p>选择张量的特定元素叫做张量切片（tensor slicing）。</p>
-<p>下面例子选择第10-100个数字（不包含100个），并将其放在形状为（90，28，28）的数组中。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">my_slice = train_images[<span class="number">10</span>:<span class="number">100</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">print(my_slice.shape)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下等同于前面的操作</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">my_slice = train_image[<span class="number">10</span>:<span class="number">100</span>, :, :]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">my_slice = train_image[<span class="number">10</span>:<span class="number">100</span>, <span class="number">0</span>:<span class="number">28</span>, <span class="number">0</span>:<span class="number">28</span>]</span></pre></td></tr></table></figure>
-
-<p><strong>数据批量概念</strong></p>
-<p>In normal，深度学习中所有数据张量的第一个轴（0轴）都是样本轴（sample axis）。在MINIST中，样本就是数字图像。</p>
-<p>深度学习模型不会同时处理整个数据集。而是将数据拆分成小批量，批量大小为128。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">batch = train_image[:<span class="number">128</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">batch = train_image[<span class="number">128</span>:<span class="number">256</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第n个批量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">batch = train_image[<span class="number">128</span> * n : <span class="number">128</span> * (n + <span class="number">1</span>)]</span></pre></td></tr></table></figure>
-
-<p>对于以上的批量张量，第一个轴（0轴）叫做批量轴（batch axis）或批量维度（batch dimension）。</p>
-<h2 id="神经网络张量运算"><a href="#神经网络张量运算" class="headerlink" title="神经网络张量运算"></a>神经网络张量运算</h2><p>深度神经网络的所有变化都可以简化为数值数据上的张量运算（tensor operation）</p>
-<p><strong>逐元素运算</strong><br>relu元素和加法都是逐元素（element-wise）的运算，即该运算独立应用于张量中的每个元素。也就是该运算非常适合大规模并行实现。（向量化实现）</p>
-<p><strong>广播</strong></p>
-<p>如果两个不同形状的2D张量相加，会发生什么？</p>
-<p>如果没有歧义，较小的张量会会被广播（broadcast），以匹配较大张量的形状。广播包含以下两步：</p>
-<ol>
-<li>向较小的张量添加轴（叫做广播轴），使其ndim与较大张量相同。</li>
-</ol>
-<p>2.将较小的张量沿着新轴重复，使其形状与较大的张量相同。</p>
-<p>举例：如果一个张量的形状是(a, b, … n, n  + 1, … m)，另一个张量的形状是(n, n + 1, …  m)，那么你通常可以利用广播对它们做两个张量之间的逐元素运算。广播操作会自动应用于a到n-1的轴。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">x = np.random.random((<span class="number">64</span>, <span class="number">3</span>, <span class="number">32</span>, <span class="number">10</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">y = np.random.random(<span class="number">32</span>, <span class="number">10</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">z = np.maximum(x, y)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出z的形状是（64， 3， 32， 10），与x相同。</span></span></pre></td></tr></table></figure>
-
-<p><strong>张量点积</strong></p>
-<p>点积运算，也叫张量积（tensor product），是最常见也是最有用的张量运算。与逐元素张量不同，它将输入张量元素合并在一起。</p>
-<p>Numpy，Keras，Theano和TensorFlow中，都是使用 * 实现逐元素点积。</p>
-<p>就是两个向量对应位置一一相乘后求和的操作，最后结果是一个标量，是一个实数值。</p>
-<p>两个向量a = [a1, a2,…, an]和b = [b1, b2,…, bn]的点积定义为：</p>
-<p>a·b=a1b1+a2b2+……+anbn。</p>
-<p>张量变形</p>
-<p>改变张量的行和列，得到想要的形状，变形后的张量元素总个数与初始张量相同。</p>
-<p>前面用到的reshape函数就是张量变形的应用。</p>
-<h2 id="梯度下降-suspended"><a href="#梯度下降-suspended" class="headerlink" title="梯度下降  [suspended]"></a>梯度下降  [suspended]</h2><p>关于梯度下降在这里不展开，以下为梯度下降的主要概念</p>
-<ul>
-<li>随机梯度下降。</li>
-<li>小批量随机梯度下降 SGD</li>
-<li>局部最小点（local minimum）</li>
-<li>反向传播算法（Backpropagation）</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>学习</strong>是找到一组模型参数，在给定训练数据样本和对应目标值上的损失函数最小化。</p>
-<p>学习过程中：随机选取包含数据小样本及其目标值的批量，并计算批量损失相对于网络参数的梯度，随后将网络参数沿着梯度反方向移动。</p>
-<p>整个学习过程中之所以能实现，是因为神经网络是一系列可微分的张量运算，因此可以利用求导的链式法则来得到梯度函数，这个函数将当前的参数和当前数据批量映射为一个梯度值。</p>
-<p>损失是在训练过程中需要最小化的量，因此应该能够衡量当前任务是否已成功解决。</p>
-<p>优化器是使用损失梯度更新参数的具体方式，比如RMSProp优化器、带动量的随机梯度下降等。</p>
-<h1 id="神经网络入门"><a href="#神经网络入门" class="headerlink" title="神经网络入门"></a>神经网络入门</h1><blockquote>
-<p>本章通过三个典型的介绍性示例深入理解如何使用神经网络解决实际问题。分别为1. 将电影评论划分为正面或负面（二分类问题）2. 将新闻按主题分类（多分类问题） 3. 根据房地产数据估算房屋价格。</p>
-</blockquote>
-<h2 id="神经网络剖析"><a href="#神经网络剖析" class="headerlink" title="神经网络剖析"></a>神经网络剖析</h2><p><strong>主要介绍神经网络的核心组件：层、网络、目标函数和优化器。</strong></p>
-<p><strong>神经网络主要围绕以下四个方面：</strong></p>
-<p>层：多个层组合成网络（或模型）。</p>
-<p>输入数据和相应的目标。</p>
-<p>损失函数：即用于学习的反馈信号。</p>
-<p>优化器：决定学习过程如何进行。</p>
-<p><img src="/2020/11/24/Part%201%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Untitled.png" alt="Part%201%20深度学习基础/Untitled.png"></p>
-<p><strong>多个层链接在一起组成了网络，将输入映射为预测值。然后损失函数将这些预测值与目标进行比较，得到损失值，用户衡量网络预测值与预期结果的匹配程度。优化器使用这个损失值来更新网络权重。</strong></p>
-<p>神经网络的基本数据结构是层。层是一个数据处理模块，将一个或多个输入张量转换为一个或多个输出张量。</p>
-<p><strong>层：深度学习的基本组件</strong></p>
-<p>神经网络的基本数据结构是层。层是一个数据处理模块，将一个或多个输入张量转换为一个或多个输出张量。有权重的层称为有状态的层。权重是利用随机梯度下降学到的一个或多个张量。其中包含网络的知识。</p>
-<p>不同张量个数与不同数据处理类型需要用到不同的层。例如，简单的向量数据保存在形状为（samples， features）的2D张量中，通常用密集连接层【Densely connected layer 】进行处理。序列数据保存在形状为（samples，timesteps，features）的3D张量中，通常用循环层（Recurrent Layer表示，比如Keras的LSTM层）</p>
-<p>层兼容性（Layer compatibiltiy）具体指每一层只接受特定形状的输入张量，并返回特定形状的输入张量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">layer = layers.Dense(<span class="number">32</span>, input_shape(<span class="number">784</span>, ))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个层，有32个输出单元的密集层，同时只接受一个维度大小为784的2D张量作为输入。</span></span></pre></td></tr></table></figure>
-
-<p>接上，上一层后面只能连接一个32维向量作为输入层，Keras会自动匹配输入层的形状。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> models</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">model = models.Sequential()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">model.add(layers.Dense(<span class="number">32</span>, input_shape=(<span class="number">784</span>)))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">model.add(layers.Dense(<span class="number">32</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第二层没有输入形状(input_shape)，可以自动推导出上一层的形状。</span></span></pre></td></tr></table></figure>
-
-<p><strong>模型：由层构成的网络</strong></p>
-<p>层构成的网络。</p>
-<p>深度学习模型是层构成的有向无环图。</p>
-<p>随着深入学习，会接触到更多类型的网络拓扑结构。</p>
-<ol>
-<li>双分支网络（two-branch）</li>
-<li>多头网络（multihead）</li>
-<li>Inception模块</li>
-</ol>
-<p><strong>损失函数与优化器</strong></p>
-<p>一旦确定了网络架构，需要选择以下两个参数。</p>
-<ol>
-<li>损失函数（目标函数） — 在训练过程中需要将其最小化。他能够衡量当前任务是否成功完成。</li>
-<li>优化器 — 决定如何基于损失函数对网络进行更新。它执行的是随机梯度下降（SGD）的某个变体。</li>
-</ol>
-<p><strong>具有多个输出的神经网络可能有多个损失函数。（每个输出对应一个损失函数）【但是梯度下降过程中必须基于单个标量损失值，因此对于具有多个损失函数的网络，需要将所有损失函数取平均，变为一个标量值】</strong></p>
-<p>选取正确的目标函数对解决问题非常重要，网络的目的是使损失尽可能最小化。因此如果目标函数与成功完成当前任务不完全相关，那么网络最终得到的结果可能会不符合你的预期。因此对于常见的分类、回归、序列预测等常见问题，可以遵循一些简单的指导原则来选择正确的损失函数。</p>
-<p>对于二分类问题：可以使用二元交叉熵（binary crossentropy）损失函数，对于多分类函数，可以使用分类交叉熵（categorical crossentropy），对于回归问题，可以使用均方误差（mean-squared error）对于序列学习问题，可以使用联结主义时序分类（CTC，connecttionist temporal classification）损失函数，等</p>
-<h2 id="二分类问题"><a href="#二分类问题" class="headerlink" title="二分类问题"></a>二分类问题</h2><p>典型的二分类问题代码及解析：<a href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.4%20%E7%94%B5%E5%BD%B1%E8%AF%84%E8%AE%BA%E5%88%86%E7%B1%BB%E3%80%90%E4%BA%8C%E5%88%86%E7%B1%BB%E3%80%91.ipynb" target="_blank" rel="noopener">使用IMDB进行电影评论分类</a></p>
-<p>关于隐藏单元。一个隐藏单元是该层表示空间的一个维度。16个隐藏单元对应权重矩阵W的形状为（input_dimension）,与W做点击相当于输入数据投影到16维表示空间中。可以表示空间维度直观理解为“网络学习内部表示时所拥有的自由度。”隐藏单元越多，网络能够学到更复杂的表示，但网络的计算代价也越大，而且能够导致学到不好的模式。（能够提高训练数据上的性能，但不能提高测试集上的性能）</p>
-<p><strong>构建网络</strong></p>
-<p>对于Dense层的堆叠，需要有以下两个关键架构</p>
-<ol>
-<li>网络有多少层</li>
-<li>每层有多少隐藏单</li>
-</ol>
-<p><strong>对于二分类问题的总结：</strong></p>
-<ol>
-<li><p>需要对原始数据进行大量的预处理，方便将其转换为张量输入到神经网络中。单词序列使用二进制向量编码，但也有别的编码方式。</p>
-</li>
-<li><p>带有relu激活的Dense层堆叠，可以解决很多种问题。</p>
-</li>
-<li><p>对于二分类问题，网络最后一层应该是只有一个单元并使用sigmoid激活的Dense层，网络输出应该是0～1范围内的标量，表示概率值。</p>
-</li>
-<li><p>对于二分类问题的sigmoid标量输出，应该使用binary_crossentropy损失函数。</p>
-</li>
-<li><p>无论问题是什么，rmsprop优化器通常都是足够好的选择。</p>
-</li>
-<li><p>随着神经网络在训练数据上的表现越来越好，模型最终会过拟合，所以需要监控模型在训练集之外的性能。</p>
-</li>
-</ol>
-<p>什么是激活函数？为什么要使用激活函数？</p>
-<p>如果没有relu等激活函数，Dense层将只包括两个线性运算—点积和加法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">output = dot(W, input) + b</span></pre></td></tr></table></figure>
-
-<p>这样Dense层就只能学习输入数据的线性变化：该层的假设空间是从输入数据到16位空间所有可能的线性变换集合。这种假设空间非常有限，无法利用多个表示层的优势，因为多个线性层堆叠实现的仍是线性运算，添加层数并不会扩展假设空间。</p>
-<p>为了得到更丰富的假设空间，从而充分利用多层表示的优势，你需要添加非线性或激活函数。relu是深度学习中最常用的激活函数，但还有许多其他函数可选。</p>
-<p>Q：Dense层堆叠的影响？</p>
-<h2 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h2><p>相关重点参见：<a href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.5%20%E5%A4%9A%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98%E3%80%90%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB%E3%80%91.ipynb" target="_blank" rel="noopener">新闻分类：多分类问题</a></p>
-<h2 id="标量回归问题"><a href="#标量回归问题" class="headerlink" title="标量回归问题"></a>标量回归问题</h2><p>相关重点参见：<a href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.6%20%E6%B3%A2%E5%A3%AB%E9%A1%BF%E6%88%BF%E4%BB%B7%E3%80%90%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%E3%80%91.ipynb" target="_blank" rel="noopener">波士顿房价预测</a></p>
-<h1 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h1><blockquote>
-<p>改进Plan：鉴于以下几个改进建议，用数据可视化进行表示。</p>
-</blockquote>
-<p>机器学习的四个分支：监督学习、无监督学习、自监督学习、强化学习。 </p>
-<p>评估机器学习模型：<br>机器学习的目的是得到可泛化（generalize）的模型，即在前所未有的数据上表现很好的模型，而过拟合则是核心难点。</p>
-<h2 id="训练集、验证集、测试集"><a href="#训练集、验证集、测试集" class="headerlink" title="训练集、验证集、测试集"></a>训练集、验证集、测试集</h2><p>评估模型的重点是将数据划分如下三个集合：<strong>训练集、验证集和测试集</strong>。在训练数据上训练模型，在测试集上评估模型，一旦找到了最佳参数，在测试数据上最后测试一次。</p>
-<p>因为在开发模型时总是需要调整参数，比如选择层数或者每层大小【这叫做模型的超参数，以便与模型的参数分开】这个调节过程需要使用模型在验证数据集上的性能作为反馈信号，这个调节本质上也是一种学习：在某个参数空间中寻找良好的模型配置。如果基于模型在验证集上的性能来调节模型配置，会很快导致模型在验证集上过拟合，即使你没有在验证集上训练数据。这一现象叫做：信息泄露（information leak）</p>
-<p>以下为主要三种经典评估方法：</p>
-<ol>
-<li><p>简单的留出验证集(hold-out validation)<br>这是最简单的评估方法，但是有一个缺点：如果可用的数据很少，那么可能验证集和测试集包含的样本太少，从而无法在统计学上代表数据。</p>
-</li>
-<li><p>K折验证</p>
-<p> K折验证（K-fold validation）将数据划分为大小相同的K个分区。对于每个分区i，在剩余的K-1个分区中训练模型，然后在分区i上评估模型。最终分数等于K个分数的平均值。</p>
-</li>
-<li><p>带有打乱数据的重复K折验证</p>
-<p> 如果可用数据相对较少，而你又需要尽可能精确地评估模型，那么可以选择带有打乱数据的重复K折验证(iterated K-fold validation with shuffling)。但这种方法一共要训练P X K个模型，计算代价很大。</p>
-</li>
-</ol>
-<p>评估模型注意事项：</p>
-<ol>
-<li>数据代表性（data representativeness)</li>
-<li>时间箭头(the arrow of time)</li>
-<li>数据冗余(redundancy in your data)</li>
-</ol>
-<h2 id="数据预处理、特征工程和特征学习"><a href="#数据预处理、特征工程和特征学习" class="headerlink" title="数据预处理、特征工程和特征学习"></a>数据预处理、特征工程和特征学习</h2><p>神经网络的数据预处理</p>
-<ol>
-<li><p>向量化</p>
-<p> 神经网络所有输入和目标都必须是浮点数张量。无论处理什么数据（声音、图像还是文本），都必须首先将其转换为张量，称为数据向量化（data vectorization）。例如前面进行的one-hot编码。</p>
-</li>
-<li><p>值标准化</p>
-<p> 在手写数字分类的例子中，开始时图像被编码为0-255范围内的整数，表示灰度值。将这一数据输入网络之前，你需要将其转换为float32格式并除255，这样就得到0-1范围内的浮点数。</p>
-<p> 一般来说，取值相对较大的数据（比如多位整数，比网络权重初始值大很多）或异质数据（heterogenrous data，比如数据的一个特征在0-1范围内，另一个特征在100-200范围内)，输入到神经网络中是不安全的。可能会导致较大的梯度更新，进而导致较大的梯度更新，从而导致网络无法收敛。因此输入数据应该具有以下特征：</p>
-<ol>
-<li>取值较小：大部分应该在0-1范围内。</li>
-<li>同质性（homogenous）所有特征取值都应在大致相同的范围内。 </li>
-</ol>
-</li>
-<li><p>处理缺失值</p>
-<p> 你的数据中有时可能会有缺失值。例如在房价预测例子中，第一个特征是人均犯罪率。如果不是所有样本都具有这个特征怎么办？</p>
-<p> 一般来说，将缺失值设置为0是安全的，只要0不是一个有意义的值。网络能够从数据总学到0意味缺失数据，并且会忽略这个值。</p>
-<p> 注意：如果测试数据中有缺失值，而网络是在没有缺失值的数据上进行训练的，那么网络不可能学会忽略缺失值。这种情况下应该人为生成一些缺失项的训练样本，多次复制一些训练样本，然后深处测试数据中可能缺失的某些特征。</p>
-</li>
-</ol>
-<h2 id="特征工程（feature-engineering）"><a href="#特征工程（feature-engineering）" class="headerlink" title="特征工程（feature engineering）"></a>特征工程（feature engineering）</h2><p>特征工程指将数据输入模型之前，利用自己关于数据和机器学习算法的知识对数据进行硬编码的变换，以改善模型的效果。多数情况下，一个机器学习无法从完全任意的数据中进行学习。呈现给模型的数据应该便于模型进行学习。</p>
-<h2 id="过拟合与欠拟合"><a href="#过拟合与欠拟合" class="headerlink" title="过拟合与欠拟合"></a>过拟合与欠拟合</h2><p>机器学习的根本问题是优化和泛化之间的对立。优化(optimization)是指调节模型以在训练数据上得到最佳性能，而泛化(generalization)是指训练好的模型在前所未见的数据上的性能好坏。机器学习的目的是去的良好的泛化，但你无法控制泛化，只能基于训练数据调节模型。</p>
-<p>训练开始时，优化和泛化是相关的：训练数据上损失越小，测试数据上的损失也越小，这时的模型是欠拟合（unfit）的。但在训练数据上迭代一定次数之后，泛化不再提高，验证指标先是不变，然后开始变差，模型开始过拟合。</p>
-<p>为了防止模型从训练数据中学到错误且无关紧要的模式：</p>
-<ul>
-<li>最优解决方式是获得更多训练数据。模型训练数据越多，泛化能力自然越好。</li>
-<li>如果无法获得更多数据，次优解决方法是调节模型允许存储的信息量，对模型允许存储的信息进行约束。</li>
-<li>如果一个网络只能记住几个模式，那么优化过程会迫使模型集中学习最重要的模式，这样可以得到更好的泛化。</li>
-</ul>
-<p>这种降低过拟合的方法叫做正则化（regularization）。以下为几种最常见的正则化方法。</p>
-<h2 id="减小网络大小"><a href="#减小网络大小" class="headerlink" title="减小网络大小"></a>减小网络大小</h2><p>防止过拟合最简单的方法就是减小模型大小，即减少模型中可学习的参数个数。在深度学习中，模型中可学习参数个数通常被称为模型容量(capacity)。从直观上看，参数更多的模型拥有更大的记忆容量(memorization capacity)，因此能够在训练样本和目标之间完美映射，但这种映射没有任何泛化能力。深度学习模型通常都擅长数据拟合，但真正的挑战在于泛化而不是拟合。</p>
-<p>相反，如果网络的记忆容量有限，则无法轻松学会这种映射。所以为了让损失最小化，网络必须学会对目标具有很强的预测能力的压缩表示。需要记住的是：你的模型应该具有足够多的参数，以防止欠拟合，即模型应避免记忆资源不足。【在容量过大与容量不足之间找到平衡】</p>
-<p>然而整个过程必须评估一些列不同的网络架构，以便为数据找到最佳的模型大小，一般工作流程是开始时选择较小的层和参数，然后逐渐增加层的大小或新层，直到这种增加对验证损失的影响变得很小。</p>
-<p>对电影评论分类做实验。【分别用原始模型、容量更小模型和容量更大模型进行实验】</p>
-<h2 id="添加权重正则化"><a href="#添加权重正则化" class="headerlink" title="添加权重正则化"></a>添加权重正则化</h2><p>这里的简单模型（simple model）指参数值分布的熵更小的模型（或参数更少的模型）因此常见的降低过拟合方法是强制让模型权重只能取较小的值，从而限制模型的复杂度，这使得权重分布更加规则。称为权重正则化（weight regularization）。其实现方法是向网络损失函数中添加较大权重值相关的成本（cost）</p>
-<ul>
-<li>L1 正则化：添加的成本与权重系数的绝对值【权重的L1范数】成正比</li>
-<li>L2正则化：添加的成本与权重系数的平方【权重L2范数】成正比。神经网络中L2正则化也叫权重衰减。</li>
-</ul>
-<h2 id="添加dropout正则化"><a href="#添加dropout正则化" class="headerlink" title="添加dropout正则化"></a>添加dropout正则化</h2><p>dropout是神经网络最有效也是最常用的正则方法之一。对某一层使用dropout，就是在训练过程中随机将该层的一些输出特征舍弃（设置为0）。假设在训练过程中，某一层对给定输入样本的返回值应该是向量[0.2, 0.5, 1.3, 0.8, 1.1]，使用dropout后，该向量会有几个随机元素变为0。dropout的比率是被设为0的特征所占的比例，通常在0.2-0.5范围内。测试时没有单元被舍弃，而该层的输出值需要按dropout比率缩小，因为这是比训练时有更多单元被激活，需要加以平衡。</p>
-<h1 id="机器学习的通用工作流程-suspend"><a href="#机器学习的通用工作流程-suspend" class="headerlink" title="机器学习的通用工作流程[suspend]"></a>机器学习的通用工作流程[suspend]</h1><p>该章介绍用于解决任何机器学习问题的通用模版。</p>
-<h2 id="问题定义，收集数据集"><a href="#问题定义，收集数据集" class="headerlink" title="问题定义，收集数据集"></a>问题定义，收集数据集</h2><ul>
-<li>你输入的数据是什么？你要预测什么？只有拥有可训练的数据，才能预测某件事情。【数据+标注】</li>
-<li>你面对的是什么问题？是二分类、多分类、标量回归、向量回归还是多标签问题。确定问题类型可以更好的选择模型架构等。</li>
-</ul>
-<p>机器学习只能用来记忆训练数据中存在的模式。你只能识出曾经见过的东西。</p>
-<h2 id="选择衡量指标"><a href="#选择衡量指标" class="headerlink" title="选择衡量指标"></a>选择衡量指标</h2><p>要控制一件事情，就需要观察它。要取得成功，必须给出成功的定义。衡量成功的指标将决定你选择损失函数，即模型需要优化什么。</p>
-<p>例如：对于平衡分类问题（每个类别的可能性相同），精度和接受者操作特征曲线下面积（area under the reveiver operating characteristic curve, ROC AUC)是常用的指标。对于排序问题或多标签问题，可以使用平均准确率均值(mean average precision)。自定义衡量成功的指标很常见。可以参考Kaggle网站上的数据科学竞赛，给出了各种问题的评估指标。</p>
-<h2 id="确定评估方法"><a href="#确定评估方法" class="headerlink" title="确定评估方法"></a>确定评估方法</h2><p>一旦明确了目标，必须确定如何衡量当前进展。</p>
-<ul>
-<li>留出验证集。数据量大的时候可以选择这种方法。</li>
-<li>K折交叉验证。如果留出的验证样本太少，无法保证可靠性，可以选择这种方法。</li>
-<li>重复K折验证。如果留出验证的样本量太少，同时模型评估又需要非常准确，可以使用这个方法。</li>
-</ul>
-<h2 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h2><p>首先需要将数据格式化，使其可以输入到机器学习模型中。</p>
-<ul>
-<li>将数据格式化为张量。</li>
-<li>张量取值通常应该缩放为较小的值。</li>
-<li>不同特征具有不同取值范围（异质数据），那么应该将数据标准化。</li>
-<li>可能需要做特征工程，尤其对小数据问题。</li>
-</ul>
-<h2 id="开发比基准更好的模型"><a href="#开发比基准更好的模型" class="headerlink" title="开发比基准更好的模型"></a>开发比基准更好的模型</h2><p>该阶段的目标是统计功效（statistical power)，即开发一个小模型，能够打败纯随机的基准（dumb baseline）。比如，MNIST数字分类的例子中</p>
-<p>如果尝试了多种合理架构后仍无法打败随机基准，那么可能问题的答案不在数据中。记住以下两种假设。</p>
-<ul>
-<li>假设输出是可以根据输出进行预测的。</li>
-<li>假设可用数据包含足够多的信息，足以学习输入和输出之间的关系。</li>
-</ul>
-<p>如果一切顺利，需要选择以下三个关键参数构建第一个工作模型</p>
-<ul>
-<li>最后一层激活。对网络输出进行有效的限制。例如IMDB分类例子在最后一层使用sigmoid，回归则没有使用激活。</li>
-<li>损失函数。匹配你所要解决的问题。例如，IMDB使用binary_crossentropy、回归使用mse等。</li>
-<li>优化配置。使用什么优化器？学习率多少？多数情况下，使用rmsprop机器默认学习率是稳妥的。</li>
-</ul>
-<p>关于损失函数的选择，需要注意：直接优化衡量问题成功的指标不一定是可行的，有时难以转化为损失函数，损失函数需要只有在小批量数据时即可计算，而且必须是可微的。例如广泛使用的分类指标ROC AUC就不能被直接优化。因此在分类任务中，常见的做法是优化ROC AUC的替代指标，比如交叉熵。一般来说你认为交叉熵越小，ROC AUC越大。</p>
-<h2 id="扩大模型规模：开发过拟合的模型"><a href="#扩大模型规模：开发过拟合的模型" class="headerlink" title="扩大模型规模：开发过拟合的模型"></a>扩大模型规模：开发过拟合的模型</h2><p>一旦得到具有统计功效的模型，问题就变成了：模型是否足够强大？是否具有足够多的层和参数来对问题进行建模。例如，只有单个隐藏层且只有两个单元的网络，在MINST问题上具有统计功效，但并不足以很好的解决问题。请记住，机器学习中无处不在的对立是优化和泛化的对立，理想的模型是刚好在欠拟合和过拟合的界线上，在容量不足和容量多大的界线上。</p>
-<p>要搞清楚需要多大的模型，就必须开发一个过拟合模型。</p>
-<ol>
-<li>添加更多的层。</li>
-<li>让每一层变得更大。</li>
-<li>训练更多轮次。</li>
-</ol>
-<p>要始终监控训练损失和验证损失，以及你所关心的指标的训练值和验证值。如果你发现模型在验证数据集上性能开始下降，那么出现了过拟合。</p>
-<h2 id="模型正则化与调节超参数"><a href="#模型正则化与调节超参数" class="headerlink" title="模型正则化与调节超参数"></a>模型正则化与调节超参数</h2><p>这是最耗时间：你将不断调节模型、训练、在验证数据上评估（不是测试数据）。再次调节模型让，然后重复，直到模型打到最佳性能。</p>
-<ul>
-<li>添加dropout。</li>
-<li>尝试不不同的架构：增加或减少层数。</li>
-<li>添加L1 和 / 或 L2正则化。</li>
-<li>尝试不同的超参数，以找到最佳配置。</li>
-<li>反复做特征工程：添加新特征或删除没有信息量的特征。</li>
-</ul>
-<p>每次使用验证过程的反馈来调节模型，都会有相关验证过程信息泄露到模型中。如果只重复几次，那么无关紧要；如果系统性迭代多次，最终会导致模型对验证过程过拟合。即会降低验证过程中的可靠性。</p>
-<p>一旦开发出令人满意的模型配置，就可以在所有可用数据（训练数据+验证数据）上训练最终的生产模型，然后在测试集上最后评估一次。如果测试集上的性能比验证集上差很多，那么可能意味你的验证流程不可靠，或者在调节模型参数时验证机数据上出现来过拟合。这种情况下可能需要更换更可靠的评估方法，比如重复的K折验证。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
-<li>定义问题与要训练的数据。收集这些数据，有需要的化用标签进行数据标注。</li>
-<li>选择衡量问题成功的指标。在验证数据上监控哪些指标。</li>
-<li>确定评估方法：留出验证？K折验证？你应该将哪一部分数据用于验证。</li>
-<li>开发第一个比基准更好的模型，即具有统计功效的模型。</li>
-<li>开发过拟合模型。</li>
-<li>基于模型在验证数据上的性能来进行模型正则化与调节超参数。</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/11/24/Part%201%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
