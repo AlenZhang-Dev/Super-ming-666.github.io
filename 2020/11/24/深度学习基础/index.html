@@ -89,24 +89,26 @@
 
 
 <meta name="description" content="1. 深度学习基础简单概述深度学习应用于计算机视觉的两个关键思想：卷积神经网络和反向传播。 总的来说，以下三种力量在推动机器学习。  硬件  CPU以及GPU上的大量投入。  数据集和基准  算法上的改进  在2009-2010年出现了几个简单但很重要的算法改进，可以实现更好的梯度传播。以及更先进的有助于梯度传播的方法：批标准化，残差连接和深度可分离卷积。  更好的神经层激活函数  更好的权重初始">
-<meta name="keywords" content="Machine-Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习基础1">
-<meta property="og:url" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;11&#x2F;24&#x2F;%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80&#x2F;index.html">
+<meta property="og:url" content="https://superming.life/2020/11/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="AlenZhang&#39;s Blog">
 <meta property="og:description" content="1. 深度学习基础简单概述深度学习应用于计算机视觉的两个关键思想：卷积神经网络和反向传播。 总的来说，以下三种力量在推动机器学习。  硬件  CPU以及GPU上的大量投入。  数据集和基准  算法上的改进  在2009-2010年出现了几个简单但很重要的算法改进，可以实现更好的梯度传播。以及更先进的有助于梯度传播的方法：批标准化，残差连接和深度可分离卷积。  更好的神经层激活函数  更好的权重初始">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;11&#x2F;24&#x2F;%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80&#x2F;Untitled.png">
-<meta property="og:updated_time" content="2021-01-28T12:16:52.937Z">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superming.life/2020/11/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Untitled.png">
+<meta property="article:published_time" content="2020-11-24T06:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-28T12:16:52.937Z">
+<meta property="article:author" content="AlenZhang">
+<meta property="article:tag" content="Machine-Learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;11&#x2F;24&#x2F;%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80&#x2F;Untitled.png">
+<meta name="twitter:image" content="https://superming.life/2020/11/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Untitled.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'https://superming.life/',
+    root: '',
     scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -145,7 +147,9 @@
 
 
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -275,7 +279,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/11/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://superming.life/images/ninja8.jpg">
     </span>
@@ -397,8 +401,7 @@
 <p> 更好的优化方案</p>
 </li>
 </ol>
-<a id="more"></a>
-
+<!--- more --->
 <h1 id="神经网络的数学基础"><a href="#神经网络的数学基础" class="headerlink" title="神经网络的数学基础"></a>神经网络的数学基础</h1><p>理解神经网络需要有很扎实的数学基础：张量，张量运算，微分，梯度下降等。因此对于神经网络的应用和理解需要分开进行，两种学习层级不在一个Level。</p>
 <ul>
 <li>侧重与应用，并尽量避免数学论证。</li>
@@ -407,20 +410,16 @@
 <p><strong>张量（Tensor）</strong>，张量是机器学习的基本数据结构。它是一个数据容器，包含的数据几乎总是数值数据，因此它是数字的容器。张量是矩阵向任意纬度的推【纬度dimension 也叫轴axis】</p>
 <p><strong>标量（0D张量）</strong></p>
 <p>仅包含一个数字的张量叫做标量（scalar）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array(<span class="number">12</span>)</span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array(<span class="number">12</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>向量（1D张量）</strong></p>
 <p>数字组成的数据叫做向量（vector）。矩阵有一个轴。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array([<span class="number">12</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>])</span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([<span class="number">12</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br></pre></td></tr></table></figure>
 <p><strong>矩阵（2D张量）</strong></p>
 <p>向量组成的数组叫做矩阵或者二维张量。矩阵有两个轴。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array([[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">						  [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">						  [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">              [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span><br><span class="line">              [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
 <p><strong>3D张量与更高维张量</strong></p>
 <p>将多个矩阵组合成一个新数组，得到一个3D张量，也就是立方体。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x = np.array([[[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">							[[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">						   [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]])</span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([[[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">               [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span><br><span class="line">               [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]],</span><br><span class="line">              [[<span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">               [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span><br><span class="line">               [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]])</span><br></pre></td></tr></table></figure>
 <p>深度学习一般处理0-4D的张量，处理视频的时候可能会遇到5D张量。</p>
 <p><strong>关键属性</strong></p>
 <p>张量是由以下三个属性定义的：</p>
@@ -430,13 +429,11 @@
 <p><strong>在Numpy中操作张量</strong></p>
 <p>选择张量的特定元素叫做张量切片（tensor slicing）。</p>
 <p>下面例子选择第10-100个数字（不包含100个），并将其放在形状为（90，28，28）的数组中。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">my_slice = train_images[<span class="number">10</span>:<span class="number">100</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">print(my_slice.shape)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下等同于前面的操作</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">my_slice = train_image[<span class="number">10</span>:<span class="number">100</span>, :, :]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">my_slice = train_image[<span class="number">10</span>:<span class="number">100</span>, <span class="number">0</span>:<span class="number">28</span>, <span class="number">0</span>:<span class="number">28</span>]</span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_slice = train_images[<span class="number">10</span>:<span class="number">100</span>]</span><br><span class="line">print(my_slice.shape)</span><br><span class="line"><span class="comment"># 以下等同于前面的操作</span></span><br><span class="line">my_slice = train_image[<span class="number">10</span>:<span class="number">100</span>, :, :]</span><br><span class="line">my_slice = train_image[<span class="number">10</span>:<span class="number">100</span>, <span class="number">0</span>:<span class="number">28</span>, <span class="number">0</span>:<span class="number">28</span>]</span><br></pre></td></tr></table></figure>
 <p><strong>数据批量概念</strong></p>
 <p>In normal，深度学习中所有数据张量的第一个轴（0轴）都是样本轴（sample axis）。在MINIST中，样本就是数字图像。</p>
 <p>深度学习模型不会同时处理整个数据集。而是将数据拆分成小批量，批量大小为128。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">batch = train_image[:<span class="number">128</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">batch = train_image[<span class="number">128</span>:<span class="number">256</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第n个批量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">batch = train_image[<span class="number">128</span> * n : <span class="number">128</span> * (n + <span class="number">1</span>)]</span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">batch = train_image[:<span class="number">128</span>]</span><br><span class="line">batch = train_image[<span class="number">128</span>:<span class="number">256</span>]</span><br><span class="line"><span class="comment"># 第n个批量</span></span><br><span class="line">batch = train_image[<span class="number">128</span> * n : <span class="number">128</span> * (n + <span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
 <p>对于以上的批量张量，第一个轴（0轴）叫做批量轴（batch axis）或批量维度（batch dimension）。</p>
 <h2 id="神经网络张量运算"><a href="#神经网络张量运算" class="headerlink" title="神经网络张量运算"></a>神经网络张量运算</h2><p>深度神经网络的所有变化都可以简化为数值数据上的张量运算（tensor operation）</p>
 <p><strong>逐元素运算</strong><br>relu元素和加法都是逐元素（element-wise）的运算，即该运算独立应用于张量中的每个元素。也就是该运算非常适合大规模并行实现。（向量化实现）</p>
@@ -448,8 +445,7 @@
 </ol>
 <p>2.将较小的张量沿着新轴重复，使其形状与较大的张量相同。</p>
 <p>举例：如果一个张量的形状是(a, b, … n, n  + 1, … m)，另一个张量的形状是(n, n + 1, …  m)，那么你通常可以利用广播对它们做两个张量之间的逐元素运算。广播操作会自动应用于a到n-1的轴。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">x = np.random.random((<span class="number">64</span>, <span class="number">3</span>, <span class="number">32</span>, <span class="number">10</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">y = np.random.random(<span class="number">32</span>, <span class="number">10</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">z = np.maximum(x, y)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出z的形状是（64， 3， 32， 10），与x相同。</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.random.random((<span class="number">64</span>, <span class="number">3</span>, <span class="number">32</span>, <span class="number">10</span>))</span><br><span class="line">y = np.random.random(<span class="number">32</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">z = np.maximum(x, y)</span><br><span class="line"><span class="comment"># 输出z的形状是（64， 3， 32， 10），与x相同。</span></span><br></pre></td></tr></table></figure>
 <p><strong>张量点积</strong></p>
 <p>点积运算，也叫张量积（tensor product），是最常见也是最有用的张量运算。与逐元素张量不同，它将输入张量元素合并在一起。</p>
 <p>Numpy，Keras，Theano和TensorFlow中，都是使用 * 实现逐元素点积。</p>
@@ -487,11 +483,9 @@
 <p>神经网络的基本数据结构是层。层是一个数据处理模块，将一个或多个输入张量转换为一个或多个输出张量。有权重的层称为有状态的层。权重是利用随机梯度下降学到的一个或多个张量。其中包含网络的知识。</p>
 <p>不同张量个数与不同数据处理类型需要用到不同的层。例如，简单的向量数据保存在形状为（samples， features）的2D张量中，通常用密集连接层【Densely connected layer 】进行处理。序列数据保存在形状为（samples，timesteps，features）的3D张量中，通常用循环层（Recurrent Layer表示，比如Keras的LSTM层）</p>
 <p>层兼容性（Layer compatibiltiy）具体指每一层只接受特定形状的输入张量，并返回特定形状的输入张量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">layer = layers.Dense(<span class="number">32</span>, input_shape(<span class="number">784</span>, ))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个层，有32个输出单元的密集层，同时只接受一个维度大小为784的2D张量作为输入。</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span><br><span class="line"></span><br><span class="line">layer = layers.Dense(<span class="number">32</span>, input_shape(<span class="number">784</span>, ))</span><br><span class="line"><span class="comment"># 创建一个层，有32个输出单元的密集层，同时只接受一个维度大小为784的2D张量作为输入。</span></span><br></pre></td></tr></table></figure>
 <p>接上，上一层后面只能连接一个32维向量作为输入层，Keras会自动匹配输入层的形状。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> models</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">model = models.Sequential()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">model.add(layers.Dense(<span class="number">32</span>, input_shape=(<span class="number">784</span>)))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">model.add(layers.Dense(<span class="number">32</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第二层没有输入形状(input_shape)，可以自动推导出上一层的形状。</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span><br><span class="line"></span><br><span class="line">model = models.Sequential()</span><br><span class="line">model.add(layers.Dense(<span class="number">32</span>, input_shape=(<span class="number">784</span>)))</span><br><span class="line">model.add(layers.Dense(<span class="number">32</span>))</span><br><span class="line"><span class="comment"># 第二层没有输入形状(input_shape)，可以自动推导出上一层的形状。</span></span><br></pre></td></tr></table></figure>
 <p><strong>模型：由层构成的网络</strong></p>
 <p>层构成的网络。</p>
 <p>深度学习模型是层构成的有向无环图。</p>
@@ -510,7 +504,7 @@
 <p><strong>具有多个输出的神经网络可能有多个损失函数。（每个输出对应一个损失函数）【但是梯度下降过程中必须基于单个标量损失值，因此对于具有多个损失函数的网络，需要将所有损失函数取平均，变为一个标量值】</strong></p>
 <p>选取正确的目标函数对解决问题非常重要，网络的目的是使损失尽可能最小化。因此如果目标函数与成功完成当前任务不完全相关，那么网络最终得到的结果可能会不符合你的预期。因此对于常见的分类、回归、序列预测等常见问题，可以遵循一些简单的指导原则来选择正确的损失函数。</p>
 <p>对于二分类问题：可以使用二元交叉熵（binary crossentropy）损失函数，对于多分类函数，可以使用分类交叉熵（categorical crossentropy），对于回归问题，可以使用均方误差（mean-squared error）对于序列学习问题，可以使用联结主义时序分类（CTC，connecttionist temporal classification）损失函数，等</p>
-<h2 id="二分类问题"><a href="#二分类问题" class="headerlink" title="二分类问题"></a>二分类问题</h2><p>典型的二分类问题代码及解析：<a href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.4%20%E7%94%B5%E5%BD%B1%E8%AF%84%E8%AE%BA%E5%88%86%E7%B1%BB%E3%80%90%E4%BA%8C%E5%88%86%E7%B1%BB%E3%80%91.ipynb" target="_blank" rel="noopener">使用IMDB进行电影评论分类</a></p>
+<h2 id="二分类问题"><a href="#二分类问题" class="headerlink" title="二分类问题"></a>二分类问题</h2><p>典型的二分类问题代码及解析：<a target="_blank" rel="noopener" href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.4%20%E7%94%B5%E5%BD%B1%E8%AF%84%E8%AE%BA%E5%88%86%E7%B1%BB%E3%80%90%E4%BA%8C%E5%88%86%E7%B1%BB%E3%80%91.ipynb">使用IMDB进行电影评论分类</a></p>
 <p>关于隐藏单元。一个隐藏单元是该层表示空间的一个维度。16个隐藏单元对应权重矩阵W的形状为（input_dimension）,与W做点击相当于输入数据投影到16维表示空间中。可以表示空间维度直观理解为“网络学习内部表示时所拥有的自由度。”隐藏单元越多，网络能够学到更复杂的表示，但网络的计算代价也越大，而且能够导致学到不好的模式。（能够提高训练数据上的性能，但不能提高测试集上的性能）</p>
 <p><strong>构建网络</strong></p>
 <p>对于Dense层的堆叠，需要有以下两个关键架构</p>
@@ -535,13 +529,12 @@
 </ol>
 <p>什么是激活函数？为什么要使用激活函数？</p>
 <p>如果没有relu等激活函数，Dense层将只包括两个线性运算—点积和加法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">output = dot(W, input) + b</span></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = dot(W, <span class="built_in">input</span>) + b</span><br></pre></td></tr></table></figure>
 <p>这样Dense层就只能学习输入数据的线性变化：该层的假设空间是从输入数据到16位空间所有可能的线性变换集合。这种假设空间非常有限，无法利用多个表示层的优势，因为多个线性层堆叠实现的仍是线性运算，添加层数并不会扩展假设空间。</p>
 <p>为了得到更丰富的假设空间，从而充分利用多层表示的优势，你需要添加非线性或激活函数。relu是深度学习中最常用的激活函数，但还有许多其他函数可选。</p>
 <p>Q：Dense层堆叠的影响？</p>
-<h2 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h2><p>相关重点参见：<a href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.5%20%E5%A4%9A%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98%E3%80%90%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB%E3%80%91.ipynb" target="_blank" rel="noopener">新闻分类：多分类问题</a></p>
-<h2 id="标量回归问题"><a href="#标量回归问题" class="headerlink" title="标量回归问题"></a>标量回归问题</h2><p>相关重点参见：<a href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.6%20%E6%B3%A2%E5%A3%AB%E9%A1%BF%E6%88%BF%E4%BB%B7%E3%80%90%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%E3%80%91.ipynb" target="_blank" rel="noopener">波士顿房价预测</a></p>
+<h2 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h2><p>相关重点参见：<a target="_blank" rel="noopener" href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.5%20%E5%A4%9A%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98%E3%80%90%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB%E3%80%91.ipynb">新闻分类：多分类问题</a></p>
+<h2 id="标量回归问题"><a href="#标量回归问题" class="headerlink" title="标量回归问题"></a>标量回归问题</h2><p>相关重点参见：<a target="_blank" rel="noopener" href="https://github.com/AlenZhang-Dev/Learning-Records/blob/master/Machine%20Learning/Deep%20Learning%20with%20Python/3.6%20%E6%B3%A2%E5%A3%AB%E9%A1%BF%E6%88%BF%E4%BB%B7%E3%80%90%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%E3%80%91.ipynb">波士顿房价预测</a></p>
 <h1 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h1><blockquote>
 <p>改进Plan：鉴于以下几个改进建议，用数据可视化进行表示。</p>
 </blockquote>
@@ -551,8 +544,7 @@
 <p>因为在开发模型时总是需要调整参数，比如选择层数或者每层大小【这叫做模型的超参数，以便与模型的参数分开】这个调节过程需要使用模型在验证数据集上的性能作为反馈信号，这个调节本质上也是一种学习：在某个参数空间中寻找良好的模型配置。如果基于模型在验证集上的性能来调节模型配置，会很快导致模型在验证集上过拟合，即使你没有在验证集上训练数据。这一现象叫做：信息泄露（information leak）</p>
 <p>以下为主要三种经典评估方法：</p>
 <ol>
-<li><p>简单的留出验证集(hold-out validation)<br>这是最简单的评估方法，但是有一个缺点：如果可用的数据很少，那么可能验证集和测试集包含的样本太少，从而无法在统计学上代表数据。</p>
-</li>
+<li>简单的留出验证集(hold-out validation)<br>这是最简单的评估方法，但是有一个缺点：如果可用的数据很少，那么可能验证集和测试集包含的样本太少，从而无法在统计学上代表数据。</li>
 <li><p>K折验证</p>
 <p> K折验证（K-fold validation）将数据划分为大小相同的K个分区。对于每个分区i，在剩余的K-1个分区中训练模型，然后在分区i上评估模型。最终分数等于K个分数的平均值。</p>
 </li>
@@ -778,9 +770,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="https://superming.life/images/ninja8.jpg"
-                alt="AlenZhang" />
+                alt="" />
             
-              <p class="site-author-name" itemprop="name">AlenZhang</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -887,7 +879,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-深度学习基础"><span class="nav-number">1.</span> <span class="nav-text">1. 深度学习基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单概述"><span class="nav-number">2.</span> <span class="nav-text">简单概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络的数学基础"><span class="nav-number">3.</span> <span class="nav-text">神经网络的数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络数据表示"><span class="nav-number">3.1.</span> <span class="nav-text">神经网络数据表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络张量运算"><span class="nav-number">3.2.</span> <span class="nav-text">神经网络张量运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降-suspended"><span class="nav-number">3.3.</span> <span class="nav-text">梯度下降  [suspended]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络入门"><span class="nav-number">4.</span> <span class="nav-text">神经网络入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络剖析"><span class="nav-number">4.1.</span> <span class="nav-text">神经网络剖析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分类问题"><span class="nav-number">4.2.</span> <span class="nav-text">二分类问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多分类问题"><span class="nav-number">4.3.</span> <span class="nav-text">多分类问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标量回归问题"><span class="nav-number">4.4.</span> <span class="nav-text">标量回归问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习基础"><span class="nav-number">5.</span> <span class="nav-text">机器学习基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练集、验证集、测试集"><span class="nav-number">5.1.</span> <span class="nav-text">训练集、验证集、测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理、特征工程和特征学习"><span class="nav-number">5.2.</span> <span class="nav-text">数据预处理、特征工程和特征学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程（feature-engineering）"><span class="nav-number">5.3.</span> <span class="nav-text">特征工程（feature engineering）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过拟合与欠拟合"><span class="nav-number">5.4.</span> <span class="nav-text">过拟合与欠拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减小网络大小"><span class="nav-number">5.5.</span> <span class="nav-text">减小网络大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加权重正则化"><span class="nav-number">5.6.</span> <span class="nav-text">添加权重正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加dropout正则化"><span class="nav-number">5.7.</span> <span class="nav-text">添加dropout正则化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习的通用工作流程-suspend"><span class="nav-number">6.</span> <span class="nav-text">机器学习的通用工作流程[suspend]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题定义，收集数据集"><span class="nav-number">6.1.</span> <span class="nav-text">问题定义，收集数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择衡量指标"><span class="nav-number">6.2.</span> <span class="nav-text">选择衡量指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定评估方法"><span class="nav-number">6.3.</span> <span class="nav-text">确定评估方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据"><span class="nav-number">6.4.</span> <span class="nav-text">准备数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发比基准更好的模型"><span class="nav-number">6.5.</span> <span class="nav-text">开发比基准更好的模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩大模型规模：开发过拟合的模型"><span class="nav-number">6.6.</span> <span class="nav-text">扩大模型规模：开发过拟合的模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型正则化与调节超参数"><span class="nav-number">6.7.</span> <span class="nav-text">模型正则化与调节超参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">1. 深度学习基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">简单概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">神经网络的数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA"><span class="nav-number">3.1.</span> <span class="nav-text">神经网络数据表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%BC%A0%E9%87%8F%E8%BF%90%E7%AE%97"><span class="nav-number">3.2.</span> <span class="nav-text">神经网络张量运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D-suspended"><span class="nav-number">3.3.</span> <span class="nav-text">梯度下降  [suspended]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8"><span class="nav-number">4.</span> <span class="nav-text">神经网络入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%89%96%E6%9E%90"><span class="nav-number">4.1.</span> <span class="nav-text">神经网络剖析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98"><span class="nav-number">4.2.</span> <span class="nav-text">二分类问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98"><span class="nav-number">4.3.</span> <span class="nav-text">多分类问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98"><span class="nav-number">4.4.</span> <span class="nav-text">标量回归问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80"><span class="nav-number">5.</span> <span class="nav-text">机器学习基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E9%9B%86%E3%80%81%E9%AA%8C%E8%AF%81%E9%9B%86%E3%80%81%E6%B5%8B%E8%AF%95%E9%9B%86"><span class="nav-number">5.1.</span> <span class="nav-text">训练集、验证集、测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E3%80%81%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E5%92%8C%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0"><span class="nav-number">5.2.</span> <span class="nav-text">数据预处理、特征工程和特征学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%EF%BC%88feature-engineering%EF%BC%89"><span class="nav-number">5.3.</span> <span class="nav-text">特征工程（feature engineering）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E4%B8%8E%E6%AC%A0%E6%8B%9F%E5%90%88"><span class="nav-number">5.4.</span> <span class="nav-text">过拟合与欠拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%8F%E5%B0%8F%E7%BD%91%E7%BB%9C%E5%A4%A7%E5%B0%8F"><span class="nav-number">5.5.</span> <span class="nav-text">减小网络大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%9D%83%E9%87%8D%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">5.6.</span> <span class="nav-text">添加权重正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0dropout%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">5.7.</span> <span class="nav-text">添加dropout正则化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E9%80%9A%E7%94%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B-suspend"><span class="nav-number">6.</span> <span class="nav-text">机器学习的通用工作流程[suspend]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89%EF%BC%8C%E6%94%B6%E9%9B%86%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">6.1.</span> <span class="nav-text">问题定义，收集数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87"><span class="nav-number">6.2.</span> <span class="nav-text">选择衡量指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="nav-number">6.3.</span> <span class="nav-text">确定评估方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="nav-number">6.4.</span> <span class="nav-text">准备数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%AF%94%E5%9F%BA%E5%87%86%E6%9B%B4%E5%A5%BD%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.5.</span> <span class="nav-text">开发比基准更好的模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%A7%84%E6%A8%A1%EF%BC%9A%E5%BC%80%E5%8F%91%E8%BF%87%E6%8B%9F%E5%90%88%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.6.</span> <span class="nav-text">扩大模型规模：开发过拟合的模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%AD%A3%E5%88%99%E5%8C%96%E4%B8%8E%E8%B0%83%E8%8A%82%E8%B6%85%E5%8F%82%E6%95%B0"><span class="nav-number">6.7.</span> <span class="nav-text">模型正则化与调节超参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
@@ -926,7 +918,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.9k字</span>
+  <span class="post-count">博客全站共84.7k字</span>
 </div>
 
 

@@ -88,39 +88,41 @@
 
 
 
-<meta name="description" content="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1云计算平台服务层次：基础设施即服务（IaaS）&#x2F; 平台即服务（PaaS）&#x2F; 软件即服务（SaaS） 资料选择《大数据技术原理与应用》：作为入门教材使用 《大数据基础编程、实验和案例教程》：配套实验指导书 《Hadoop》:作为深入研究的书籍 概述大数据计算的几种模式    大数据计算模式 解决问题 代表产品    批">
-<meta name="keywords" content="BigData">
+<meta name="description" content="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1云计算平台服务层次：基础设施即服务（IaaS）&#x2F; 平台即服务（PaaS）&#x2F; 软件即服务（SaaS） 资料选择《大数据技术原理与应用》：作为入门教材使用 《大数据基础编程、实验和案例教程》：配套实验指导书 《Hadoop》:作为深入研究的书籍 概述大数据计算的几种模式     大数据计算模式 解决问题 代表产品">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01-Hadoop Configuration">
-<meta property="og:url" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;index.html">
+<meta property="og:url" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/index.html">
 <meta property="og:site_name" content="AlenZhang&#39;s Blog">
-<meta property="og:description" content="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1云计算平台服务层次：基础设施即服务（IaaS）&#x2F; 平台即服务（PaaS）&#x2F; 软件即服务（SaaS） 资料选择《大数据技术原理与应用》：作为入门教材使用 《大数据基础编程、实验和案例教程》：配套实验指导书 《Hadoop》:作为深入研究的书籍 概述大数据计算的几种模式    大数据计算模式 解决问题 代表产品    批">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p1.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p2.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p3.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p5.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p4.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p12.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p6.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p7.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p8.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p9.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p10.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p11.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p15.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p13.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p14.png">
-<meta property="og:updated_time" content="2021-01-19T04:22:23.936Z">
+<meta property="og:description" content="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1云计算平台服务层次：基础设施即服务（IaaS）&#x2F; 平台即服务（PaaS）&#x2F; 软件即服务（SaaS） 资料选择《大数据技术原理与应用》：作为入门教材使用 《大数据基础编程、实验和案例教程》：配套实验指导书 《Hadoop》:作为深入研究的书籍 概述大数据计算的几种模式     大数据计算模式 解决问题 代表产品">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p1.jpg">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p2.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p3.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p5.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p4.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p12.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p6.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p7.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p8.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p9.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p10.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p11.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p15.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p13.png">
+<meta property="og:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p14.png">
+<meta property="article:published_time" content="2020-02-25T15:31:35.000Z">
+<meta property="article:modified_time" content="2021-01-19T04:22:23.936Z">
+<meta property="article:author" content="AlenZhang">
+<meta property="article:tag" content="BigData">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;02&#x2F;25&#x2F;01-Hadoop-Configuration&#x2F;p1.jpg">
+<meta name="twitter:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p1.jpg">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'https://superming.life/',
+    root: '',
     scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -159,7 +161,9 @@
 
 
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -289,7 +293,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/02/25/01-Hadoop-Configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://superming.life/images/ninja8.jpg">
     </span>
@@ -397,39 +401,43 @@
 
       
         <h1 id="Hadoop-配置【一】：macOS-10-15-3-Hadoop-3-2-1"><a href="#Hadoop-配置【一】：macOS-10-15-3-Hadoop-3-2-1" class="headerlink" title="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1"></a>Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1</h1><h2 id="云计算平台"><a href="#云计算平台" class="headerlink" title="云计算平台"></a>云计算平台</h2><p>服务层次：基础设施即服务（IaaS）/ 平台即服务（PaaS）/ 软件即服务（SaaS）</p>
-<h2 id="资料选择"><a href="#资料选择" class="headerlink" title="资料选择"></a>资料选择</h2><p><a href="http://dblab.xmu.edu.cn/post/5663/" target="_blank" rel="noopener">《大数据技术原理与应用》</a>：作为入门教材使用</p>
-<p><a href="https://dblab.xmu.edu.cn/post/bigdatapractice/" target="_blank" rel="noopener">《大数据基础编程、实验和案例教程》</a>：配套实验指导书</p>
-<p><a href="https://book.douban.com/subject/10464777/" target="_blank" rel="noopener">《Hadoop》</a>:作为深入研究的书籍</p>
+<h2 id="资料选择"><a href="#资料选择" class="headerlink" title="资料选择"></a>资料选择</h2><p><a target="_blank" rel="noopener" href="http://dblab.xmu.edu.cn/post/5663/">《大数据技术原理与应用》</a>：作为入门教材使用</p>
+<p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/post/bigdatapractice/">《大数据基础编程、实验和案例教程》</a>：配套实验指导书</p>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/10464777/">《Hadoop》</a>:作为深入研究的书籍</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>大数据计算的几种模式</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">大数据计算模式</th>
-<th align="left">解决问题</th>
-<th align="left">代表产品</th>
+<th style="text-align:left">大数据计算模式</th>
+<th style="text-align:left">解决问题</th>
+<th style="text-align:left">代表产品</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">批处理计算</td>
-<td align="left">大规模数据的<strong>批</strong>处理</td>
-<td align="left">MapReduce、Spark等</td>
+<tbody>
+<tr>
+<td style="text-align:left">批处理计算</td>
+<td style="text-align:left">大规模数据的<strong>批</strong>处理</td>
+<td style="text-align:left">MapReduce、Spark等</td>
 </tr>
 <tr>
-<td align="left">流计算</td>
-<td align="left">针对流数据的<strong>实时</strong>计算</td>
-<td align="left">Storm、S4、Flume、Streams等</td>
+<td style="text-align:left">流计算</td>
+<td style="text-align:left">针对流数据的<strong>实时</strong>计算</td>
+<td style="text-align:left">Storm、S4、Flume、Streams等</td>
 </tr>
 <tr>
-<td align="left">图计算</td>
-<td align="left">针对大规模<strong>图结构</strong>数据的处理</td>
-<td align="left">Pregel、GraphX、Giraph、PowerGraph等</td>
+<td style="text-align:left">图计算</td>
+<td style="text-align:left">针对大规模<strong>图结构</strong>数据的处理</td>
+<td style="text-align:left">Pregel、GraphX、Giraph、PowerGraph等</td>
 </tr>
 <tr>
-<td align="left">查询分析计算</td>
-<td align="left">大规模数据的<strong>存储管理和查询</strong></td>
-<td align="left">Dremel、Hive、Cassandra等</td>
+<td style="text-align:left">查询分析计算</td>
+<td style="text-align:left">大规模数据的<strong>存储管理和查询</strong></td>
+<td style="text-align:left">Dremel、Hive、Cassandra等</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>扩展：大数据与云计算、物联网的关系</p>
 <p>云计算概述：</p>
 <blockquote>
@@ -447,8 +455,7 @@
 <p>云计算为大数据提供技术基础、大数据为云计算提供用武之地。</p>
 <p>物联网是大数据重要来源，大数据为物联网数据分析提供支撑。</p>
 <p>云计算为互联网提供海量数据存储能力，物联网为云计算技术提供广阔的应用空间。</p>
-<a id="more"></a>
-
+<!------more -------->
 <h2 id="处理架构Hadoop-需拓展"><a href="#处理架构Hadoop-需拓展" class="headerlink" title="处理架构Hadoop[需拓展]"></a>处理架构Hadoop[需拓展]</h2><p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p1.jpg" alt="p1"></p>
 <p>开源的分布式计算平台，极大的降低了用户的复杂性。可以使用多种语言在Hadoop上运行。</p>
 <p>两大核心：HDFS + MapReduce，<strong>这两个核心解决了分布式的存储和分布式处理问题两大核心问题。</strong></p>
@@ -469,9 +476,7 @@
 <hr>
 <h1 id="MacOS-Hadoop-配置及入坑指南"><a href="#MacOS-Hadoop-配置及入坑指南" class="headerlink" title="MacOS Hadoop 配置及入坑指南"></a>MacOS Hadoop 配置及入坑指南</h1><blockquote>
 <p>学习大数据的记录文章，有很多不足或错误尽请谅解或与我联系。</p>
-<p><a href="supermingzero@gmail.com">邮箱</a>                          <a href="https://t.me/SuperMing" target="_blank" rel="noopener">Telegram</a></p>
-</blockquote>
-<blockquote>
+<p><a href="supermingzero@gmail.com">邮箱</a>                          <a target="_blank" rel="noopener" href="https://t.me/SuperMing">Telegram</a></p>
 <p>系统版本：macOS Catalina 10.15.3</p>
 <p>Hadoop 版本：3.2.1</p>
 </blockquote>
@@ -482,38 +487,32 @@
 <h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>mac作为我平时开发的主力机，当然希望各种开发环境都能在一台机子上完成，Hadoop也不例外。Apache Hadoop 3.2.1于2019年9月22日释出，mac系统可参考和借鉴的文章不是很多，所以希望在macOS下完美的配置Hadoop，并解决相关问题。「Not Yet」。</p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
 <li>Java 8 [ 注意是Java 8 ]</li>
-<li><a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> [Mac OS的包管理系统]</li>
+<li><a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a> [Mac OS的包管理系统]</li>
 <li>ssh</li>
 <li>Hadoop</li>
 </ul>
-<h3 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></pre></td></tr></table></figure>
-
+<h3 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Homebrew安装的软件都集中在/usr/local/Cellar中</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看brew的帮助</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">brew -help</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装软件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">brew install hadoop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 卸载软件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">brew uninstall hadoop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 搜索软件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">brew search hadoop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看已经安装的软件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">brew list</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 更新软件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">brew update</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 更新某具体软件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">brew upgrade hadoop</span></pre></td></tr></table></figure>
-
-<h3 id="安装Java8"><a href="#安装Java8" class="headerlink" title="安装Java8"></a>安装Java8</h3><p>对于Java版本使用问题，参见<a href="https://cwiki.apache.org/confluence/display/HADOOP/Hadoop+Java+Versions" target="_blank" rel="noopener">官网</a>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看brew的帮助</span></span><br><span class="line">brew -help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装软件</span></span><br><span class="line">brew install hadoop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载软件</span></span><br><span class="line">brew uninstall hadoop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 搜索软件</span></span><br><span class="line">brew search hadoop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看已经安装的软件</span></span><br><span class="line">brew list</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新软件</span></span><br><span class="line">brew update</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新某具体软件</span></span><br><span class="line">brew upgrade hadoop</span><br></pre></td></tr></table></figure>
+<h3 id="安装Java8"><a href="#安装Java8" class="headerlink" title="安装Java8"></a>安装Java8</h3><p>对于Java版本使用问题，参见<a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/HADOOP/Hadoop+Java+Versions">官网</a>。</p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p2.png" alt="p1"></p>
 <p>检查自己的Java 版本<code>Java -version</code></p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p3.png" alt="p1"></p>
 <p>如果不是Java8，参考常规下载包安装或命令安装「若原本有更高级或别的java版本在进行其余开发，不用卸载修改路径即可，请自寻Google」</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew cask install java8</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install java8</span><br></pre></td></tr></table></figure>
 <h3 id="配置ssh-key"><a href="#配置ssh-key" class="headerlink" title="配置ssh key"></a>配置ssh key</h3><p>使用下面命令查看ssh是否可用</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ssh localhost</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br></pre></td></tr></table></figure>
 <p>若显示</p>
 <p><code>ssh：connect to host localhost port 22: COnnection refused</code></p>
 <p>使用下面命令，授权SSH登陆。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -P <span class="string">''</span> -f ~/.ssh/id_rsa</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> chmod 0600 ~/.ssh/authorized_keys</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -P <span class="string">&#x27;&#x27;</span> -f ~/.ssh/id_rsa</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod 0600 ~/.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p5.png" alt="p1"></p>
 <p>然后在系统System Preferences -&gt; Sharing下的Remote Login中国中选择All users允许接入。</p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p4.png" alt="p1"></p>
 <p>再次执行<code>ssh localhost</code>看是否成功。若依旧失败请Google解决。</p>
-<h3 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Brew install hadoop</span></pre></td></tr></table></figure>
-
+<h3 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Brew install hadoop</span><br></pre></td></tr></table></figure>
 <p>Brew会安装最新的稳定版本，截止2020年2月23日，版本为<code>hadoop-3.2.1</code> </p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p12.png" alt="p1"></p>
 <p>Mac下的安装目录：<code>/usr/local/Cellar/hadoop</code></p>
@@ -548,47 +547,39 @@
 <p>在<code>/usr/local/Cellar/hadoop/3.2.1/libexec/etc/hadoop/hadoop-env.sh</code>下寻找export JAVA_HOME，修改配置如下：</p>
 <p>!<img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p6.png" alt="p1"></p>
 <h3 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h3><p>在core-site.xml下配置HDFS 地址和端口号，写入下面配置「注意所有端口号不要与你正在使用的<strong>端口号</strong>冲突，冲突请更换空闲端口」</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Put site-specific property overrides in this file. --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>A base for other temporary directories<span class="tag">&lt;/<span class="name">description</span>&gt;</span>             </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.default.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Put site-specific property overrides in this file. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>A base for other temporary directories<span class="tag">&lt;/<span class="name">description</span>&gt;</span>             </span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.default.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>hadoop.tmp.dir</code> : 用于存放本地Hadoop临时文件，比如datanode、namenode、hdfs等，记得给相应权限</li>
 <li><code>fs.defaultFS</code> : is the new name for the previously-deprecated key <code>fs.default.name</code>.</li>
 </ul>
 <h3 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h3><p>在目录 <code>/usr/local/Cellar/hadoop/3.2.1/libexec/etc/hadoop/hdfs-site.xml</code> 下配置以下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  	 <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   	 <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">   	 <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  	 <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   	 <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   	 <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>为什么是1？因为在单机环境下，不论是分布式还是伪分布，都只有一个数据点（Datanode）。</p>
 <h3 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h3><p>此节点为运行YARN配置。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:8021<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr></table></figure>
-
-
-
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:8021<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="初始化HDFS"><a href="#初始化HDFS" class="headerlink" title="初始化HDFS"></a>初始化HDFS</h2><p>下面命令初始化分布式文件，收到”successfully formatted”即配置ok。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/opt/hadoop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hdfs namenode -format</span></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/opt/hadoop</span><br><span class="line">hdfs namenode -format</span><br></pre></td></tr></table></figure>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p7.png" alt="p1"></p>
 <h3 id="启动命令介绍"><a href="#启动命令介绍" class="headerlink" title="启动命令介绍"></a>启动命令介绍</h3><p>进入以下目录<code>/usr/local/opt/hadoop/sbin</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./start-dfs.sh # 开启HDFS服务命令</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">./stop-dfs.sh  # 停止HDFS服务命令</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./start-all.sh # 开启所有命令</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">./stop-all.sh # 停止所有命令</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./start-dfs.sh # 开启HDFS服务命令</span><br><span class="line">./stop-dfs.sh  # 停止HDFS服务命令</span><br><span class="line">./start-all.sh # 开启所有命令</span><br><span class="line">./stop-all.sh # 停止所有命令</span><br></pre></td></tr></table></figure>
 <p>开启完毕后使用<code>jps</code>命令查看服务状态</p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p8.png" alt="p1"></p>
 <p>按照上述配置，且没有更换端口，通过下面网址接入Hadoop的网页</p>
-<p><strong>Resource Manager： <a href="http://localhost:9780" target="_blank" rel="noopener">http://localhost:9780</a></strong></p>
+<p><strong>Resource Manager： <a target="_blank" rel="noopener" href="http://localhost:9780">http://localhost:9780</a></strong></p>
 <blockquote>
-<p><strong>2.x版本默认为<a href="http://localhost:50070" target="_blank" rel="noopener">http://localhost:50070</a></strong></p>
+<p><strong>2.x版本默认为<a target="_blank" rel="noopener" href="http://localhost:50070">http://localhost:50070</a></strong></p>
 </blockquote>
 <p>NameNode Info：</p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p9.png" alt="p1"></p>
-<p><strong>JobTracker：<a href="http://localhost:8088/" target="_blank" rel="noopener">http://localhost:8088/</a></strong></p>
+<p><strong>JobTracker：<a target="_blank" rel="noopener" href="http://localhost:8088/">http://localhost:8088/</a></strong></p>
 <p>MapReduce Info：</p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p10.png" alt="p1"></p>
-<p><strong>Node Specific Info: <a href="http://localhost:8042/" target="_blank" rel="noopener">http://localhost:8042/</a></strong></p>
+<p><strong>Node Specific Info: <a target="_blank" rel="noopener" href="http://localhost:8042/">http://localhost:8042/</a></strong></p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p11.png" alt="p1"></p>
 <h2 id="Shell-配置（optional）"><a href="#Shell-配置（optional）" class="headerlink" title="Shell 配置（optional）"></a>Shell 配置（optional）</h2><p>相较于每次都进入目录<code>/usr/local/Cellar/hadoop/3.2.1/sbin</code>，在shell中配置全局<code>PATH</code>会方面很多，这样我们就可以在shell或terminal任意地方使用hadoop相关命令。</p>
-<p>不同的shell配置目录不同，``/etc/profile<code>,</code><del>/.bashrc<code>,</code></del>/.bash_profile<code>,</code><del>/.profile<code>,</code></del>/.zshrc<code>…</code></p>
+<p>不同的shell配置目录不同，<code>`/etc/profile</code>, <code>~/.bashrc</code>, <code>~/.bash_profile</code>, <code>~/.profile</code>, <code>~/.zshrc</code>… `</p>
 <p>我使用zsh，所以打开<code>~/.zshrc</code>下添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/Cellar/hadoop/3.2.1/sbin </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> gohadoop=<span class="string">"cd /usr/local/Cellar/hadoop"</span> <span class="comment">#方便进入hadoop目录</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/Cellar/hadoop/3.2.1/sbin </span><br><span class="line"><span class="built_in">alias</span> gohadoop=<span class="string">&quot;cd /usr/local/Cellar/hadoop&quot;</span> <span class="comment">#方便进入hadoop目录</span></span><br></pre></td></tr></table></figure>
 <p>保存退出</p>
 <p>使用命令<code>source ~/.zshrc</code>使zsh配置生效</p>
 <p>这样在<code>/usr/local/Cellar/hadoop/3.2.1/sbin</code>目录下的文件可以不再进入该目录直接执行即可。</p>
@@ -599,12 +590,11 @@
 </ol>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p15.png" alt="p1"></p>
 <p>Answer：未能开启其余模块，主要是Java版本不兼容，我使用的是Java11进行安装，出现如上错误，下载Java 8 后问题Fix。</p>
-<ol start="2">
+<ol>
 <li>进行单机伪分布测试时，出现如下问题「unFixed」不影响正常使用</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</span></pre></td></tr></table></figure>
-
-<ol start="3">
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</span><br></pre></td></tr></table></figure>
+<ol>
 <li>Hadoop启动错误是出现“ssh: Could not resolve hostname xxx” 「参考」</li>
 </ol>
 <p>通过设置Hadoop的环境变量解决。</p>
@@ -619,46 +609,35 @@
 <ol>
 <li>需要使用HDFS，则需要创建用户目录。mac默认为你原本用户的名字，可以直接用也可以创建用户。</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -mkdir -p /user/hadoop  #创建hadoop用户</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -mkdir -p /user/hadoop  #创建hadoop用户</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Report：我在mac的hadoop目录下运行以上命令没有任何反应，查看用户也不存在。</p>
 </blockquote>
-<ol start="2">
+<ol>
 <li>在分布式文件中创建input文件，然后将文/usr/local/Cellar/hadoop/3.2.1/libexec/etc/hadoop/下的文件复制到分布式文件系统下的input文件中。</li>
 </ol>
 <p>因为我使用的是此电脑的用户即superming，且已有相应用户目录/user/superming，因此在命令中可以使用相对路径如input，绝对路径为/user/superming/input,我在hadoop/3.2.1目录下执行的以下操作。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -mkdir input</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -put .libxexc/etc/hadoop/*.xml input</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -mkdir input</span><br><span class="line">./bin/hdfs dfs -put .libxexc/etc/hadoop/*.xml input</span><br></pre></td></tr></table></figure>
 <p>复制完成后通过下面命令查看文件列表</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -ls input</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -ls input</span><br></pre></td></tr></table></figure>
 <p>接下来运行MapReduce作业。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./bin/hadoop jar ./libexec/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output 'dfs[a-z.]+'</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hadoop jar ./libexec/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output &#x27;dfs[a-z.]+&#x27;</span><br></pre></td></tr></table></figure>
 <p>运行结果截图如下：</p>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p13.png" alt="p1"></p>
 <p>查看命令运行结果：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -cat output/*</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -cat output/*</span><br></pre></td></tr></table></figure>
 <p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p14.png" alt="p1"></p>
 <p>或把文件存入本地再查看</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rm -r ./output    # 先删除本地的 output 文件夹（如果存在）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -get output ./output     # 将 HDFS 上的 output 文件夹拷贝到本机</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">cat ./output/*</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -r ./output    # 先删除本地的 output 文件夹（如果存在）</span><br><span class="line">./bin/hdfs dfs -get output ./output     # 将 HDFS 上的 output 文件夹拷贝到本机</span><br><span class="line">cat ./output/*</span><br></pre></td></tr></table></figure>
 <p>提示：Hadoop运行文件时，输出的目录Hadoop会给你创建，否则会导致冲突。若原本存在或要重新执行以上测试，先删除目标文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -rm -r output 「output指代目标文件」</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -rm -r output 「output指代目标文件」</span><br></pre></td></tr></table></figure>
 <p>【<strong>参考</strong>】：鉴于此在每次开发中，可以在程序中添加如下代码，能在每次运行时自动删除输出目录。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Configuration conf = <span class="keyword">new</span> Configuration();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Job job = <span class="keyword">new</span> Job(conf);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 删除输出目录 */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Path outputPath = <span class="keyword">new</span> Path(args[<span class="number">1</span>]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">outputPath.getFileSystem(conf).delete(outputPath, <span class="keyword">true</span>);</span></pre></td></tr></table></figure>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">Job job = <span class="keyword">new</span> Job(conf);</span><br><span class="line"> </span><br><span class="line"><span class="comment">/* 删除输出目录 */</span></span><br><span class="line">Path outputPath = <span class="keyword">new</span> Path(args[<span class="number">1</span>]);</span><br><span class="line">outputPath.getFileSystem(conf).delete(outputPath, <span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
 <p>关闭Hadoop执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">./sbin/stop-dfs.sh  # 停止HDFS服务命令</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">./sbin/stop-all.sh  # 停止所有hadoop服务</span></pre></td></tr></table></figure>
-
-<hr>
-<p><strong>目录整理：</strong></p>
+<h2 id><a href="#" class="headerlink" title></a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./sbin/stop-dfs.sh  # 停止HDFS服务命令</span><br><span class="line">./sbin/stop-all.sh  # 停止所有hadoop服务</span><br></pre></td></tr></table></figure></h2><p><strong>目录整理：</strong></p>
 <p>环境配置目录：<code>/usr/local/Cellar/hadoop/3.2.1/libexec/etc/hadoop/capacity-scheduler.xml</code></p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://dblab.xmu.edu.cn/blog/2441-2/#more-2441" target="_blank" rel="noopener">林子雨老师的Hadoop3.1.3 安装教程</a></p>
-<p><a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html#Required_Software" target="_blank" rel="noopener">Hadoop: Setting up a Single Node Cluster.</a></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="http://dblab.xmu.edu.cn/blog/2441-2/#more-2441">林子雨老师的Hadoop3.1.3 安装教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html#Required_Software">Hadoop: Setting up a Single Node Cluster.</a></p>
 <p>[Complete Guide to Install and Configure Apache Hadoop 3 on MacOS](</p>
 
       
@@ -773,9 +752,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="https://superming.life/images/ninja8.jpg"
-                alt="AlenZhang" />
+                alt="" />
             
-              <p class="site-author-name" itemprop="name">AlenZhang</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -882,7 +861,11 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop-配置【一】：macOS-10-15-3-Hadoop-3-2-1"><span class="nav-number">1.</span> <span class="nav-text">Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#云计算平台"><span class="nav-number">1.1.</span> <span class="nav-text">云计算平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料选择"><span class="nav-number">1.2.</span> <span class="nav-text">资料选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.3.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理架构Hadoop-需拓展"><span class="nav-number">1.4.</span> <span class="nav-text">处理架构Hadoop[需拓展]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MacOS-Hadoop-配置及入坑指南"><span class="nav-number">2.</span> <span class="nav-text">MacOS Hadoop 配置及入坑指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WHY"><span class="nav-number">2.1.</span> <span class="nav-text">WHY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">2.2.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Homebrew"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装Homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Java8"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装Java8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置ssh-key"><span class="nav-number">2.2.3.</span> <span class="nav-text">配置ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hadoop"><span class="nav-number">2.2.4.</span> <span class="nav-text">安装Hadoop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关配置参考："><span class="nav-number">2.3.</span> <span class="nav-text">相关配置参考：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">2.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-site-xml"><span class="nav-number">2.3.2.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">2.3.3.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">2.3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化HDFS"><span class="nav-number">2.4.</span> <span class="nav-text">初始化HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动命令介绍"><span class="nav-number">2.4.1.</span> <span class="nav-text">启动命令介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-配置（optional）"><span class="nav-number">2.5.</span> <span class="nav-text">Shell 配置（optional）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troble-shooting"><span class="nav-number">2.6.</span> <span class="nav-text">Troble shooting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop伪分布式运行MapReduce实例"><span class="nav-number">2.7.</span> <span class="nav-text">Hadoop伪分布式运行MapReduce实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">2.8.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop-%E9%85%8D%E7%BD%AE%E3%80%90%E4%B8%80%E3%80%91%EF%BC%9AmacOS-10-15-3-Hadoop-3-2-1"><span class="nav-number">1.</span> <span class="nav-text">Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.1.</span> <span class="nav-text">云计算平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%96%99%E9%80%89%E6%8B%A9"><span class="nav-number">1.2.</span> <span class="nav-text">资料选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.3.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%9E%B6%E6%9E%84Hadoop-%E9%9C%80%E6%8B%93%E5%B1%95"><span class="nav-number">1.4.</span> <span class="nav-text">处理架构Hadoop[需拓展]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MacOS-Hadoop-%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97"><span class="nav-number">2.</span> <span class="nav-text">MacOS Hadoop 配置及入坑指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WHY"><span class="nav-number">2.1.</span> <span class="nav-text">WHY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">2.2.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Homebrew"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装Homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Java8"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装Java8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEssh-key"><span class="nav-number">2.2.3.</span> <span class="nav-text">配置ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hadoop"><span class="nav-number">2.2.4.</span> <span class="nav-text">安装Hadoop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">相关配置参考：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">2.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-site-xml"><span class="nav-number">2.3.2.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">2.3.3.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">2.3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96HDFS"><span class="nav-number">2.4.</span> <span class="nav-text">初始化HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.1.</span> <span class="nav-text">启动命令介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-%E9%85%8D%E7%BD%AE%EF%BC%88optional%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">Shell 配置（optional）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troble-shooting"><span class="nav-number">2.6.</span> <span class="nav-text">Troble shooting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E8%BF%90%E8%A1%8CMapReduce%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.7.</span> <span class="nav-text">Hadoop伪分布式运行MapReduce实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.8.</span> <span class="nav-text">1
+2
+.&#x2F;sbin&#x2F;stop-dfs.sh  # 停止HDFS服务命令
+.&#x2F;sbin&#x2F;stop-all.sh  # 停止所有hadoop服务
+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">2.9.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -921,7 +904,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.9k字</span>
+  <span class="post-count">博客全站共84.7k字</span>
 </div>
 
 

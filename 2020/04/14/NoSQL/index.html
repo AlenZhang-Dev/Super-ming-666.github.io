@@ -89,34 +89,36 @@
 
 
 <meta name="description" content="NoSQL简介NoSQL( Not only SQL ) 是非关系型数据库的统称，其数据模型采用类似键&#x2F;值、列族、文档等非关系模型。因为没有固定的表结构，故不存在连接操作，也无ACID约束。 主要特点： 可扩展性：传统的关系型数据库由于其设计约束，很难实现“横向扩展”，只能通过升级硬件来实现“纵向拓展”。而NoSQL数据库的设计初衷就是为了满足“横向扩展”，因此具有很好的水平扩展能力。 数据模型：">
-<meta name="keywords" content="BigData">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NoSQL">
-<meta property="og:url" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;index.html">
+<meta property="og:url" content="https://superming.life/2020/04/14/NoSQL/index.html">
 <meta property="og:site_name" content="AlenZhang&#39;s Blog">
 <meta property="og:description" content="NoSQL简介NoSQL( Not only SQL ) 是非关系型数据库的统称，其数据模型采用类似键&#x2F;值、列族、文档等非关系模型。因为没有固定的表结构，故不存在连接操作，也无ACID约束。 主要特点： 可扩展性：传统的关系型数据库由于其设计约束，很难实现“横向扩展”，只能通过升级硬件来实现“纵向拓展”。而NoSQL数据库的设计初衷就是为了满足“横向扩展”，因此具有很好的水平扩展能力。 数据模型：">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;nosqlvssql.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;compare1.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;compare2.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;compare3.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;type.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;NoSQLfamily.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;keyvalue.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;column.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;doc.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;map.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;cap.png">
-<meta property="og:updated_time" content="2020-10-15T08:28:23.007Z">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/nosqlvssql.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/compare1.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/compare2.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/compare3.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/type.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/NoSQLfamily.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/keyvalue.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/column.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/doc.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/map.png">
+<meta property="og:image" content="https://superming.life/2020/04/14/NoSQL/cap.png">
+<meta property="article:published_time" content="2020-04-13T16:17:58.000Z">
+<meta property="article:modified_time" content="2020-10-15T08:28:23.007Z">
+<meta property="article:author" content="AlenZhang">
+<meta property="article:tag" content="BigData">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;04&#x2F;14&#x2F;NoSQL&#x2F;nosqlvssql.png">
+<meta name="twitter:image" content="https://superming.life/2020/04/14/NoSQL/nosqlvssql.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'https://superming.life/',
+    root: '',
     scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -155,7 +157,9 @@
 
 
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -285,7 +289,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/04/14/NoSQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://superming.life/images/ninja8.jpg">
     </span>
@@ -397,8 +401,7 @@
 <p>可扩展性：传统的关系型数据库由于其设计约束，很难实现“横向扩展”，只能通过升级硬件来实现“纵向拓展”。而NoSQL数据库的设计初衷就是为了满足“横向扩展”，因此具有很好的水平扩展能力。</p>
 <p>数据模型：关系模型是关系数据库的基石，以完备的关系代数理论为基础，保证了业务系统对数据一致性需求，但过多的束缚条件很难满足各新兴业务需求。而NoSQL摒弃各种束缚条件，采用新的模型，允许在一个数据元素中存储不同类型的数据。</p>
 <p>云计算：云计算具有很好的水平扩展能力，根据资源使用情况进行自由伸缩，各种动态资源可以动态加入或退出。NoSQL凭良好的横向扩展能力，很好融入云计算环境中，构建基于NoSQL的云数据库服务。</p>
-<a id="more"></a>
-
+<!----- more ---->
 <h3 id="为何兴起？"><a href="#为何兴起？" class="headerlink" title="为何兴起？"></a>为何兴起？</h3><p>随着Web2.0时代以及大数据时代的带来。关系数据库暴露出很多缺陷「在银行、电信等各类商业公司具有较好的需求」，为了满足新兴业务和市场需求，NoSQL应运而生。</p>
 <p>关系数据库无法满足Web2.0的需求：无法满足海量数据的管理需求，无法满足数据高并发的需求，无法满足高可扩展性和高可用性需求。</p>
 <p>Web2.0特性：通常不要求严格的数据库事务，不要求严格的读写实时性，不包含大量复杂的SQL查询。</p>
@@ -557,9 +560,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="https://superming.life/images/ninja8.jpg"
-                alt="AlenZhang" />
+                alt="" />
             
-              <p class="site-author-name" itemprop="name">AlenZhang</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -666,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NoSQL"><span class="nav-number">1.</span> <span class="nav-text">NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何兴起？"><span class="nav-number">1.1.1.</span> <span class="nav-text">为何兴起？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOSQL-vs-RDBMS"><span class="nav-number">1.2.</span> <span class="nav-text">NOSQL vs RDBMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL四大类型"><span class="nav-number">1.3.</span> <span class="nav-text">NoSQL四大类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#键值数据库"><span class="nav-number">1.3.1.</span> <span class="nav-text">键值数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列族数据库"><span class="nav-number">1.3.2.</span> <span class="nav-text">列族数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档数据库"><span class="nav-number">1.3.3.</span> <span class="nav-text">文档数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图数据库"><span class="nav-number">1.3.4.</span> <span class="nav-text">图数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL三大基石"><span class="nav-number">1.4.</span> <span class="nav-text">NoSQL三大基石</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CAP"><span class="nav-number">1.4.1.</span> <span class="nav-text">CAP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BASE"><span class="nav-number">1.4.2.</span> <span class="nav-text">BASE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Eventual-consistency"><span class="nav-number">1.4.3.</span> <span class="nav-text">Eventual consistency</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NoSQL"><span class="nav-number">1.</span> <span class="nav-text">NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BD%95%E5%85%B4%E8%B5%B7%EF%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">为何兴起？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOSQL-vs-RDBMS"><span class="nav-number">1.2.</span> <span class="nav-text">NOSQL vs RDBMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL%E5%9B%9B%E5%A4%A7%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">NoSQL四大类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%AE%E5%80%BC%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.3.1.</span> <span class="nav-text">键值数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E6%97%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.3.2.</span> <span class="nav-text">列族数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.3.3.</span> <span class="nav-text">文档数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.3.4.</span> <span class="nav-text">图数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL%E4%B8%89%E5%A4%A7%E5%9F%BA%E7%9F%B3"><span class="nav-number">1.4.</span> <span class="nav-text">NoSQL三大基石</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CAP"><span class="nav-number">1.4.1.</span> <span class="nav-text">CAP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BASE"><span class="nav-number">1.4.2.</span> <span class="nav-text">BASE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Eventual-consistency"><span class="nav-number">1.4.3.</span> <span class="nav-text">Eventual consistency</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -705,7 +708,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.9k字</span>
+  <span class="post-count">博客全站共84.7k字</span>
 </div>
 
 

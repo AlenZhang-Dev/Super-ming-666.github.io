@@ -89,28 +89,30 @@
 
 
 <meta name="description" content="Mapreduce概述 分布式并行编程可以大幅提高程序性能，实现高效的批量数据处理。分布式程序运行在大规模计算机集群上，集群中包含大量廉价服务器，能够并行执行大规模数据处理任务，从而获得海量的计算能力。MapReduce就是一种并行编程模型，用于大规模数据集的并行运行，将复杂的，运行于大规模集群上的并行计算高度抽象到两个函数Map和Reduce，两个函数及其核心思想源自函数式编程语言。  谷歌最先">
-<meta name="keywords" content="Bigdata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mapreduce">
-<meta property="og:url" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;index.html">
+<meta property="og:url" content="https://superming.life/2020/05/18/Mapreduce/index.html">
 <meta property="og:site_name" content="AlenZhang&#39;s Blog">
 <meta property="og:description" content="Mapreduce概述 分布式并行编程可以大幅提高程序性能，实现高效的批量数据处理。分布式程序运行在大规模计算机集群上，集群中包含大量廉价服务器，能够并行执行大规模数据处理任务，从而获得海量的计算能力。MapReduce就是一种并行编程模型，用于大规模数据集的并行运行，将复杂的，运行于大规模集群上的并行计算高度抽象到两个函数Map和Reduce，两个函数及其核心思想源自函数式编程语言。  谷歌最先">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;structure.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;process.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;workflow.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;phase.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;Shuffle1.png">
-<meta property="og:updated_time" content="2020-10-15T08:27:39.812Z">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superming.life/2020/05/18/Mapreduce/structure.png">
+<meta property="og:image" content="https://superming.life/2020/05/18/Mapreduce/process.png">
+<meta property="og:image" content="https://superming.life/2020/05/18/Mapreduce/workflow.png">
+<meta property="og:image" content="https://superming.life/2020/05/18/Mapreduce/phase.png">
+<meta property="og:image" content="https://superming.life/2020/05/18/Mapreduce/Shuffle1.png">
+<meta property="article:published_time" content="2020-05-18T01:58:58.000Z">
+<meta property="article:modified_time" content="2020-10-15T08:27:39.812Z">
+<meta property="article:author" content="AlenZhang">
+<meta property="article:tag" content="Bigdata">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;05&#x2F;18&#x2F;Mapreduce&#x2F;structure.png">
+<meta name="twitter:image" content="https://superming.life/2020/05/18/Mapreduce/structure.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'https://superming.life/',
+    root: '',
     scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -149,7 +151,9 @@
 
 
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -279,7 +283,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/05/18/Mapreduce/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://superming.life/images/ninja8.jpg">
     </span>
@@ -394,9 +398,9 @@
 <p>MapReduce的一个设计理念为<strong>“计算向数据靠拢”</strong>而非“数据向计算靠拢”。主要是因为移动数据需要大量的网络传输开销，尤其在大规模数据环境下，移动计算比移动数据更加经济。所以在集群中，MapReduce框架会将每个Map程序就近在HDFS数据所在的节点运行，即将计算节点和存储节点一起运行，减少移动数据开销。</p>
 <p>综上，MapReduce是一个<strong>基于集群的高性能并行计算平台</strong>，MapReduce是一个<strong>并行计算软件框架</strong>，MapReduce是一个<strong>并行程序设计模型与方法</strong>。</p>
 <h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2><p>MapReduce核心是Map函数和Reduce函数，开发者只需要关注Map和Reduce函数的实现即可，不需要处理其他复杂的问题，比如分布式存储、工作调度、负载均衡等。</p>
-<p>MapReduce使用列表和键值对&lt;key, value&gt;作为主要的数据模式。</p>
+<p>MapReduce使用列表和键值对<key, value>作为主要的数据模式。</key,></p>
 <p><img src="https://superming.life/2020/05/18/Mapreduce/structure.png" alt></p>
-<h3 id="Map函数"><a href="#Map函数" class="headerlink" title="Map函数"></a>Map函数</h3><p>Map函数的输入来自分布式文件系统的文件快，这些文件块的格式是任意的，可以是文档，也可以是二进制格式的。文件块是一系列元素的集合，这些元素也是任意类型的。Map函数将输入元素转化为键值对，<strong>键和值的类型也是任意的</strong>，其中键不同于一般的标志属性，键没有唯一性，不能作为输出身份标识。即使是同一输入元素也可以通过Map任务生成具有相同键的多个&lt;key, value&gt;。</p>
+<h3 id="Map函数"><a href="#Map函数" class="headerlink" title="Map函数"></a>Map函数</h3><p>Map函数的输入来自分布式文件系统的文件快，这些文件块的格式是任意的，可以是文档，也可以是二进制格式的。文件块是一系列元素的集合，这些元素也是任意类型的。Map函数将输入元素转化为键值对，<strong>键和值的类型也是任意的</strong>，其中键不同于一般的标志属性，键没有唯一性，不能作为输出身份标识。即使是同一输入元素也可以通过Map任务生成具有相同键的多个<key, value>。</key,></p>
 <h3 id="Reduce函数"><a href="#Reduce函数" class="headerlink" title="Reduce函数"></a>Reduce函数</h3><p>Reduce函数的任务就是将输入的一系列具有相同键的键值对以某种方式组合起来，输出处理后的键值对，输出结果会合并成一个文件。用户可指定Reduce任务个数，通知实现系统，然后主控进程通常选择一个Hash函数，Map任务输出的每个键都会经过Hash函数计算，并更具哈希结果将该键值对输入相应的Reduce任务处理。</p>
 <p><img src="https://superming.life/2020/05/18/Mapreduce/process.png" alt></p>
 <h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><p><img src="https://superming.life/2020/05/18/Mapreduce/workflow.png" alt></p>
@@ -419,16 +423,16 @@
 <h4 id="Map端的Shuffle过程"><a href="#Map端的Shuffle过程" class="headerlink" title="Map端的Shuffle过程"></a>Map端的Shuffle过程</h4><ol>
 <li>输入数据和执行Map任务</li>
 </ol>
-<p>Map任务的输入数据保存在分布式文件系统的文件块中，文件格式任意。Map任务接收&lt;key , value&gt;作为输入后，按一定的映射规则转换成一批&lt;key , value&gt;进行输出。</p>
-<ol start="2">
+<p>Map任务的输入数据保存在分布式文件系统的文件块中，文件格式任意。Map任务接收<key , value>作为输入后，按一定的映射规则转换成一批<key , value>进行输出。</key></key></p>
+<ol>
 <li>写入缓存</li>
 </ol>
 <p>每个Map任务都会分配一个缓存，Map输出结果先写入缓存中，在缓存满后才写入磁盘。可以大大降低开销。</p>
-<ol start="3">
+<ol>
 <li>溢写（分区、排序和合并）</li>
 </ol>
 <p>提供给MapReduce的缓存容量时有限的，一旦占满缓存就执行溢写（Spill）操作，把缓存中的内容一次性写入磁盘并清空缓存。在溢写到磁盘前，缓存中的数据先被分区（Partition），以键值对形式存储；对于每个分区的键值对，后台线程根据其Key对其进行内存排序（Sort），排序是MapReduce默认操作，排序结束后执行合并（Combine）操作，合并操作根据用户定义的执行。</p>
-<ol start="4">
+<ol>
 <li>文件归并</li>
 </ol>
 <p>在Map任务全部结束之前，系统会对所有溢写文件中的数据进行归并（Merge），生成一个大的溢写文件。这个大的溢写文件中所有键值对也是经过分区和排序的。</p>
@@ -438,11 +442,11 @@
 <li>领取数据</li>
 </ol>
 <p>Map端的Shuffle过程结束后，Reduce任务把这些数据领取回来，</p>
-<ol start="2">
+<ol>
 <li>归并数据</li>
 </ol>
 <p>归并过程与Map端类似</p>
-<ol start="3">
+<ol>
 <li>把数据给Reduce任务</li>
 </ol>
 <p>磁盘经过多轮归并后得到若干大文件，不再继续归并，直接输入给Reduce任务，减少磁盘读写开销。</p>
@@ -559,9 +563,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="https://superming.life/images/ninja8.jpg"
-                alt="AlenZhang" />
+                alt="" />
             
-              <p class="site-author-name" itemprop="name">AlenZhang</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -668,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mapreduce"><span class="nav-number">1.</span> <span class="nav-text">Mapreduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型介绍"><span class="nav-number">1.2.</span> <span class="nav-text">模型介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">Map函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">Reduce函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作流程"><span class="nav-number">1.2.3.</span> <span class="nav-text">工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务执行"><span class="nav-number">1.2.4.</span> <span class="nav-text">任务执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shuffle过程"><span class="nav-number">1.2.5.</span> <span class="nav-text">Shuffle过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Map端的Shuffle过程"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">Map端的Shuffle过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduce端的Shuffle过程"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">Reduce端的Shuffle过程</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mapreduce"><span class="nav-number">1.</span> <span class="nav-text">Mapreduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text">模型介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">Map函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text">Reduce函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.3.</span> <span class="nav-text">工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C"><span class="nav-number">1.2.4.</span> <span class="nav-text">任务执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shuffle%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.5.</span> <span class="nav-text">Shuffle过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Map%E7%AB%AF%E7%9A%84Shuffle%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">Map端的Shuffle过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduce%E7%AB%AF%E7%9A%84Shuffle%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">Reduce端的Shuffle过程</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -707,7 +711,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.9k字</span>
+  <span class="post-count">博客全站共84.7k字</span>
 </div>
 
 

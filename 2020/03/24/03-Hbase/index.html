@@ -88,34 +88,36 @@
 
 
 
-<meta name="description" content="HBase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase  默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和">
-<meta name="keywords" content="BigData">
+<meta name="description" content="HBase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase 默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和完">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HBase">
-<meta property="og:url" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;index.html">
+<meta property="og:url" content="https://superming.life/2020/03/24/03-Hbase/index.html">
 <meta property="og:site_name" content="AlenZhang&#39;s Blog">
-<meta property="og:description" content="HBase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase  默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;flow.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;Hbase-relenvent.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;table.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;Hbasestructure.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HBaseData.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HRegion.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;Store.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HbaseLayer.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;RegionLocation.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;HLog.png">
-<meta property="og:updated_time" content="2020-10-15T08:26:49.332Z">
+<meta property="og:description" content="HBase环境准备 MacOS 10.15.3    &#x2F;    Hadoop 3.2.1    &#x2F;    Hbase  1.3.5  使用shell命令安装Hbase 1brew install Hbase 默认安装的hbase1.3.5，安装目录如下：&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;hbase&#x2F;1.3.5。 配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和完">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/flow.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/Hbase-relenvent.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/table.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/Hbasestructure.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/HBaseData.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/HRegion.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/Store.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/HbaseLayer.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/RegionLocation.png">
+<meta property="og:image" content="https://superming.life/2020/03/24/03-Hbase/HLog.png">
+<meta property="article:published_time" content="2020-03-24T10:17:58.000Z">
+<meta property="article:modified_time" content="2020-10-15T08:26:49.332Z">
+<meta property="article:author" content="AlenZhang">
+<meta property="article:tag" content="BigData">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;superming.life&#x2F;2020&#x2F;03&#x2F;24&#x2F;03-Hbase&#x2F;flow.png">
+<meta name="twitter:image" content="https://superming.life/2020/03/24/03-Hbase/flow.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'https://superming.life/',
+    root: '',
     scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -154,7 +156,9 @@
 
 
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -284,7 +288,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/03/24/03-Hbase/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://superming.life/images/ninja8.jpg">
     </span>
@@ -395,36 +399,28 @@
 <p>MacOS 10.15.3    /    Hadoop 3.2.1    /    Hbase  1.3.5</p>
 </blockquote>
 <p>使用shell命令安装Hbase</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew install Hbase</span></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install Hbase</span><br></pre></td></tr></table></figure>
 <p>默认安装的hbase1.3.5，安装目录如下：<code>/usr/local/Cellar/hbase/1.3.5</code>。</p>
-<p>配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和完全分布式，下面配置伪分布式模式。其余配置请参考<a href="https://hbase.apache.org/book.html" target="_blank" rel="noopener">HBase文档</a>。</p>
+<p>配置：Hbase有两个运行模式，分别为单机模式和分布式模式。分布式又分为伪分布式和完全分布式，下面配置伪分布式模式。其余配置请参考<a target="_blank" rel="noopener" href="https://hbase.apache.org/book.html">HBase文档</a>。</p>
 <p><code>在确保Hbase停止的情况下进行如下配置。</code></p>
 <ul>
 <li>修改hbase-env.sh</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HBASE_MANAGES_ZK=<span class="literal">true</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HBASE_HOME=/usr/<span class="built_in">local</span>/Cellar/hbase/1.3.5/libexec</span></pre></td></tr></table></figure>
-
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HBASE_MANAGES_ZK=<span class="literal">true</span></span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/usr/<span class="built_in">local</span>/Cellar/hbase/1.3.5/libexec</span><br></pre></td></tr></table></figure>
 <p>第一个配置使用Hbase自带的Zookeeper，而非单独加载外部的。</p>
-<a id="more"></a>
-
+<!--- more ----->
 <ul>
 <li>修改hbase-site.xml</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></pre></td></tr></table></figure>
-
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>修改<code>hbase.rootdir</code>地址可参见Hadoop配置文件<code>core-site.xml</code>下的<code>fs.default.name</code>值。</p>
 <p>为了使用方便，我们可以在shell配置文件下使用以下命令。</p>
 <p><code>export PATH=$PATH:/usr/local/Cellar/hbase/1.3.5/bin</code></p>
 <p>运行Hbase：</p>
 <p>类似HDFS，先运行hadoop伪分布，再运行Hbase。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">start-hbase.sh</span></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br><span class="line">start-hbase.sh</span><br></pre></td></tr></table></figure>
 <p>使用<code>jps</code>查看<code>HMaster</code>、<code>HQuorumPeer</code>和HRegionServer进程是否运行。</p>
-<img src="https://superming.life/2020/03/24/03-Hbase/flow.png" alt="flow" style="zoom:50%;">
-
-
-
+<p><img src="https://superming.life/2020/03/24/03-Hbase/flow.png" alt="flow" style="zoom:50%;"></p>
 <h2 id="HBase-1"><a href="#HBase-1" class="headerlink" title="HBase"></a>HBase</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>HBase是一种构建在HDFS之上的分布式、面向列的存储系统，是一个高可靠、高性能、面向列、可伸缩的分布式数据库，用于存储非结构化和半结构化的松散数据，在需要实时读写、随机访问超大数据集时具有极大优势。</p>
 <h3 id="生态关系"><a href="#生态关系" class="headerlink" title="生态关系"></a>生态关系</h3><p>HBase在Hadoop生态中与其他部分的关系。</p>
 <blockquote>
@@ -438,6 +434,7 @@
 <h3 id="为什么需要HBase"><a href="#为什么需要HBase" class="headerlink" title="为什么需要HBase"></a>为什么需要HBase</h3><p>Hadoop主要解决大规模数据的离线批量处理，无法满足大规模数据实时处理应用的需求。HDFS面向批量访问模式，而非随机访问模式    ——&gt; HBase支持数据的随机访问模式，提供在线实时数据分析处理。</p>
 <p>传统的关系型数据库无法应对在数据规模剧增时导致的系统扩展性和性能问题    ——&gt;     Hbase支持分布式存储，易于横向拓展，性能高，且支持动态调整。</p>
 <p>HBase与传统数据库之间优劣分析</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -446,7 +443,8 @@
 <th>传统关系数据库</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>数据类型</td>
 <td>把数据存储为未经解释的字符串，用户可以把不同格式的数据存入其中</td>
 <td>关系模型具有丰富的数据类型和存储方式</td>
@@ -476,12 +474,15 @@
 <td>可以轻易通过在集群中增加或减少硬件数量实现伸缩</td>
 <td>很难实现<strong>横向扩展</strong></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>局限：Hbase不支持事务，无法实现跨行原子性。</p>
 <h3 id="数据模型概述"><a href="#数据模型概述" class="headerlink" title="数据模型概述"></a>数据模型概述</h3><p>HBase是一个稀疏、多维度、排序的映射表，索引是行键、列族、列限定符和时间戳。每个值是未经解释的字符串，没有数据类型。<strong>每一行都有一个可排序的行键和任意多的列。</strong></p>
 <p><strong>数据模型相关概念</strong></p>
 <p><img src="https://superming.life/2020/03/24/03-Hbase/table.png" alt="table"></p>
 <p>Hbase可以对允许保留的版本数量进行设置。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -489,7 +490,8 @@
 <th>概念</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>表</td>
 <td>采用表组织数据，表由行和列族组成，列族划分若干个列限定符</td>
 </tr>
@@ -517,7 +519,9 @@
 <td>稀疏表</td>
 <td>很多单元没有值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <blockquote>
 <p>HBase按单元格插数据，或按照单元格删除数据</p>
 </blockquote>
@@ -601,8 +605,7 @@
 </li>
 <li><p>Master处理故障Region服务器上遗留的HLog文件。根据每条日志记录所属的<strong>Region对象</strong>对HLog数据进行拆分，分别放到对应Region对象目录下，然后再将失效的Region重新分配到可用的Region服务器中,同时把该Region对象相关的HLog日志记录也发送给相应的Region服务器。</p>
 </li>
-<li><p>Region服务领取到分配给自己的Region对象以及相关的HLog日志后，把日志记录中的数据写入到MemStore缓存中，刷新到磁盘的StroeFile文件中，完成数据恢复。</p>
-</li>
+<li>Region服务领取到分配给自己的Region对象以及相关的HLog日志后，把日志记录中的数据写入到MemStore缓存中，刷新到磁盘的StroeFile文件中，完成数据恢复。</li>
 </ol>
 <blockquote>
 <p>需要强调的是：HBase中，每个Region服务器只需要维护一个HLog文件，所有<strong>Region对象</strong>共用一个HLog。多个Region对象的更新操作导致的日志修改，只需要对HLog进行文件追加即可。缺点在于，当一个Region服务器故障时，需要将HLog按照所属的Region对象进行拆分并分发。</p>
@@ -725,9 +728,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="https://superming.life/images/ninja8.jpg"
-                alt="AlenZhang" />
+                alt="" />
             
-              <p class="site-author-name" itemprop="name">AlenZhang</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -834,7 +837,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase"><span class="nav-number">1.</span> <span class="nav-text">HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase-1"><span class="nav-number">1.2.</span> <span class="nav-text">HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生态关系"><span class="nav-number">1.2.2.</span> <span class="nav-text">生态关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要HBase"><span class="nav-number">1.2.3.</span> <span class="nav-text">为什么需要HBase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据模型概述"><span class="nav-number">1.2.4.</span> <span class="nav-text">数据模型概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase原理与系统架构"><span class="nav-number">1.3.</span> <span class="nav-text">HBase原理与系统架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase各组件"><span class="nav-number">1.3.1.</span> <span class="nav-text">HBase各组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Region服务器工作原理"><span class="nav-number">1.3.2.</span> <span class="nav-text">Region服务器工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表和Region"><span class="nav-number">1.3.3.</span> <span class="nav-text">表和Region</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Region定位"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Region定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HLog工作原理"><span class="nav-number">1.3.4.</span> <span class="nav-text">HLog工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据恢复"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">数据恢复</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.4.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase"><span class="nav-number">1.</span> <span class="nav-text">HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase-1"><span class="nav-number">1.2.</span> <span class="nav-text">HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%80%81%E5%85%B3%E7%B3%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">生态关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81HBase"><span class="nav-number">1.2.3.</span> <span class="nav-text">为什么需要HBase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0"><span class="nav-number">1.2.4.</span> <span class="nav-text">数据模型概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase%E5%8E%9F%E7%90%86%E4%B8%8E%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">HBase原理与系统架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase%E5%90%84%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">HBase各组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Region%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.2.</span> <span class="nav-text">Region服务器工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E5%92%8CRegion"><span class="nav-number">1.3.3.</span> <span class="nav-text">表和Region</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Region%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Region定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HLog%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.4.</span> <span class="nav-text">HLog工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">数据恢复</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.4.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -873,7 +876,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.9k字</span>
+  <span class="post-count">博客全站共84.7k字</span>
 </div>
 
 
