@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="SSD 论文学习笔记 知乎：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;347860986  Single Shot MultiBox DetectorSingle Shot：表示物体的分类和定位在网络的一次前向传递的完成。【The tasks of object localization and classification are done in a single forward">
 <meta property="og:type" content="article">
@@ -53,7 +53,7 @@
 <meta property="og:image" content="https://superming.life/2021/01/28/SSD-Notes/Screen_Shot_2021-01-28_at_3.24.12_PM.png">
 <meta property="og:image" content="https://superming.life/2021/01/28/SSD-Notes/Screen_Shot_2021-01-28_at_7.32.03_PM.png">
 <meta property="article:published_time" content="2021-01-28T12:30:00.000Z">
-<meta property="article:modified_time" content="2021-02-01T13:59:14.269Z">
+<meta property="article:modified_time" content="2021-02-01T16:09:18.004Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="Machine-Learning">
 <meta name="twitter:card" content="summary">
@@ -114,7 +114,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -193,7 +193,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -225,7 +225,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -265,7 +265,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2021/01/28/SSD-Notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -306,8 +306,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -338,21 +336,21 @@
 <p><strong>MultiBox</strong>：可扩展、高质量的目标检测，<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1412.1441">论文地址</a>。可以理解为在多个feature map上进行多尺度（multi-scale）预测。</p>
 <p><strong>Detector</strong>：网络是一个Object Detector。</p>
 <p><img src="/2021/01/28/SSD-Notes/Untitled.png" alt="Fig.1 详细SSD模型1"></p>
-<p>==Fig.1 详细SSD模型1==</p>
-<!--- more ---->
+<p>Fig.1 详细SSD模型1</p>
+<a id="more"></a>
 <h2 id="Model-Architecture"><a href="#Model-Architecture" class="headerlink" title="Model Architecture"></a>Model Architecture</h2><blockquote>
 <p>The SSD approach is based on a feed-forward convolutional network that produces a fixed-size collection of bounding boxes and scores for the presence of object class<br>instances in those boxes, followed by a non-maximum suppression step to produce thefinal detections. The early network layers are based on a standard architecture used for high quality image classification (truncated before any classification layers), which we will call the base network2. </p>
 </blockquote>
 <p><img src="/2021/01/28/SSD-Notes/Screen_Shot_2021-01-28_at_8.19.22_AM.png" alt="Fig.2 SSD详细模型2"></p>
-<p>==Fig.2 SSD详细模型2==</p>
+<p>Fig.2 SSD详细模型2</p>
 <h3 id="Base-Network"><a href="#Base-Network" class="headerlink" title="Base Network"></a><strong>Base Network</strong></h3><p>VGG-16，舍弃了fc6和fc7两个全连接层，主要用于高质量的图片分类任务【High quality image classification  tasks】</p>
 <p>原始的VGG、ResNet等主要用于处理分类任务，会采用fc层将最终的feature map映射到向量【对应分类物体】中，而目标检测不需要该分类任务，所以将fc层去掉。</p>
 <p><img src="/2021/01/28/SSD-Notes/Screen_Shot_2021-01-28_at_9.00.06_AM.png" alt="SSD%EF%BC%9ASingle%20Shot%20MultiBox%20Detector%20Notes%209c6d1d0f6b01440b8da4dac4d5ca7769/Screen_Shot_2021-01-28_at_9.00.06_AM.png"></p>
-<p>==Fig.3 VGG网络结构(input 244 x 244 x 3)==</p>
+<p>Fig.3 VGG网络结构(input 244 x 244 x 3)</p>
 <p>SSD在VGG16后添加6个辅助卷积层，这六层一共进行8732次预测。</p>
 <p>参考论文给出的下图，可见使用Multi-scale feature maps对精度提升显著。</p>
 <p><img src="/2021/01/28/SSD-Notes/Screen_Shot_2021-01-28_at_3.17.11_PM.png" alt="SSD%EF%BC%9ASingle%20Shot%20MultiBox%20Detector%20Notes%209c6d1d0f6b01440b8da4dac4d5ca7769/Screen_Shot_2021-01-28_at_3.17.11_PM.png"></p>
-<p>==Fig.4 Multiple output layer at different resolutions is better.==</p>
+<p>Fig.4 Multiple output layer at different resolutions is better.</p>
 <p>对照实验，尽量控制Boxes的数量均衡。删除某一层后，会把该层的default box挂载到余下层并进行调整。</p>
 <h3 id="Multi-scale-feature-map-for-detection"><a href="#Multi-scale-feature-map-for-detection" class="headerlink" title="Multi-scale feature map for detection."></a><strong>Multi-scale feature map for detection.</strong></h3><p>VGG中的Conv5_3以及后续添加的辅助层，用于用多种尺度进行特征提取【检测 + 分类】。最终进行预测的是这些层中选出的特定层。每个层对应不同的scale和不同的aspect ratios的bounding box进行预测。【后文会详细介绍】</p>
 <h3 id="Convolutional-predictors-for-detection"><a href="#Convolutional-predictors-for-detection" class="headerlink" title="Convolutional predictors for detection."></a><strong>Convolutional predictors for detection.</strong></h3><p>每一个添加的feature layer通过使用一系列卷积层【convolutional filters】生成一系列预测结果。假设一个feature layer层的尺寸为m x n x p 【p为channel】，那么卷积核为3 x 3 x p，即一个detector/classifier 的参数量，它输出对应类别的得分或相对default box的坐标偏移量。对于m x n中卷积核的每一个bouding box，都会生成一个预测值。</p>
@@ -361,9 +359,9 @@
 <p>通过非极大抑制来控制噪声，确保网络保留最有效的几个预测，丢弃噪声较大的预测。</p>
 <h3 id="MultiBox-Priors-and-IoU"><a href="#MultiBox-Priors-and-IoU" class="headerlink" title="MultiBox Priors and IoU."></a><strong>MultiBox Priors and IoU.</strong></h3><p>In MultiBox, the researchers created what we call priors (or anchors in Faster-R-CNN terminology), which are pre-computed, fixed size bounding boxes that closely match the distribution of the original ground truth boxes.In fact those priors are selected in such a way that their Intersection over Union ratio (aka IoU, and sometimes referred to as Jaccard index) is greater than 0.5.</p>
 <p><img src="/2021/01/28/SSD-Notes/Untitled%201.png" alt="SSD%EF%BC%9ASingle%20Shot%20MultiBox%20Detector%20Notes%209c6d1d0f6b01440b8da4dac4d5ca7769/Untitled%201.png"></p>
-<p>==Fig.5 IoU Explaination==</p>
+<p>Fig.5 IoU Explainatio</p>
 <h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><p><img src="/2021/01/28/SSD-Notes/Untitled%202.png" alt="SSD%EF%BC%9ASingle%20Shot%20MultiBox%20Detector%20Notes%209c6d1d0f6b01440b8da4dac4d5ca7769/Untitled%202.png"></p>
-<p>==Fig.6 SSD训练流程==</p>
+<p>Fig.6 SSD训练流程</p>
 <h3 id="Matching-strategy"><a href="#Matching-strategy" class="headerlink" title="Matching strategy."></a><strong>Matching strategy.</strong></h3><p>在训练过程中，需要确定默认框【default box】与真值框【Ground truth box】以及和训练网络的相关性。这些default box随着cell、aspect ratio和scale的不同而变化，我们通过将真值框与默认框之间的重合度定义一个值【IOU &gt; 0.5】，重合度高于IOU的样本便是正样本，参与后续的训练。这就是SSD的匹配策略，在YOLO，Faster R-CNN中都有使用。</p>
 <h3 id="Training-objective"><a href="#Training-objective" class="headerlink" title="Training objective."></a><strong>Training objective.</strong></h3><p>SSD的Training objective 源于MultiBox objective ，但可以拓展到多个对象级别。</p>
 <p>总的损失函数包含了localization loss（loc）和 confidence loss（conf），包含了定位和分类。</p>
@@ -372,7 +370,7 @@
 <li>N是匹配成功的正样本数量。N = 0， Loss = 0。</li>
 <li>$\alpha$ 是定位损失和分类损失之间的比重，通过交叉验证设为1。</li>
 <li>l表示bounding box 与 default box之间的变换关系，g代表ground truth box和default box之间的变换关系。</li>
-<li>$x^p_{ij}=\left { 0,1 \right}$ 即x 参数，表示第i个default box与种类p的第j个ground truth box是否匹配，匹配则为1，否则为0。</li>
+<li>$x^p_{ij}=\left{0,1\right}$ 即x 参数，表示第i个default box与种类p的第j个ground truth box是否匹配，匹配则为1，否则为0。</li>
 </ul>
 <p><strong>和Faster R-CNN类似，定位损失使用Smooth L1 loss</strong></p>
 <p><img src="/2021/01/28/SSD-Notes/Screen_Shot_2021-01-28_at_11.56.16_AM.png" alt="SSD%EF%BC%9ASingle%20Shot%20MultiBox%20Detector%20Notes%209c6d1d0f6b01440b8da4dac4d5ca7769/Screen_Shot_2021-01-28_at_11.56.16_AM.png"></p>

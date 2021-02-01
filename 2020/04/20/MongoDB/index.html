@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="MongoDB安装使用tar包进行安装前提： MongoDB4.2社区版支持macOS 10.12及后续版本。 下载tar包：地址  OS选择macOSx64，包选择TGZ，点击下载。  把下载文件移至&#x2F;usr&#x2F;local下，进行解压缩。   12tar -zxvf mongodb-macos-x86_64-4.2.5.tgzsudo mv mongodb-osx-x86_64-4.2.5&#x2F; mo">
 <meta property="og:type" content="article">
@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://superming.life/2020/04/20/MongoDB/arrary.png">
 <meta property="og:image" content="https://superming.life/2020/04/20/MongoDB/cusorbehavior.png">
 <meta property="article:published_time" content="2020-04-19T16:17:58.000Z">
-<meta property="article:modified_time" content="2021-01-19T04:20:44.732Z">
+<meta property="article:modified_time" content="2021-02-01T16:02:19.536Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="BigData">
 <meta name="twitter:card" content="summary">
@@ -102,7 +102,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -181,7 +181,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -213,7 +213,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -253,7 +253,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2020/04/20/MongoDB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -294,8 +294,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -333,7 +331,7 @@
 <li>将bin目录下的文件放入<code>/usr/local/bin</code>下</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/local/mongodb/bin/* /usr/local/bin/</span><br></pre></td></tr></table></figure>
-<!-----more------->
+<a id="more"></a>
 <p>建立存放数据目录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/local/var/mongodb    //mongod进程写入数据文件</span><br><span class="line">sudo mkdir -p /usr/local/var/log/mongodb		//创建mongod进程产生的log文件</span><br></pre></td></tr></table></figure>
 <p>注意：在macOS 10.15 Catalina后，Apple限制了MongDB存放数据的默认地址<code>/data/db</code>。所以我们必须使用不同的数据目录。比如<code>/usr/local/var/mongodb</code>。</p>

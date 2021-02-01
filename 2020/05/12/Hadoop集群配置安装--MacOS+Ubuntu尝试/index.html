@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="Hadoop集群配置安装：MacOS+Ubuntu 尝试关于Hadoop集群配置，教程基本都是都是Ubuntu之间的相互配置，很少MacOs与Ubuntu之间的分布式教程，相信很多同学为了做实验受限于机器等条件限制，本文可能会有所帮助。 环境准备：MacOS 【Catalina 10.15.3 】： 作为从节点，节点名称为superming。 Ubuntu 【19.04】：作为主节点，节点命名ZK">
 <meta property="og:type" content="article">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://superming.life/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/web2.png">
 <meta property="og:image" content="https://superming.life/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/hadoop2.png">
 <meta property="article:published_time" content="2020-05-11T16:17:58.000Z">
-<meta property="article:modified_time" content="2021-01-19T04:21:34.286Z">
+<meta property="article:modified_time" content="2021-02-01T16:02:13.626Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="BigData">
 <meta name="twitter:card" content="summary">
@@ -101,7 +101,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -180,7 +180,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -212,7 +212,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -252,7 +252,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2020/05/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85--MacOS+Ubuntu%E5%B0%9D%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -293,8 +293,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -325,7 +323,7 @@
 <p><strong>说明：</strong></p>
 <p>两者安装的Hadoop版本均为3.2.1。</p>
 <p>Ubuntu机器使用hadoop用户进行hadoop的相关操作，而Mac机器上为了方便使用，并未创建hadoop用户，而是使用我原来的用户superming进行相关操作，在配置集群之前，所有机器上的hadoop配置均按照伪分布式配置，并可以运行。</p>
-<!--- more ---->
+<a id="more"></a>
 <h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><p>为了便于区分节点名称，修改Master的主机名</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hostname</span><br></pre></td></tr></table></figure>
 <p>在文件hostname文件中写入自己指定的机器名称并保存即可。</p>

@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="插入排序直接插入排序（Straight Insertion Sort）直接插入排序是简单直观的排序方法，将一个记录插入到已排好的有序表中，从而得到一个新的、记录数增1的有序表。">
 <meta property="og:type" content="article">
@@ -32,7 +32,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Insertion-sort-example-300px.gif/220px-Insertion-sort-example-300px.gif">
 <meta property="article:published_time" content="2020-10-17T04:16:55.000Z">
-<meta property="article:modified_time" content="2020-10-17T07:01:36.895Z">
+<meta property="article:modified_time" content="2021-02-01T16:01:06.556Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="Algorithms">
 <meta name="twitter:card" content="summary">
@@ -93,7 +93,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -172,7 +172,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -204,7 +204,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -244,7 +244,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2020/10/17/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -285,8 +285,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>

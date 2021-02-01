@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="Programming Assignment: Deques and Randomized QueuesAssignment Link: https:&#x2F;&#x2F;coursera.cs.princeton.edu&#x2F;algs4&#x2F;assignments&#x2F;queues&#x2F;specification.php  Write a generic data type for a deque and a randomize">
 <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
 <meta property="og:description" content="Programming Assignment: Deques and Randomized QueuesAssignment Link: https:&#x2F;&#x2F;coursera.cs.princeton.edu&#x2F;algs4&#x2F;assignments&#x2F;queues&#x2F;specification.php  Write a generic data type for a deque and a randomize">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-16T01:12:52.000Z">
-<meta property="article:modified_time" content="2020-11-16T01:54:16.513Z">
+<meta property="article:modified_time" content="2021-02-01T16:00:39.894Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="Algorithms">
 <meta name="twitter:card" content="summary">
@@ -91,7 +91,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -170,7 +170,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -202,7 +202,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -242,7 +242,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2020/11/16/Programming%20Assignment%20Deques%20and%20Randomized%20Queues/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -283,8 +283,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -316,7 +314,7 @@
 <p>目标1: Linked lists和arrays的应用</p>
 <p>目标2: 范型和迭代器的应用</p>
 </blockquote>
-<!--- more --->
+<a id="more"></a>
 <h2 id="Dequeue"><a href="#Dequeue" class="headerlink" title="Dequeue"></a>Dequeue</h2><p><strong>Dequeue.</strong> A <em>double-ended queue</em> or <em>deque</em> (pronounced “deck”) is a generalization of a stack and a queue that supports adding and removing items from either the front or the back of the data structure. Create a generic data type <code>Deque</code> that implements the following API:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Deque</span>&lt;<span class="title">Item</span>&gt; <span class="keyword">implements</span> <span class="title">Iterable</span>&lt;<span class="title">Item</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// construct an empty deque</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Deque</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// is the deque empty?</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// return the number of items on the deque</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// add the item to the front</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(Item item)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// add the item to the back</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(Item item)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// remove and return the item from the front</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> Item <span class="title">removeFirst</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// remove and return the item from the back</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> Item <span class="title">removeLast</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// return an iterator over items in order from front to back</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> Iterator&lt;Item&gt; <span class="title">iterator</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// unit testing (required)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
 <p><em>Corner cases.</em> Throw the specified exception for the following corner cases:</p>

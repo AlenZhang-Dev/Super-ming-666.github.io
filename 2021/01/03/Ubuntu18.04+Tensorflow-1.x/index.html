@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="Ubuntu18.04 Tensorflow 1.x 安装（一）：Nvidia软件安装文章包含以下几个内容：  Nvidia驱动安装 CUDA版本选择及安装 cuDNN选择及安装  我的配置[参考]：  GTX965M Ubuntu18.04 LTS  Nvidia驱动安装需考虑：GPU硬件型号，GPU驱动，CUDA，TensorFlow，PyTorch以及CuDNN等适配信息。  检查GPU是否">
 <meta property="og:type" content="article">
@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://superming.life/2021/01/03/Ubuntu18.04+Tensorflow-1.x/Screen_Shot_2020-12-26_at_7.27.01_PM.png">
 <meta property="og:image" content="https://superming.life/2021/01/03/Ubuntu18.04+Tensorflow-1.x/Screen_Shot_2020-12-27_at_1.22.23_AM.png">
 <meta property="article:published_time" content="2021-01-03T12:22:19.000Z">
-<meta property="article:modified_time" content="2021-01-05T16:14:47.879Z">
+<meta property="article:modified_time" content="2021-02-01T16:00:09.873Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="Machine-Learning">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -184,7 +184,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -216,7 +216,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -256,7 +256,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2021/01/03/Ubuntu18.04+Tensorflow-1.x/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -297,8 +297,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -339,7 +337,7 @@
 </ol>
 <p>通过下面链接检查GPU是否支持CUDA，如果GPU能在列表中找到，即支持CUDA。</p>
 <p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-gpus">CUDA GPUs</a></p>
-<!--- more --->
+<a id="more"></a>
 <p>例如：我使用的GPU为GTX965M，相关信息能在Nvidia官网找到：</p>
 <p><img src="/2021/01/03/Ubuntu18.04+Tensorflow-1.x/Screen_Shot_2020-12-24_at_4.09.17_PM.png" alt="Ubuntu18.04+Tensorflow-1.x/Screen_Shot_2020-12-24_at_4.09.17_PM.png"></p>
 <p>计算能力5.2</p>

@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,14 +21,14 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="本文简单介绍我搭建博客时考虑到或直接用上的几个集成功能。 访问统计站点访问量统计访问统计功能由不蒜子提供，详细使用参见其个人网站。  效果如下：【前者为uv算法显示，后者为pv算法显示】    我所使用的Next主题已经集成此功能，只需添加脚本和开启功能即可。 访问主题下的footer.swig文件添加代码，path:themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig">
+<meta name="description" content="本文简单介绍我搭建博客时考虑到或直接用上的几个集成功能。 访问统计站点访问量统计访问统计功能由不蒜子提供，详细使用参见其个人网站。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 个人博客高级配置">
 <meta property="og:url" content="https://superming.life/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="AlenZhang&#39;s Blog">
-<meta property="og:description" content="本文简单介绍我搭建博客时考虑到或直接用上的几个集成功能。 访问统计站点访问量统计访问统计功能由不蒜子提供，详细使用参见其个人网站。  效果如下：【前者为uv算法显示，后者为pv算法显示】    我所使用的Next主题已经集成此功能，只需添加脚本和开启功能即可。 访问主题下的footer.swig文件添加代码，path:themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig">
+<meta property="og:description" content="本文简单介绍我搭建博客时考虑到或直接用上的几个集成功能。 访问统计站点访问量统计访问统计功能由不蒜子提供，详细使用参见其个人网站。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://superming.life/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/busuanzi.png">
 <meta property="og:image" content="https://superming.life/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/count.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://superming.life/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/douban.png">
 <meta property="og:image" content="https://superming.life/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/valine.png">
 <meta property="article:published_time" content="2020-01-21T14:12:37.000Z">
-<meta property="article:modified_time" content="2021-01-19T04:21:18.649Z">
+<meta property="article:modified_time" content="2021-02-01T16:03:21.758Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="Tech">
 <meta name="twitter:card" content="summary">
@@ -97,7 +97,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -176,7 +176,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -208,7 +208,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -248,7 +248,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -289,8 +289,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -316,6 +314,7 @@
     <div class="post-body" itemprop="articleBody">
         <p>本文简单介绍我搭建博客时考虑到或直接用上的几个集成功能。</p>
 <h2 id="访问统计"><a href="#访问统计" class="headerlink" title="访问统计"></a>访问统计</h2><h3 id="站点访问量统计"><a href="#站点访问量统计" class="headerlink" title="站点访问量统计"></a>站点访问量统计</h3><p>访问统计功能由<a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">不蒜子</a>提供，详细使用参见其个人网站。</p>
+<a id="more"></a>
 <ul>
 <li><p>效果如下：【前者为uv算法显示，后者为pv算法显示】</p>
 <p><img src="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/busuanzi.png" alt="valine"></p>

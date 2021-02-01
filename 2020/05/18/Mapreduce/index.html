@@ -7,9 +7,9 @@
 <meta name="generator" content="Hexo 5.3.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="Mapreduce概述 分布式并行编程可以大幅提高程序性能，实现高效的批量数据处理。分布式程序运行在大规模计算机集群上，集群中包含大量廉价服务器，能够并行执行大规模数据处理任务，从而获得海量的计算能力。MapReduce就是一种并行编程模型，用于大规模数据集的并行运行，将复杂的，运行于大规模集群上的并行计算高度抽象到两个函数Map和Reduce，两个函数及其核心思想源自函数式编程语言。  谷歌最先">
 <meta property="og:type" content="article">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://superming.life/2020/05/18/Mapreduce/phase.png">
 <meta property="og:image" content="https://superming.life/2020/05/18/Mapreduce/Shuffle1.png">
 <meta property="article:published_time" content="2020-05-18T01:58:58.000Z">
-<meta property="article:modified_time" content="2020-10-15T08:27:39.812Z">
+<meta property="article:modified_time" content="2021-02-01T16:02:00.484Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="Bigdata">
 <meta name="twitter:card" content="summary">
@@ -97,7 +97,7 @@
 </noscript>
 
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="/custom_css_source.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
 </head>
 
@@ -176,7 +176,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlenZhang"
-      src="/images/ninja2.jpg">
+      src="/images/ninja8.jpg">
   <p class="site-author-name" itemprop="name">AlenZhang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -208,7 +208,7 @@
         <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
   </div>
 
@@ -248,7 +248,7 @@
     <link itemprop="mainEntityOfPage" href="https://superming.life/2020/05/18/Mapreduce/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="image" content="/images/ninja8.jpg">
       <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
     </span>
@@ -289,8 +289,6 @@
       <span class="post-meta-item-text">Views: </span>
       <span class="leancloud-visitors-count"></span>
     </span>
-      </div>
-      <div class="post-meta">
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -321,6 +319,7 @@
 <p>在MapReduce中，一个存储在分布式文件系统中的大规模数据集会被切分为许多独立的小数据块，这些小数据块可以被多个Map任务并行处理。<u>MapReduce框架会为每个Map任务输入一个<strong>数据子集</strong>，Map任务生成的结果会继续作为Reduce任务的输入，最终由Reduce任务输出最后结果，并写入分布式文件系统。</u>「适合用MapReduce来处理的数据集需要满足一个前提条件：待处理的数据集可以分解成许多小的数据集，而且每个小数据集都可以完全并行进行处理。」</p>
 <p>MapReduce的一个设计理念为<strong>“计算向数据靠拢”</strong>而非“数据向计算靠拢”。主要是因为移动数据需要大量的网络传输开销，尤其在大规模数据环境下，移动计算比移动数据更加经济。所以在集群中，MapReduce框架会将每个Map程序就近在HDFS数据所在的节点运行，即将计算节点和存储节点一起运行，减少移动数据开销。</p>
 <p>综上，MapReduce是一个<strong>基于集群的高性能并行计算平台</strong>，MapReduce是一个<strong>并行计算软件框架</strong>，MapReduce是一个<strong>并行程序设计模型与方法</strong>。</p>
+<a id="more"></a>
 <h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2><p>MapReduce核心是Map函数和Reduce函数，开发者只需要关注Map和Reduce函数的实现即可，不需要处理其他复杂的问题，比如分布式存储、工作调度、负载均衡等。</p>
 <p>MapReduce使用列表和键值对<key, value>作为主要的数据模式。</key,></p>
 <p><img src="/2020/05/18/Mapreduce/structure.png" alt></p>
