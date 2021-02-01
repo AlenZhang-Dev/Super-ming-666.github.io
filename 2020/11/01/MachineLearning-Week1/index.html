@@ -1,82 +1,28 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="https://superming.life/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="https://superming.life/css/main.css?v=" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="https://superming.life/images/apple-touch-icon.png?v=">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="https://superming.life/images/favicon-32x32.png?v=">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="https://superming.life/images/favicon-16x16.png?v=">
-
-
-  <link rel="mask-icon" href="https://superming.life/images/safari-pinned-tab.svg?v=" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Machine-Learning," />
-
-
-
-
-
-  <link rel="alternate" href="https://superming.life/atom.xml" title="AlenZhang's Blog" type="application/atom+xml" />
-
-
-
-
-
-
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
 <meta name="description" content="Machine-Learning - Week 1Github link: https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev&#x2F;MachineLearning-Stanford 1. IntroductionIntroduce the core idea of teaching a computer to learn concepts using data - without bei">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine-Learning Andrew Ng">
@@ -140,737 +86,133 @@
 <meta name="twitter:image" content="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.50.40_PM.png">
 
 
+<link rel="canonical" href="https://superming.life/2020/11/01/MachineLearning-Week1/">
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Mist',
-    version: '',
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12},
-    fancybox: false,
-    tabs: ,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},
-    duoshuo: {
-      userId: 'undefined',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: ""
-    }
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
-
-
-
-
-
-
-
-  <title>Machine-Learning Andrew Ng | AlenZhang's Blog</title>
+<title>Machine-Learning Andrew Ng | AlenZhang's Blog</title>
   
 
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '[object Object]', 'auto');
-  ga('send', 'pageview');
-</script>
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
 
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
+</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="https://superming.life/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">AlenZhang's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">AlenZhang's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="https://superming.life/" rel="section">
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="https://superming.life/about/" rel="section">
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="https://superming.life/tags/" rel="section">
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="https://superming.life/categories/" rel="section">
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="https://superming.life/archives/" rel="section">
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a></li>
+  </ul>
 </nav>
 
 
 
- </div>
-    </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/11/01/MachineLearning-Week1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://superming.life/[object%20Object]">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AlenZhang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+</div>
         
-        
-          <h1 class="post-title" itemprop="name headline">Machine-Learning Andrew Ng</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-01T12:10:55+08:00">
-                2020-11-01
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2020-11-15T21:23:06+08:00">
-                2020-11-15
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="https://superming.life/categories/CS/" itemprop="url" rel="index">
-                    <span itemprop="name">CS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="https://superming.life/2020/11/01/MachineLearning-Week1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="https://superming.life/2020/11/01/MachineLearning-Week1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="https://superming.life/2020/11/01/MachineLearning-Week1/" class="leancloud_visitors" data-flag-title="Machine-Learning Andrew Ng">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="Machine-Learning-Week-1"><a href="#Machine-Learning-Week-1" class="headerlink" title="Machine-Learning - Week 1"></a>Machine-Learning - Week 1</h1><p>Github link: <a target="_blank" rel="noopener" href="https://github.com/AlenZhang-Dev/MachineLearning-Stanford">https://github.com/AlenZhang-Dev/MachineLearning-Stanford</a></p>
-<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>Introduce the core idea of teaching a computer to learn concepts using data - without being explicitly programmed.</p>
-<p><strong>linear regression with one variable.</strong> Discuss the application of linear regression to housing price prediction, present the notion of a cost function, also introduce the gradient descent method for learning.</p>
-<p>The course require the knowledge of l<strong>inear algebra</strong> concepts.</p>
-<!---more-->
-<hr>
-<h2 id="What’s-Machine-Learning"><a href="#What’s-Machine-Learning" class="headerlink" title="What’s Machine Learning?"></a>What’s Machine Learning?</h2><p>Andrew NG: Machine Learning is the science of getting computers to learn, without being explicitly programmed.</p>
-<ul>
-<li>Grew out of work in AI</li>
-<li>New capability for computers</li>
-</ul>
-<p>Examples:</p>
-<ul>
-<li>Database mining<ul>
-<li>Large datasets from growth of automation/web</li>
-<li>E.g., Web click data, medical records, biology, engineering</li>
-</ul>
-</li>
-<li><p>Applications can’t program by hand.</p>
-<ul>
-<li>E.g., Autonomous helicopter, handwriting recognition, most of Natural Language Processing(NLP), Computer Vision.</li>
-</ul>
-</li>
-<li><p>Self-customizing programs</p>
-<p>  E.g., Amazon, Netflix product recommendations.</p>
-</li>
-<li><p>Understanding human learning(brain, real AI).</p>
-</li>
-</ul>
-<p><strong>What’s Machine Learning?[Definition]</strong></p>
-<p>Two definitions of Machine Learning are offered.</p>
-<ul>
-<li>Arthur Samuel described it as: <strong>“the field of study that gives computers the ability to learn without being explicitly programmed.”</strong> This is an older, informal definition.</li>
-<li>Tom Mitchell provides a more modern definition: <strong>“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</strong></li>
-</ul>
-<p>Examples:</p>
-<p>playing checkers.</p>
-<p>E = the experience of playing many games of checkers</p>
-<p>T = the task of playing checkers.</p>
-<p>P = the probability that the program will win the next game.</p>
-<p>Suppose your email program watches which emails you do or do not mark as spam, and based on that learns how to better filter spam. Explain the E T P according to Tom Mitchell’s definiation.</p>
-<p>E = Watching you label emails as spam or not spam.</p>
-<p>T = Classify emails as spam or not spam.</p>
-<p>P = The number(or fraction) of emails correctly classified as spam/not spam.</p>
-<p>In general, any machine learning problem can be assigned to one of two broad classifications:</p>
-<p><strong>Supervised learning and Unsupervised learning.</strong></p>
-<p>Machine Learning algorithms </p>
-<ul>
-<li>Supervised Learning</li>
-<li>Unsupervised Learning</li>
-</ul>
-<p>Others: Reinforcement Learning, recommender systems.</p>
-<h2 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>In supervised learning, we are given a data set and already know what our correct output should look like, <strong>having the idea that there is a relationship between the input and the output.</strong></p>
-<p>Supervised learning problems are categorized into “<strong>regression</strong>“ and “<strong>classification</strong>“ problems. </p>
-<p>In a regression problem, we are trying to predict results within a <strong>continuous output</strong>, meaning that we are trying to map input variables to some continuous function. </p>
-<p>In a classification problem, we are instead trying to predict results in a <strong>discrete output[离散输出]</strong>. In other words, we are trying to map input variables into discrete categories.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.50.40_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.50.40_PM.png"></p>
-<p>Regression exp</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.51.03_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.51.03_PM.png"></p>
-<p>Classification</p>
-<p><strong>Example 1:</strong></p>
-<p>Given data about the size of houses on the real estate market, try to predict their price. Price as a function of size is a continuous output, so this is a regression problem.</p>
-<p>We could turn this example into a classification problem by instead making our output about whether the house “sells for more or less than the asking price.” Here we are classifying the houses based on price into two discrete categories.</p>
-<p><strong>Example 2</strong>:</p>
-<p>(a) Regression - Given a picture of a person, we have to predict their age on the basis of the given picture</p>
-<p>(b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.</p>
-<p>Practice：</p>
-<p>You’re running a company, and you want to develop learning algorithms to address each of two problems. </p>
-<p>Problem 1: You have a large inventory of identical items. You want to predict how many of these items will sell over the next 3 months.</p>
-<p>Problem 2: You’d like software to examine individual customer accounts, and for each account decide if it has been hacked/compromised. Should you treat these as classification or as regression problems?</p>
-<p>Answer: </p>
-<p>Treat problem 1 as a regression problem, problem 2 as a classification problem.</p>
-<p>Explain:</p>
-<p>First one : we have thousand of items [Continuous]</p>
-<p>Second one: 0 - not hacked, 1 - hacked.[Hacked or not, Discrete]</p>
-<h2 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h2><p>Unsupervised learning is a type of machine learning that looks for previously undetected patterns in a data set with no pre-existing labels and with a minimum of human supervision.    —- Wikipedia</p>
-<p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
-<p>We can derive this structure by clustering the data based on relationships among the variables in the data.</p>
-<p>With unsupervised learning there is no feedback based on the prediction results.</p>
-<p><strong>Example:</strong></p>
-<p>Clustering: Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.</p>
-<p>Non-clustering: The “Cocktail Party Algorithm”, allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cocktail_party_effect">cocktail party</a>).</p>
-<p>The Following examples using an unsupervised learning algorithm: </p>
-<p>Given a set of news articles found on web, group them into sets of articles about the same stories.</p>
-<p>Given a database of customer data, automatically discover market segments and group customers into different market segments.</p>
-<h1 id="2-Model-and-Cost-Function"><a href="#2-Model-and-Cost-Function" class="headerlink" title="2. Model and Cost Function"></a>2. Model and Cost Function</h1><h3 id="Model-Representation"><a href="#Model-Representation" class="headerlink" title="Model Representation"></a>Model Representation</h3><p><strong>Notes:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.03.23_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.03.23_PM.png"></p>
-<p>Linear regression model with only one variable[Also called univariate linear regression]</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.10.45_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.10.45_PM.png"></p>
-<p><strong>Material:</strong></p>
-<p>To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function h : X → Y so that h(x) is a “good” predictor for the corresponding value of y. For historical reasons, this function h is called a <strong>hypothesis</strong>. </p>
-<p>When the target variable that we’re trying to predict is continuous, such as in our housing example, we call the learning problem a regression problem. When y can take on only a small number of discrete values (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a classification problem.</p>
-<h3 id="Cost-Function"><a href="#Cost-Function" class="headerlink" title="Cost Function"></a>Cost Function</h3><p><strong>Notes:</strong></p>
-<p>How to choose the parameters?</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.17.14_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.17.14_PM.png"></p>
-<p><strong>Material</strong>:</p>
-<p>We can measure the accuracy of our hypothesis function by using a <strong>cost function</strong>. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x’s and the actual output y’s.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.06.02_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.06.02_PM.png"></p>
-<p>MSE: the most common one used for regression problems.</p>
-<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Mean_squared_error">Mean squared error</a></p>
-<h2 id="Cost-Function-Intuition-I"><a href="#Cost-Function-Intuition-I" class="headerlink" title="Cost Function Intuition I"></a>Cost Function Intuition I</h2><p>1.Set the theta(0) to zero.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.58.03_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.58.03_PM.png"></p>
-<p>2.The optimization objective for our learning algorithm is we want to choose the value of theta (1).  The Minimizes J(theat(1)).</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.12_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.12_PM.png"></p>
-<p>Material:</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.36_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.36_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.52_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.52_PM.png"></p>
-<h2 id="Cost-function-Intuition-II"><a href="#Cost-function-Intuition-II" class="headerlink" title="Cost function - Intuition II"></a>Cost function - Intuition II</h2><ol>
-<li>Keep both two parameters of the cost function.</li>
-</ol>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.42.52_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.42.52_PM.png"></p>
-<p>The cost function may be look like below:</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.43.16_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.43.16_PM.png"></p>
-<p>Contour plots / figure</p>
-<p>A contour plot is a graph that contains many contour lines. A contour line of a two variable function has constant value at all points of same line. An example of such a graph is the one to the right below:</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.46.54_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.46.54_PM.png"></p>
-<p>3 green x have the same cost.</p>
-<p>When θ0=360 and θ1 = 0, the value of J(θ0, θ1) in the contour plot gets closer to the center thus reducing the cost function error. Now Giving our hypothesis function a slightly positive slope result in a better fit of the data.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.57.37_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.57.37_PM.png"></p>
-<p>The graph above minimizes the cost function as much as possible and consequently, the result of θ1 and θ0 tend to be around 0.12 and 250 respectively. Plotting those values on our graph to the right seems to put our point in the center of the inner most ‘circle’.</p>
-<h1 id="3-Parameter-Learning"><a href="#3-Parameter-Learning" class="headerlink" title="3. Parameter Learning"></a>3. Parameter Learning</h1><h2 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>The algorithm called gradient descent for <strong>minimizing the cost function j().</strong> </p>
-<p>Gradient is a general algorithm.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.07.15_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.07.15_PM.png"></p>
-<p>The outline of Gradient descent algorithm:</p>
-<p>Understand the concept between Assignment and Truth assertion.</p>
-<p>Simultaneous update both parameters.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.29.22_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.29.22_PM.png"></p>
-<p><strong>Material:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.07_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.07_PM.png"></p>
-<p>We will know that we have succeed when our cost function is at the very bottom of the pits in our graph. when its values is the minimum. The red arrows show the minimum points in the graph.</p>
-<p>The way we do is by taking the derivative of our cost function. The slope of the tangent is the derivative at the point and it will give us a direction move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter α, which is called the learning rate.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.16_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.16_PM.png"></p>
-<h2 id="Gradient-Descent-Intuition"><a href="#Gradient-Descent-Intuition" class="headerlink" title="Gradient Descent Intuition"></a>Gradient Descent Intuition</h2><p>Apply gradient descent to minimize our squared cost function.</p>
-<p>Gradient descent can converge to local minimum, even with the learning rate a fixed.</p>
-<p>don’t need to change the a.</p>
-<p>Explain the Gradient descent with one variable:</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.02.06_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.02.06_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.29_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.29_PM.png"></p>
-<p>Features of Gradient descent:</p>
-<p>When reach the bottom of our convex function, the derivative will always be 0, thus we get the settled <em>θ1.</em></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.42_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.42_PM.png"></p>
-<h2 id="Gradient-Descent-For-Linear-Regression"><a href="#Gradient-Descent-For-Linear-Regression" class="headerlink" title="Gradient Descent For Linear Regression"></a>Gradient Descent For Linear Regression</h2><p>Simplify the function:</p>
-<p>When we apply the Gradient descent algorithm with Linear Regression Model, we will derived a new form of the gradient descent equation.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.37.54_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.37.54_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.10.52_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.10.52_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.16.44_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.16.44_PM.png"></p>
-<p>Convex function equals to Bowl shaped</p>
-<p>“Batch” Gradient Descent.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.24.15_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.24.15_PM.png"></p>
-<p>Material:</p>
-<p>A new form of the gradient descent equation:</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.41.58_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.41.58_PM.png"></p>
-<p>A single example of derivative.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.42.55_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.42.55_PM.png"></p>
-<p>So this is simply gradient descent on the original cost function j. This method looks at every example in the entire training set on every step, which is called <strong>batch gradient descent.</strong> Note that, while gradient descent can be susceptible to <strong>local minima</strong> in general. the optimization problem we have posed here for linear regression has only on global, and no other local, optima; thus gradient descent always converges to the global minimum. </p>
-<p>Indeed, j is a <strong>convex quadratic function</strong>. Here is an example of gradient descent as it run to minimize a quadratic function.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Untitled.png" alt="MachineLearning-Week1/Untitled.png"></p>
-<p>The ellipses shown above are the contours of a quadratic function. Also shown is the trajectory taken by gradient descent, which was initialized at (48,30). The x’s in the figure (joined by straight lines) mark the successive values of θ that gradient descent went through as it converged to its minimum.</p>
-<p>Rating Test:</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.31.33_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.31.33_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.35.23_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.35.23_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.37.06_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.37.06_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.01.07_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.01.07_PM.png"></p>
-<p>Choose C and D</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.53.44_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.53.44_PM.png"></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.09.25_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.09.25_PM.png"></p>
-<p><a target="_blank" rel="noopener" href="https://www.notion.so/1cd7ea007e554bc59178ca74776018d5">Answers</a></p>
-<h1 id="4-Linear-Algebra-Review"><a href="#4-Linear-Algebra-Review" class="headerlink" title="4. Linear Algebra Review"></a>4. Linear Algebra Review</h1><h2 id="Matrices-and-Vectors"><a href="#Matrices-and-Vectors" class="headerlink" title="Matrices and Vectors"></a>Matrices and Vectors</h2><p>Matrix: Rectangular array of numbers.</p>
-<p>Matrices are 2-dimensional arrays.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.28.31_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.28.31_AM.png"></p>
-<p>Vector: An n x 1 matrix.</p>
-<p>A vector is a matrix with one column and many rows.</p>
-<p>So vectors are a <strong>subset</strong> of matrices.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.34.06_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.34.06_AM.png"></p>
-<p><strong>Notation and terms[Essential]</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.40.18_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.40.18_AM.png"></p>
-<p><strong>Matlab commands below:</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% The ; denotes we are going back to a new row.</span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>; <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Initialize a vector </span></span><br><span class="line">v = [<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">% Get the dimension of the matrix A where m = rows and n = columns</span></span><br><span class="line">[m,n] = <span class="built_in">size</span>(A)</span><br><span class="line"></span><br><span class="line"><span class="comment">% You could also store it this way</span></span><br><span class="line">dim_A = <span class="built_in">size</span>(A)</span><br><span class="line"></span><br><span class="line"><span class="comment">% Get the dimension of the vector v </span></span><br><span class="line">dim_v = <span class="built_in">size</span>(v)</span><br><span class="line"></span><br><span class="line"><span class="comment">% Now let&#x27;s index into the 2nd row 3rd column of matrix A</span></span><br><span class="line">A_23 = A(<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="Addition-and-Scalar-Multiplication"><a href="#Addition-and-Scalar-Multiplication" class="headerlink" title="Addition and Scalar Multiplication"></a>Addition and Scalar Multiplication</h2><p><strong>Outline:</strong></p>
-<p>Matrix addition and subtraction, and how to multiply a matrix by a number. SO called Scalar Multiplication.</p>
-<p><strong>Matrix Addition:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.49.42_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.49.42_AM.png"></p>
-<p><strong>Scalar Multiplication:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.51.49_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.51.49_AM.png"></p>
-<p><strong>Combination of Operands:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.55.22_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.55.22_AM.png"></p>
-<p><strong>Matlab command:</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Initialize matrix A and B </span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>; <span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">B = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>; <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Initialize constant s </span></span><br><span class="line">s = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% See how element-wise addition works</span></span><br><span class="line">add_AB = A + B </span><br><span class="line"></span><br><span class="line"><span class="comment">% See how element-wise subtraction works</span></span><br><span class="line">sub_AB = A - B</span><br><span class="line"></span><br><span class="line"><span class="comment">% See how scalar multiplication works</span></span><br><span class="line">mult_As = A * s</span><br><span class="line"></span><br><span class="line"><span class="comment">% Divide A by s</span></span><br><span class="line">div_As = A / s</span><br><span class="line"></span><br><span class="line"><span class="comment">% What happens if we have a Matrix + scalar?</span></span><br><span class="line">add_As = A + s</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">5</span>   <span class="number">3</span>   <span class="number">2</span></span><br><span class="line"></span><br><span class="line">B =</span><br><span class="line">   <span class="number">1</span>   <span class="number">3</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br><span class="line">s =  <span class="number">2</span></span><br><span class="line"></span><br><span class="line">add_AB =</span><br><span class="line">   <span class="number">2</span>   <span class="number">5</span>   <span class="number">8</span></span><br><span class="line">   <span class="number">6</span>   <span class="number">4</span>   <span class="number">3</span></span><br><span class="line"></span><br><span class="line">sub_AB =</span><br><span class="line">   <span class="number">0</span>  <span class="number">-1</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">4</span>   <span class="number">2</span>   <span class="number">1</span></span><br><span class="line"></span><br><span class="line">mult_As =</span><br><span class="line">    <span class="number">2</span>    <span class="number">4</span>    <span class="number">8</span></span><br><span class="line">   <span class="number">10</span>    <span class="number">6</span>    <span class="number">4</span></span><br><span class="line"></span><br><span class="line">div_As =</span><br><span class="line">   <span class="number">0.50000</span>   <span class="number">1.00000</span>   <span class="number">2.00000</span></span><br><span class="line">   <span class="number">2.50000</span>   <span class="number">1.50000</span>   <span class="number">1.00000</span></span><br><span class="line"></span><br><span class="line">add_As =</span><br><span class="line">   <span class="number">3</span>   <span class="number">4</span>   <span class="number">6</span></span><br><span class="line">   <span class="number">7</span>   <span class="number">5</span>   <span class="number">4</span></span><br></pre></td></tr></table></figure>
-<h2 id="Matrix-Vector-Multiplication"><a href="#Matrix-Vector-Multiplication" class="headerlink" title="Matrix Vector Multiplication"></a>Matrix Vector Multiplication</h2><p>The number of columns of matrix must match the number of rows of vector.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.11.24_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.11.24_AM.png"></p>
-<p>m x n matrix multiply n x 1 matrix [n-dimensional vector] = m-dimensional vector</p>
-<h2 id="Matrix-Matrix-Multiplication"><a href="#Matrix-Matrix-Multiplication" class="headerlink" title="Matrix Matrix Multiplication"></a>Matrix Matrix Multiplication</h2><p><strong>Details:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.26.48_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.26.48_AM.png"></p>
-<p><strong>Apply:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.37.41_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.37.41_AM.png"></p>
-<p><strong>Matlab command:</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Initialize a 3 by 2 matrix </span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>; <span class="number">3</span>, <span class="number">4</span>;<span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Initialize a 2 by 1 matrix </span></span><br><span class="line">B = [<span class="number">1</span>; <span class="number">2</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">% We expect a resulting matrix of (3 by 2)*(2 by 1) = (3 by 1) </span></span><br><span class="line">mult_AB = A*B</span><br><span class="line"></span><br><span class="line"><span class="comment">% Make sure you understand why we got that result</span></span><br><span class="line">A =</span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span></span><br><span class="line">     <span class="number">3</span>     <span class="number">4</span></span><br><span class="line">     <span class="number">5</span>     <span class="number">6</span></span><br><span class="line"></span><br><span class="line">B =</span><br><span class="line">     <span class="number">1</span></span><br><span class="line">     <span class="number">2</span></span><br><span class="line"></span><br><span class="line">mult_AB =</span><br><span class="line">     <span class="number">5</span></span><br><span class="line">    <span class="number">11</span></span><br><span class="line">    <span class="number">17</span></span><br></pre></td></tr></table></figure>
-<h2 id="Matrix-Multiplication-Properties"><a href="#Matrix-Multiplication-Properties" class="headerlink" title="Matrix Multiplication Properties"></a>Matrix Multiplication Properties</h2><p><strong>Not commutative</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.42.59_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.42.59_AM.png"></p>
-<p><strong>Associative</strong></p>
-<p>(A <em> B) </em> C = A <em> (B </em> C)</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.46.25_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.46.25_AM.png"></p>
-<p><strong>Identity Matrix:</strong></p>
-<p>The identity matrix of size n is the n x n square matrix <strong>with ones on the main diagonal and zeros elsewhere.<br>Details of Identity Matrix:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.55.37_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.55.37_AM.png"></p>
-<h2 id="Inverse-and-Transpose"><a href="#Inverse-and-Transpose" class="headerlink" title="Inverse and Transpose"></a>Inverse and Transpose</h2><p>Start by how it relates to real numbers.</p>
-<p><strong>Inverse Matrix:</strong></p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.07.41_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.07.41_AM.png"></p>
-<ul>
-<li>Matrices that don’t have an inverse are <strong>“singular” or “degenerate”</strong></li>
-</ul>
-<p>So how can we get the inverse matrix?</p>
-<p>Sometimes you can compute inverses by hand but almost no one does that those day. It turns out there is very good <strong>numerical software</strong> for taking a matrix and computing.</p>
-<p><strong>Matrix Transpose:</strong></p>
-<p>The transpose of a matrix is an operator which flips a matrix over its diagonal.</p>
-<p><img src="https://superming.life/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.14.30_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.14.30_AM.png"></p>
-<p>Matlab Command</p>
-<h2 id><a href="#" class="headerlink" title></a><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Initialize matrix A </span></span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>;<span class="number">0</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">0</span>,<span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Transpose A </span></span><br><span class="line">A_trans = A&#x27; </span><br><span class="line"></span><br><span class="line"><span class="comment">% Take the inverse of A </span></span><br><span class="line">A_inv = inv(A)</span><br><span class="line"></span><br><span class="line"><span class="comment">% What is A^(-1)*A? </span></span><br><span class="line">A_invA = inv(A)*A</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span>     <span class="number">0</span></span><br><span class="line">     <span class="number">0</span>     <span class="number">5</span>     <span class="number">6</span></span><br><span class="line">     <span class="number">7</span>     <span class="number">0</span>     <span class="number">9</span></span><br><span class="line">A_trans =</span><br><span class="line"></span><br><span class="line">     <span class="number">1</span>     <span class="number">0</span>     <span class="number">7</span></span><br><span class="line">     <span class="number">2</span>     <span class="number">5</span>     <span class="number">0</span></span><br><span class="line">     <span class="number">0</span>     <span class="number">6</span>     <span class="number">9</span></span><br><span class="line">A_inv =</span><br><span class="line"></span><br><span class="line">    <span class="number">0.3488</span>   <span class="number">-0.1395</span>    <span class="number">0.0930</span></span><br><span class="line">    <span class="number">0.3256</span>    <span class="number">0.0698</span>   <span class="number">-0.0465</span></span><br><span class="line">   <span class="number">-0.2713</span>    <span class="number">0.1085</span>    <span class="number">0.0388</span></span><br><span class="line">A_invA =</span><br><span class="line"></span><br><span class="line">    <span class="number">1.0000</span>   <span class="number">-0.0000</span>    <span class="number">0.0000</span></span><br><span class="line">    <span class="number">0.0000</span>    <span class="number">1.0000</span>   <span class="number">-0.0000</span></span><br><span class="line">   <span class="number">-0.0000</span>         <span class="number">0</span>    <span class="number">1.0000</span></span><br></pre></td></tr></table></figure></h2><h1 id="FAQ-for-Week1"><a href="#FAQ-for-Week1" class="headerlink" title="FAQ for Week1:"></a>FAQ for Week1:</h1><p><strong>Q1: In the cost function, why don’t we use absolute value(or mod(), or some other function) instead of the squared error?</strong></p>
-<p>The absolute value has some bad characteristics for  minimization.</p>
-<ul>
-<li>The gradient is not continuous because the absolute value function is not differentiable at its minimum point.</li>
-<li>It does not emphasize the correction of large errors.</li>
-<li>The abs() function is also not very mathematically efficient.</li>
-</ul>
-<p>However, the squared error cost function has some very desirable characteristics:</p>
-<ul>
-<li>The cost can be computed very efficiently.</li>
-<li>Its partial derivative is easily computed.</li>
-<li>Its partial derivative is continuous.</li>
-</ul>
-<p><strong>Q2: How does the Cocktail Party problem work?</strong></p>
-<p>It isn’t clustering.</p>
-<p>Clustering would not preserve the time-sequence of the sound samples, so the results would not sound like speech.</p>
-<p>The method used is Principal Component Analysis. This method is a mathematical trick that takes two sets of correlated data, and returns two new sets of data that are not correlated. The sequence of the data is retained.</p>
-<p>If the data is audio recordings, the result has the effect to the human ear of sounding like two separate audio tracks.</p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="https://superming.life/tags/Machine-Learning/" rel="tag"># Machine-Learning</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="https://superming.life/2020/10/23/%E4%B8%8D%E8%83%BD%E6%89%BF%E5%8F%97%E7%94%9F%E5%91%BD%E4%B9%8B%E8%BD%BB%20/" rel="next" title="《不能承受生命之轻》">
-                <i class="fa fa-chevron-left"></i> 《不能承受生命之轻》
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="https://superming.life/2020/11/06/2001%E5%A4%AA%E7%A9%BA%E6%BC%AB%E6%B8%B8/" rel="prev" title="2001太空漫游">
-                2001太空漫游 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
+  <aside class="sidebar">
 
-          </div>
-          
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="https://superming.life/[object%20Object]"
-                alt="" />
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="https://superming.life/archives/">
-              
-                  <span class="site-state-item-count">29</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="https://superming.life/categories/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="https://superming.life/tags/index.html">
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="https://superming.life/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/AlenZhang-Dev" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-fab fa-github"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:supermingzero@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-fa fa-envelope"></i></a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Machine-Learning-Week-1"><span class="nav-number">1.</span> <span class="nav-text">Machine-Learning - Week 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Introduction"><span class="nav-number">2.</span> <span class="nav-text">1. Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What%E2%80%99s-Machine-Learning"><span class="nav-number">2.1.</span> <span class="nav-text">What’s Machine Learning?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Supervised-Learning"><span class="nav-number">2.2.</span> <span class="nav-text">Supervised Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Learning"><span class="nav-number">2.3.</span> <span class="nav-text">Unsupervised Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Model-and-Cost-Function"><span class="nav-number">3.</span> <span class="nav-text">2. Model and Cost Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Representation"><span class="nav-number">3.0.1.</span> <span class="nav-text">Model Representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cost-Function"><span class="nav-number">3.0.2.</span> <span class="nav-text">Cost Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cost-Function-Intuition-I"><span class="nav-number">3.1.</span> <span class="nav-text">Cost Function Intuition I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cost-function-Intuition-II"><span class="nav-number">3.2.</span> <span class="nav-text">Cost function - Intuition II</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Parameter-Learning"><span class="nav-number">4.</span> <span class="nav-text">3. Parameter Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent"><span class="nav-number">4.1.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-Intuition"><span class="nav-number">4.2.</span> <span class="nav-text">Gradient Descent Intuition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-For-Linear-Regression"><span class="nav-number">4.3.</span> <span class="nav-text">Gradient Descent For Linear Regression</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Linear-Algebra-Review"><span class="nav-number">5.</span> <span class="nav-text">4. Linear Algebra Review</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrices-and-Vectors"><span class="nav-number">5.1.</span> <span class="nav-text">Matrices and Vectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Addition-and-Scalar-Multiplication"><span class="nav-number">5.2.</span> <span class="nav-text">Addition and Scalar Multiplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Vector-Multiplication"><span class="nav-number">5.3.</span> <span class="nav-text">Matrix Vector Multiplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Matrix-Multiplication"><span class="nav-number">5.4.</span> <span class="nav-text">Matrix Matrix Multiplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Multiplication-Properties"><span class="nav-number">5.5.</span> <span class="nav-text">Matrix Multiplication Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-and-Transpose"><span class="nav-number">5.6.</span> <span class="nav-text">Inverse and Transpose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.7.</span> <span class="nav-text">1
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Machine-Learning-Week-1"><span class="nav-number">1.</span> <span class="nav-text">Machine-Learning - Week 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Introduction"><span class="nav-number">2.</span> <span class="nav-text">1. Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What%E2%80%99s-Machine-Learning"><span class="nav-number">2.1.</span> <span class="nav-text">What’s Machine Learning?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Supervised-Learning"><span class="nav-number">2.2.</span> <span class="nav-text">Supervised Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Learning"><span class="nav-number">2.3.</span> <span class="nav-text">Unsupervised Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Model-and-Cost-Function"><span class="nav-number">3.</span> <span class="nav-text">2. Model and Cost Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Representation"><span class="nav-number">3.0.1.</span> <span class="nav-text">Model Representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cost-Function"><span class="nav-number">3.0.2.</span> <span class="nav-text">Cost Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cost-Function-Intuition-I"><span class="nav-number">3.1.</span> <span class="nav-text">Cost Function Intuition I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cost-function-Intuition-II"><span class="nav-number">3.2.</span> <span class="nav-text">Cost function - Intuition II</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Parameter-Learning"><span class="nav-number">4.</span> <span class="nav-text">3. Parameter Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent"><span class="nav-number">4.1.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-Intuition"><span class="nav-number">4.2.</span> <span class="nav-text">Gradient Descent Intuition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-For-Linear-Regression"><span class="nav-number">4.3.</span> <span class="nav-text">Gradient Descent For Linear Regression</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Linear-Algebra-Review"><span class="nav-number">5.</span> <span class="nav-text">4. Linear Algebra Review</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrices-and-Vectors"><span class="nav-number">5.1.</span> <span class="nav-text">Matrices and Vectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Addition-and-Scalar-Multiplication"><span class="nav-number">5.2.</span> <span class="nav-text">Addition and Scalar Multiplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Vector-Multiplication"><span class="nav-number">5.3.</span> <span class="nav-text">Matrix Vector Multiplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Matrix-Multiplication"><span class="nav-number">5.4.</span> <span class="nav-text">Matrix Matrix Multiplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Multiplication-Properties"><span class="nav-number">5.5.</span> <span class="nav-text">Matrix Multiplication Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-and-Transpose"><span class="nav-number">5.6.</span> <span class="nav-text">Inverse and Transpose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.7.</span> <span class="nav-text">1
 2
 3
 4
@@ -933,335 +275,660 @@ A_invA &#x3D;
     0.0000    1.0000   -0.0000
    -0.0000         0    1.0000
 </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ-for-Week1"><span class="nav-number">6.</span> <span class="nav-text">FAQ for Week1:</span></a></li></ol></div>
-            
+        </div>
+        <!--/noindex-->
 
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-[object Object]"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">AlenZhang</span>
-
-  
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AlenZhang"
+      src="/images/ninja2.jpg">
+  <p class="site-author-name" itemprop="name">AlenZhang</p>
+  <div class="site-description" itemprop="description"></div>
 </div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-
-
-
-
-
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.7k字</span>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
 </div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
   </div>
 
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
   
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superming.life/2020/11/01/MachineLearning-Week1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlenZhang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine-Learning Andrew Ng
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-11-01 12:10:55" itemprop="dateCreated datePublished" datetime="2020-11-01T12:10:55+08:00">2020-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2020/11/01/MachineLearning-Week1/" class="post-meta-item leancloud_visitors" data-flag-title="Machine-Learning Andrew Ng" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>11 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Machine-Learning-Week-1"><a href="#Machine-Learning-Week-1" class="headerlink" title="Machine-Learning - Week 1"></a>Machine-Learning - Week 1</h1><p>Github link: <a target="_blank" rel="noopener" href="https://github.com/AlenZhang-Dev/MachineLearning-Stanford">https://github.com/AlenZhang-Dev/MachineLearning-Stanford</a></p>
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>Introduce the core idea of teaching a computer to learn concepts using data - without being explicitly programmed.</p>
+<p><strong>linear regression with one variable.</strong> Discuss the application of linear regression to housing price prediction, present the notion of a cost function, also introduce the gradient descent method for learning.</p>
+<p>The course require the knowledge of l<strong>inear algebra</strong> concepts.</p>
+<!---more-->
+<hr>
+<h2 id="What’s-Machine-Learning"><a href="#What’s-Machine-Learning" class="headerlink" title="What’s Machine Learning?"></a>What’s Machine Learning?</h2><p>Andrew NG: Machine Learning is the science of getting computers to learn, without being explicitly programmed.</p>
+<ul>
+<li>Grew out of work in AI</li>
+<li>New capability for computers</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Database mining<ul>
+<li>Large datasets from growth of automation/web</li>
+<li>E.g., Web click data, medical records, biology, engineering</li>
+</ul>
+</li>
+<li><p>Applications can’t program by hand.</p>
+<ul>
+<li>E.g., Autonomous helicopter, handwriting recognition, most of Natural Language Processing(NLP), Computer Vision.</li>
+</ul>
+</li>
+<li><p>Self-customizing programs</p>
+<p>  E.g., Amazon, Netflix product recommendations.</p>
+</li>
+<li><p>Understanding human learning(brain, real AI).</p>
+</li>
+</ul>
+<p><strong>What’s Machine Learning?[Definition]</strong></p>
+<p>Two definitions of Machine Learning are offered.</p>
+<ul>
+<li>Arthur Samuel described it as: <strong>“the field of study that gives computers the ability to learn without being explicitly programmed.”</strong> This is an older, informal definition.</li>
+<li>Tom Mitchell provides a more modern definition: <strong>“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</strong></li>
+</ul>
+<p>Examples:</p>
+<p>playing checkers.</p>
+<p>E = the experience of playing many games of checkers</p>
+<p>T = the task of playing checkers.</p>
+<p>P = the probability that the program will win the next game.</p>
+<p>Suppose your email program watches which emails you do or do not mark as spam, and based on that learns how to better filter spam. Explain the E T P according to Tom Mitchell’s definiation.</p>
+<p>E = Watching you label emails as spam or not spam.</p>
+<p>T = Classify emails as spam or not spam.</p>
+<p>P = The number(or fraction) of emails correctly classified as spam/not spam.</p>
+<p>In general, any machine learning problem can be assigned to one of two broad classifications:</p>
+<p><strong>Supervised learning and Unsupervised learning.</strong></p>
+<p>Machine Learning algorithms </p>
+<ul>
+<li>Supervised Learning</li>
+<li>Unsupervised Learning</li>
+</ul>
+<p>Others: Reinforcement Learning, recommender systems.</p>
+<h2 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>In supervised learning, we are given a data set and already know what our correct output should look like, <strong>having the idea that there is a relationship between the input and the output.</strong></p>
+<p>Supervised learning problems are categorized into “<strong>regression</strong>“ and “<strong>classification</strong>“ problems. </p>
+<p>In a regression problem, we are trying to predict results within a <strong>continuous output</strong>, meaning that we are trying to map input variables to some continuous function. </p>
+<p>In a classification problem, we are instead trying to predict results in a <strong>discrete output[离散输出]</strong>. In other words, we are trying to map input variables into discrete categories.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.50.40_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.50.40_PM.png"></p>
+<p>Regression exp</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.51.03_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_3.51.03_PM.png"></p>
+<p>Classification</p>
+<p><strong>Example 1:</strong></p>
+<p>Given data about the size of houses on the real estate market, try to predict their price. Price as a function of size is a continuous output, so this is a regression problem.</p>
+<p>We could turn this example into a classification problem by instead making our output about whether the house “sells for more or less than the asking price.” Here we are classifying the houses based on price into two discrete categories.</p>
+<p><strong>Example 2</strong>:</p>
+<p>(a) Regression - Given a picture of a person, we have to predict their age on the basis of the given picture</p>
+<p>(b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.</p>
+<p>Practice：</p>
+<p>You’re running a company, and you want to develop learning algorithms to address each of two problems. </p>
+<p>Problem 1: You have a large inventory of identical items. You want to predict how many of these items will sell over the next 3 months.</p>
+<p>Problem 2: You’d like software to examine individual customer accounts, and for each account decide if it has been hacked/compromised. Should you treat these as classification or as regression problems?</p>
+<p>Answer: </p>
+<p>Treat problem 1 as a regression problem, problem 2 as a classification problem.</p>
+<p>Explain:</p>
+<p>First one : we have thousand of items [Continuous]</p>
+<p>Second one: 0 - not hacked, 1 - hacked.[Hacked or not, Discrete]</p>
+<h2 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h2><p>Unsupervised learning is a type of machine learning that looks for previously undetected patterns in a data set with no pre-existing labels and with a minimum of human supervision.    —- Wikipedia</p>
+<p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
+<p>We can derive this structure by clustering the data based on relationships among the variables in the data.</p>
+<p>With unsupervised learning there is no feedback based on the prediction results.</p>
+<p><strong>Example:</strong></p>
+<p>Clustering: Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.</p>
+<p>Non-clustering: The “Cocktail Party Algorithm”, allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cocktail_party_effect">cocktail party</a>).</p>
+<p>The Following examples using an unsupervised learning algorithm: </p>
+<p>Given a set of news articles found on web, group them into sets of articles about the same stories.</p>
+<p>Given a database of customer data, automatically discover market segments and group customers into different market segments.</p>
+<h1 id="2-Model-and-Cost-Function"><a href="#2-Model-and-Cost-Function" class="headerlink" title="2. Model and Cost Function"></a>2. Model and Cost Function</h1><h3 id="Model-Representation"><a href="#Model-Representation" class="headerlink" title="Model Representation"></a>Model Representation</h3><p><strong>Notes:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.03.23_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.03.23_PM.png"></p>
+<p>Linear regression model with only one variable[Also called univariate linear regression]</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.10.45_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.10.45_PM.png"></p>
+<p><strong>Material:</strong></p>
+<p>To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function h : X → Y so that h(x) is a “good” predictor for the corresponding value of y. For historical reasons, this function h is called a <strong>hypothesis</strong>. </p>
+<p>When the target variable that we’re trying to predict is continuous, such as in our housing example, we call the learning problem a regression problem. When y can take on only a small number of discrete values (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a classification problem.</p>
+<h3 id="Cost-Function"><a href="#Cost-Function" class="headerlink" title="Cost Function"></a>Cost Function</h3><p><strong>Notes:</strong></p>
+<p>How to choose the parameters?</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.17.14_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.17.14_PM.png"></p>
+<p><strong>Material</strong>:</p>
+<p>We can measure the accuracy of our hypothesis function by using a <strong>cost function</strong>. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x’s and the actual output y’s.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.06.02_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.06.02_PM.png"></p>
+<p>MSE: the most common one used for regression problems.</p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Mean_squared_error">Mean squared error</a></p>
+<h2 id="Cost-Function-Intuition-I"><a href="#Cost-Function-Intuition-I" class="headerlink" title="Cost Function Intuition I"></a>Cost Function Intuition I</h2><p>1.Set the theta(0) to zero.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.58.03_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_6.58.03_PM.png"></p>
+<p>2.The optimization objective for our learning algorithm is we want to choose the value of theta (1).  The Minimizes J(theat(1)).</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.12_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.12_PM.png"></p>
+<p>Material:</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.36_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.36_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.52_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_7.39.52_PM.png"></p>
+<h2 id="Cost-function-Intuition-II"><a href="#Cost-function-Intuition-II" class="headerlink" title="Cost function - Intuition II"></a>Cost function - Intuition II</h2><ol>
+<li>Keep both two parameters of the cost function.</li>
+</ol>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.42.52_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.42.52_PM.png"></p>
+<p>The cost function may be look like below:</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.43.16_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.43.16_PM.png"></p>
+<p>Contour plots / figure</p>
+<p>A contour plot is a graph that contains many contour lines. A contour line of a two variable function has constant value at all points of same line. An example of such a graph is the one to the right below:</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.46.54_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.46.54_PM.png"></p>
+<p>3 green x have the same cost.</p>
+<p>When θ0=360 and θ1 = 0, the value of J(θ0, θ1) in the contour plot gets closer to the center thus reducing the cost function error. Now Giving our hypothesis function a slightly positive slope result in a better fit of the data.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.57.37_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_4.57.37_PM.png"></p>
+<p>The graph above minimizes the cost function as much as possible and consequently, the result of θ1 and θ0 tend to be around 0.12 and 250 respectively. Plotting those values on our graph to the right seems to put our point in the center of the inner most ‘circle’.</p>
+<h1 id="3-Parameter-Learning"><a href="#3-Parameter-Learning" class="headerlink" title="3. Parameter Learning"></a>3. Parameter Learning</h1><h2 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>The algorithm called gradient descent for <strong>minimizing the cost function j().</strong> </p>
+<p>Gradient is a general algorithm.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.07.15_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.07.15_PM.png"></p>
+<p>The outline of Gradient descent algorithm:</p>
+<p>Understand the concept between Assignment and Truth assertion.</p>
+<p>Simultaneous update both parameters.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.29.22_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.29.22_PM.png"></p>
+<p><strong>Material:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.07_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.07_PM.png"></p>
+<p>We will know that we have succeed when our cost function is at the very bottom of the pits in our graph. when its values is the minimum. The red arrows show the minimum points in the graph.</p>
+<p>The way we do is by taking the derivative of our cost function. The slope of the tangent is the derivative at the point and it will give us a direction move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter α, which is called the learning rate.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.16_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_8.31.16_PM.png"></p>
+<h2 id="Gradient-Descent-Intuition"><a href="#Gradient-Descent-Intuition" class="headerlink" title="Gradient Descent Intuition"></a>Gradient Descent Intuition</h2><p>Apply gradient descent to minimize our squared cost function.</p>
+<p>Gradient descent can converge to local minimum, even with the learning rate a fixed.</p>
+<p>don’t need to change the a.</p>
+<p>Explain the Gradient descent with one variable:</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.02.06_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.02.06_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.29_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.29_PM.png"></p>
+<p>Features of Gradient descent:</p>
+<p>When reach the bottom of our convex function, the derivative will always be 0, thus we get the settled <em>θ1.</em></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.42_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.01.42_PM.png"></p>
+<h2 id="Gradient-Descent-For-Linear-Regression"><a href="#Gradient-Descent-For-Linear-Regression" class="headerlink" title="Gradient Descent For Linear Regression"></a>Gradient Descent For Linear Regression</h2><p>Simplify the function:</p>
+<p>When we apply the Gradient descent algorithm with Linear Regression Model, we will derived a new form of the gradient descent equation.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.37.54_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.37.54_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.10.52_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.10.52_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.16.44_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.16.44_PM.png"></p>
+<p>Convex function equals to Bowl shaped</p>
+<p>“Batch” Gradient Descent.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.24.15_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-27_at_9.24.15_PM.png"></p>
+<p>Material:</p>
+<p>A new form of the gradient descent equation:</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.41.58_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.41.58_PM.png"></p>
+<p>A single example of derivative.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.42.55_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_6.42.55_PM.png"></p>
+<p>So this is simply gradient descent on the original cost function j. This method looks at every example in the entire training set on every step, which is called <strong>batch gradient descent.</strong> Note that, while gradient descent can be susceptible to <strong>local minima</strong> in general. the optimization problem we have posed here for linear regression has only on global, and no other local, optima; thus gradient descent always converges to the global minimum. </p>
+<p>Indeed, j is a <strong>convex quadratic function</strong>. Here is an example of gradient descent as it run to minimize a quadratic function.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Untitled.png" alt="MachineLearning-Week1/Untitled.png"></p>
+<p>The ellipses shown above are the contours of a quadratic function. Also shown is the trajectory taken by gradient descent, which was initialized at (48,30). The x’s in the figure (joined by straight lines) mark the successive values of θ that gradient descent went through as it converged to its minimum.</p>
+<p>Rating Test:</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.31.33_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.31.33_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.35.23_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.35.23_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.37.06_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.37.06_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.01.07_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.01.07_PM.png"></p>
+<p>Choose C and D</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.53.44_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_8.53.44_PM.png"></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.09.25_PM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-28_at_9.09.25_PM.png"></p>
+<p><a target="_blank" rel="noopener" href="https://www.notion.so/1cd7ea007e554bc59178ca74776018d5">Answers</a></p>
+<h1 id="4-Linear-Algebra-Review"><a href="#4-Linear-Algebra-Review" class="headerlink" title="4. Linear Algebra Review"></a>4. Linear Algebra Review</h1><h2 id="Matrices-and-Vectors"><a href="#Matrices-and-Vectors" class="headerlink" title="Matrices and Vectors"></a>Matrices and Vectors</h2><p>Matrix: Rectangular array of numbers.</p>
+<p>Matrices are 2-dimensional arrays.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.28.31_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.28.31_AM.png"></p>
+<p>Vector: An n x 1 matrix.</p>
+<p>A vector is a matrix with one column and many rows.</p>
+<p>So vectors are a <strong>subset</strong> of matrices.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.34.06_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.34.06_AM.png"></p>
+<p><strong>Notation and terms[Essential]</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.40.18_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.40.18_AM.png"></p>
+<p><strong>Matlab commands below:</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% The ; denotes we are going back to a new row.</span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>; <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Initialize a vector </span></span><br><span class="line">v = [<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">% Get the dimension of the matrix A where m = rows and n = columns</span></span><br><span class="line">[m,n] = <span class="built_in">size</span>(A)</span><br><span class="line"></span><br><span class="line"><span class="comment">% You could also store it this way</span></span><br><span class="line">dim_A = <span class="built_in">size</span>(A)</span><br><span class="line"></span><br><span class="line"><span class="comment">% Get the dimension of the vector v </span></span><br><span class="line">dim_v = <span class="built_in">size</span>(v)</span><br><span class="line"></span><br><span class="line"><span class="comment">% Now let&#x27;s index into the 2nd row 3rd column of matrix A</span></span><br><span class="line">A_23 = A(<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Addition-and-Scalar-Multiplication"><a href="#Addition-and-Scalar-Multiplication" class="headerlink" title="Addition and Scalar Multiplication"></a>Addition and Scalar Multiplication</h2><p><strong>Outline:</strong></p>
+<p>Matrix addition and subtraction, and how to multiply a matrix by a number. SO called Scalar Multiplication.</p>
+<p><strong>Matrix Addition:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.49.42_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.49.42_AM.png"></p>
+<p><strong>Scalar Multiplication:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.51.49_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.51.49_AM.png"></p>
+<p><strong>Combination of Operands:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.55.22_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_8.55.22_AM.png"></p>
+<p><strong>Matlab command:</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Initialize matrix A and B </span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>; <span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">B = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>; <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Initialize constant s </span></span><br><span class="line">s = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% See how element-wise addition works</span></span><br><span class="line">add_AB = A + B </span><br><span class="line"></span><br><span class="line"><span class="comment">% See how element-wise subtraction works</span></span><br><span class="line">sub_AB = A - B</span><br><span class="line"></span><br><span class="line"><span class="comment">% See how scalar multiplication works</span></span><br><span class="line">mult_As = A * s</span><br><span class="line"></span><br><span class="line"><span class="comment">% Divide A by s</span></span><br><span class="line">div_As = A / s</span><br><span class="line"></span><br><span class="line"><span class="comment">% What happens if we have a Matrix + scalar?</span></span><br><span class="line">add_As = A + s</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">5</span>   <span class="number">3</span>   <span class="number">2</span></span><br><span class="line"></span><br><span class="line">B =</span><br><span class="line">   <span class="number">1</span>   <span class="number">3</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br><span class="line">s =  <span class="number">2</span></span><br><span class="line"></span><br><span class="line">add_AB =</span><br><span class="line">   <span class="number">2</span>   <span class="number">5</span>   <span class="number">8</span></span><br><span class="line">   <span class="number">6</span>   <span class="number">4</span>   <span class="number">3</span></span><br><span class="line"></span><br><span class="line">sub_AB =</span><br><span class="line">   <span class="number">0</span>  <span class="number">-1</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">4</span>   <span class="number">2</span>   <span class="number">1</span></span><br><span class="line"></span><br><span class="line">mult_As =</span><br><span class="line">    <span class="number">2</span>    <span class="number">4</span>    <span class="number">8</span></span><br><span class="line">   <span class="number">10</span>    <span class="number">6</span>    <span class="number">4</span></span><br><span class="line"></span><br><span class="line">div_As =</span><br><span class="line">   <span class="number">0.50000</span>   <span class="number">1.00000</span>   <span class="number">2.00000</span></span><br><span class="line">   <span class="number">2.50000</span>   <span class="number">1.50000</span>   <span class="number">1.00000</span></span><br><span class="line"></span><br><span class="line">add_As =</span><br><span class="line">   <span class="number">3</span>   <span class="number">4</span>   <span class="number">6</span></span><br><span class="line">   <span class="number">7</span>   <span class="number">5</span>   <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<h2 id="Matrix-Vector-Multiplication"><a href="#Matrix-Vector-Multiplication" class="headerlink" title="Matrix Vector Multiplication"></a>Matrix Vector Multiplication</h2><p>The number of columns of matrix must match the number of rows of vector.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.11.24_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.11.24_AM.png"></p>
+<p>m x n matrix multiply n x 1 matrix [n-dimensional vector] = m-dimensional vector</p>
+<h2 id="Matrix-Matrix-Multiplication"><a href="#Matrix-Matrix-Multiplication" class="headerlink" title="Matrix Matrix Multiplication"></a>Matrix Matrix Multiplication</h2><p><strong>Details:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.26.48_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.26.48_AM.png"></p>
+<p><strong>Apply:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.37.41_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.37.41_AM.png"></p>
+<p><strong>Matlab command:</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Initialize a 3 by 2 matrix </span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>; <span class="number">3</span>, <span class="number">4</span>;<span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Initialize a 2 by 1 matrix </span></span><br><span class="line">B = [<span class="number">1</span>; <span class="number">2</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">% We expect a resulting matrix of (3 by 2)*(2 by 1) = (3 by 1) </span></span><br><span class="line">mult_AB = A*B</span><br><span class="line"></span><br><span class="line"><span class="comment">% Make sure you understand why we got that result</span></span><br><span class="line">A =</span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span></span><br><span class="line">     <span class="number">3</span>     <span class="number">4</span></span><br><span class="line">     <span class="number">5</span>     <span class="number">6</span></span><br><span class="line"></span><br><span class="line">B =</span><br><span class="line">     <span class="number">1</span></span><br><span class="line">     <span class="number">2</span></span><br><span class="line"></span><br><span class="line">mult_AB =</span><br><span class="line">     <span class="number">5</span></span><br><span class="line">    <span class="number">11</span></span><br><span class="line">    <span class="number">17</span></span><br></pre></td></tr></table></figure>
+<h2 id="Matrix-Multiplication-Properties"><a href="#Matrix-Multiplication-Properties" class="headerlink" title="Matrix Multiplication Properties"></a>Matrix Multiplication Properties</h2><p><strong>Not commutative</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.42.59_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.42.59_AM.png"></p>
+<p><strong>Associative</strong></p>
+<p>(A <em> B) </em> C = A <em> (B </em> C)</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.46.25_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.46.25_AM.png"></p>
+<p><strong>Identity Matrix:</strong></p>
+<p>The identity matrix of size n is the n x n square matrix <strong>with ones on the main diagonal and zeros elsewhere.<br>Details of Identity Matrix:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.55.37_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_9.55.37_AM.png"></p>
+<h2 id="Inverse-and-Transpose"><a href="#Inverse-and-Transpose" class="headerlink" title="Inverse and Transpose"></a>Inverse and Transpose</h2><p>Start by how it relates to real numbers.</p>
+<p><strong>Inverse Matrix:</strong></p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.07.41_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.07.41_AM.png"></p>
+<ul>
+<li>Matrices that don’t have an inverse are <strong>“singular” or “degenerate”</strong></li>
+</ul>
+<p>So how can we get the inverse matrix?</p>
+<p>Sometimes you can compute inverses by hand but almost no one does that those day. It turns out there is very good <strong>numerical software</strong> for taking a matrix and computing.</p>
+<p><strong>Matrix Transpose:</strong></p>
+<p>The transpose of a matrix is an operator which flips a matrix over its diagonal.</p>
+<p><img src="/2020/11/01/MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.14.30_AM.png" alt="MachineLearning-Week1/Screen_Shot_2020-10-29_at_10.14.30_AM.png"></p>
+<p>Matlab Command</p>
+<h2 id><a href="#" class="headerlink" title></a><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Initialize matrix A </span></span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>;<span class="number">0</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">0</span>,<span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">% Transpose A </span></span><br><span class="line">A_trans = A&#x27; </span><br><span class="line"></span><br><span class="line"><span class="comment">% Take the inverse of A </span></span><br><span class="line">A_inv = inv(A)</span><br><span class="line"></span><br><span class="line"><span class="comment">% What is A^(-1)*A? </span></span><br><span class="line">A_invA = inv(A)*A</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span>     <span class="number">0</span></span><br><span class="line">     <span class="number">0</span>     <span class="number">5</span>     <span class="number">6</span></span><br><span class="line">     <span class="number">7</span>     <span class="number">0</span>     <span class="number">9</span></span><br><span class="line">A_trans =</span><br><span class="line"></span><br><span class="line">     <span class="number">1</span>     <span class="number">0</span>     <span class="number">7</span></span><br><span class="line">     <span class="number">2</span>     <span class="number">5</span>     <span class="number">0</span></span><br><span class="line">     <span class="number">0</span>     <span class="number">6</span>     <span class="number">9</span></span><br><span class="line">A_inv =</span><br><span class="line"></span><br><span class="line">    <span class="number">0.3488</span>   <span class="number">-0.1395</span>    <span class="number">0.0930</span></span><br><span class="line">    <span class="number">0.3256</span>    <span class="number">0.0698</span>   <span class="number">-0.0465</span></span><br><span class="line">   <span class="number">-0.2713</span>    <span class="number">0.1085</span>    <span class="number">0.0388</span></span><br><span class="line">A_invA =</span><br><span class="line"></span><br><span class="line">    <span class="number">1.0000</span>   <span class="number">-0.0000</span>    <span class="number">0.0000</span></span><br><span class="line">    <span class="number">0.0000</span>    <span class="number">1.0000</span>   <span class="number">-0.0000</span></span><br><span class="line">   <span class="number">-0.0000</span>         <span class="number">0</span>    <span class="number">1.0000</span></span><br></pre></td></tr></table></figure></h2><h1 id="FAQ-for-Week1"><a href="#FAQ-for-Week1" class="headerlink" title="FAQ for Week1:"></a>FAQ for Week1:</h1><p><strong>Q1: In the cost function, why don’t we use absolute value(or mod(), or some other function) instead of the squared error?</strong></p>
+<p>The absolute value has some bad characteristics for  minimization.</p>
+<ul>
+<li>The gradient is not continuous because the absolute value function is not differentiable at its minimum point.</li>
+<li>It does not emphasize the correction of large errors.</li>
+<li>The abs() function is also not very mathematically efficient.</li>
+</ul>
+<p>However, the squared error cost function has some very desirable characteristics:</p>
+<ul>
+<li>The cost can be computed very efficiently.</li>
+<li>Its partial derivative is easily computed.</li>
+<li>Its partial derivative is continuous.</li>
+</ul>
+<p><strong>Q2: How does the Cocktail Party problem work?</strong></p>
+<p>It isn’t clustering.</p>
+<p>Clustering would not preserve the time-sequence of the sound samples, so the results would not sound like speech.</p>
+<p>The method used is Principal Component Analysis. This method is a mathematical trick that takes two sets of correlated data, and returns two new sets of data that are not correlated. The sequence of the data is retained.</p>
+<p>If the data is audio recordings, the result has the effect to the human ear of sounding like two separate audio tracks.</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/28/SSD-Notes/" rel="bookmark">Dive into SSD</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/03/Ubuntu18.04+Tensorflow-1.x/" rel="bookmark">Ubuntu18.04 Tensorflow 1.x</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/11/24/深度学习基础/" rel="bookmark">深度学习基础1</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Machine-Learning/" rel="tag"># Machine-Learning</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/06/2001%E5%A4%AA%E7%A9%BA%E6%BC%AB%E6%B8%B8/" rel="prev" title="2001太空漫游">
+                  <i class="fa fa-chevron-left"></i> 2001太空漫游
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/23/%E4%B8%8D%E8%83%BD%E6%89%BF%E5%8F%97%E7%94%9F%E5%91%BD%E4%B9%8B%E8%BD%BB%20/" rel="next" title="《不能承受生命之轻》">
+                  《不能承受生命之轻》 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-alien"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlenZhang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">200k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:02</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+
+
+  
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            const target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz","app_key":"GvmFzmeE5nuRcXTSQNH3icVD","server_url":null,"security":true};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+    <div class="pjax">
+
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
   }
 </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="https://superming.life/js/src/utils.js?v="></script>
-
-  <script type="text/javascript" src="https://superming.life/js/src/motion.js?v="></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="https://superming.life/js/src/scrollspy.js?v="></script>
-<script type="text/javascript" src="https://superming.life/js/src/post-details.js?v="></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="https://superming.life/js/src/bootstrap.js?v="></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz',
-        appKey: 'GvmFzmeE5nuRcXTSQNH3icVD',
-        placeholder: '',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'5' || 10,
-    });
-  </script>
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz", "GvmFzmeE5nuRcXTSQNH3icVD");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    </div>
 </body>
 </html>

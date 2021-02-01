@@ -1,82 +1,28 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="https://superming.life/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="https://superming.life/css/main.css?v=" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="https://superming.life/images/apple-touch-icon.png?v=">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="https://superming.life/images/favicon-32x32.png?v=">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="https://superming.life/images/favicon-16x16.png?v=">
-
-
-  <link rel="mask-icon" href="https://superming.life/images/safari-pinned-tab.svg?v=" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="BigData," />
-
-
-
-
-
-  <link rel="alternate" href="https://superming.life/atom.xml" title="AlenZhang's Blog" type="application/atom+xml" />
-
-
-
-
-
-
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
 <meta name="description" content="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1云计算平台服务层次：基础设施即服务（IaaS）&#x2F; 平台即服务（PaaS）&#x2F; 软件即服务（SaaS） 资料选择《大数据技术原理与应用》：作为入门教材使用 《大数据基础编程、实验和案例教程》：配套实验指导书 《Hadoop》:作为深入研究的书籍 概述大数据计算的几种模式     大数据计算模式 解决问题 代表产品">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01-Hadoop Configuration">
@@ -107,297 +53,281 @@
 <meta name="twitter:image" content="https://superming.life/2020/02/25/01-Hadoop-Configuration/p1.jpg">
 
 
+<link rel="canonical" href="https://superming.life/2020/02/25/01-Hadoop-Configuration/">
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Mist',
-    version: '',
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12},
-    fancybox: false,
-    tabs: ,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},
-    duoshuo: {
-      userId: 'undefined',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: ""
-    }
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
-
-
-
-
-
-
-
-  <title>01-Hadoop Configuration | AlenZhang's Blog</title>
+<title>01-Hadoop Configuration | AlenZhang's Blog</title>
   
 
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '[object Object]', 'auto');
-  ga('send', 'pageview');
-</script>
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
 
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
+</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="https://superming.life/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">AlenZhang's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">AlenZhang's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="https://superming.life/" rel="section">
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="https://superming.life/about/" rel="section">
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="https://superming.life/tags/" rel="section">
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="https://superming.life/categories/" rel="section">
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="https://superming.life/archives/" rel="section">
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a></li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop-%E9%85%8D%E7%BD%AE%E3%80%90%E4%B8%80%E3%80%91%EF%BC%9AmacOS-10-15-3-Hadoop-3-2-1"><span class="nav-number">1.</span> <span class="nav-text">Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.1.</span> <span class="nav-text">云计算平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%96%99%E9%80%89%E6%8B%A9"><span class="nav-number">1.2.</span> <span class="nav-text">资料选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.3.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%9E%B6%E6%9E%84Hadoop-%E9%9C%80%E6%8B%93%E5%B1%95"><span class="nav-number">1.4.</span> <span class="nav-text">处理架构Hadoop[需拓展]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MacOS-Hadoop-%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97"><span class="nav-number">2.</span> <span class="nav-text">MacOS Hadoop 配置及入坑指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WHY"><span class="nav-number">2.1.</span> <span class="nav-text">WHY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">2.2.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Homebrew"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装Homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Java8"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装Java8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEssh-key"><span class="nav-number">2.2.3.</span> <span class="nav-text">配置ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hadoop"><span class="nav-number">2.2.4.</span> <span class="nav-text">安装Hadoop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">相关配置参考：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">2.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-site-xml"><span class="nav-number">2.3.2.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">2.3.3.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">2.3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96HDFS"><span class="nav-number">2.4.</span> <span class="nav-text">初始化HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.1.</span> <span class="nav-text">启动命令介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-%E9%85%8D%E7%BD%AE%EF%BC%88optional%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">Shell 配置（optional）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troble-shooting"><span class="nav-number">2.6.</span> <span class="nav-text">Troble shooting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E8%BF%90%E8%A1%8CMapReduce%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.7.</span> <span class="nav-text">Hadoop伪分布式运行MapReduce实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.8.</span> <span class="nav-text">1
+2
+.&#x2F;sbin&#x2F;stop-dfs.sh  # 停止HDFS服务命令
+.&#x2F;sbin&#x2F;stop-all.sh  # 停止所有hadoop服务
+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">2.9.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AlenZhang"
+      src="/images/ninja2.jpg">
+  <p class="site-author-name" itemprop="name">AlenZhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/02/25/01-Hadoop-Configuration/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superming.life/2020/02/25/01-Hadoop-Configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
+      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://superming.life/[object%20Object]">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="AlenZhang's Blog">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          01-Hadoop Configuration
+        </h1>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">01-Hadoop Configuration</h1>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-25T23:31:35+08:00">
-                2020-02-25
-              </time>
-            
+      <time title="Created: 2020-02-25 23:31:35" itemprop="dateCreated datePublished" datetime="2020-02-25T23:31:35+08:00">2020-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+    </span>
 
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2021-01-19T12:22:23+08:00">
-                2021-01-19
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="https://superming.life/categories/CS/" itemprop="url" rel="index">
-                    <span itemprop="name">CS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="https://superming.life/2020/02/25/01-Hadoop-Configuration/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="https://superming.life/2020/02/25/01-Hadoop-Configuration/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="https://superming.life/2020/02/25/01-Hadoop-Configuration/" class="leancloud_visitors" data-flag-title="01-Hadoop Configuration">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+  
+    <span id="/2020/02/25/01-Hadoop-Configuration/" class="post-meta-item leancloud_visitors" data-flag-title="01-Hadoop Configuration" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>8.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <h1 id="Hadoop-配置【一】：macOS-10-15-3-Hadoop-3-2-1"><a href="#Hadoop-配置【一】：macOS-10-15-3-Hadoop-3-2-1" class="headerlink" title="Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1"></a>Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1</h1><h2 id="云计算平台"><a href="#云计算平台" class="headerlink" title="云计算平台"></a>云计算平台</h2><p>服务层次：基础设施即服务（IaaS）/ 平台即服务（PaaS）/ 软件即服务（SaaS）</p>
 <h2 id="资料选择"><a href="#资料选择" class="headerlink" title="资料选择"></a>资料选择</h2><p><a target="_blank" rel="noopener" href="http://dblab.xmu.edu.cn/post/5663/">《大数据技术原理与应用》</a>：作为入门教材使用</p>
 <p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/post/bigdatapractice/">《大数据基础编程、实验和案例教程》</a>：配套实验指导书</p>
@@ -454,7 +384,7 @@
 <p>物联网是大数据重要来源，大数据为物联网数据分析提供支撑。</p>
 <p>云计算为互联网提供海量数据存储能力，物联网为云计算技术提供广阔的应用空间。</p>
 <!------more -------->
-<h2 id="处理架构Hadoop-需拓展"><a href="#处理架构Hadoop-需拓展" class="headerlink" title="处理架构Hadoop[需拓展]"></a>处理架构Hadoop[需拓展]</h2><p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p1.jpg" alt="p1"></p>
+<h2 id="处理架构Hadoop-需拓展"><a href="#处理架构Hadoop-需拓展" class="headerlink" title="处理架构Hadoop[需拓展]"></a>处理架构Hadoop[需拓展]</h2><p><img src="/2020/02/25/01-Hadoop-Configuration/p1.jpg" alt="p1"></p>
 <p>开源的分布式计算平台，极大的降低了用户的复杂性。可以使用多种语言在Hadoop上运行。</p>
 <p>两大核心：HDFS + MapReduce，<strong>这两个核心解决了分布式的存储和分布式处理问题两大核心问题。</strong></p>
 <p>特点：高可靠性，高效性「分布式并行处理」，高可扩展性，成本低「可用低端机」。</p>
@@ -495,9 +425,9 @@
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看brew的帮助</span></span><br><span class="line">brew -help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装软件</span></span><br><span class="line">brew install hadoop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载软件</span></span><br><span class="line">brew uninstall hadoop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 搜索软件</span></span><br><span class="line">brew search hadoop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看已经安装的软件</span></span><br><span class="line">brew list</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新软件</span></span><br><span class="line">brew update</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新某具体软件</span></span><br><span class="line">brew upgrade hadoop</span><br></pre></td></tr></table></figure>
 <h3 id="安装Java8"><a href="#安装Java8" class="headerlink" title="安装Java8"></a>安装Java8</h3><p>对于Java版本使用问题，参见<a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/HADOOP/Hadoop+Java+Versions">官网</a>。</p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p2.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p2.png" alt="p1"></p>
 <p>检查自己的Java 版本<code>Java -version</code></p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p3.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p3.png" alt="p1"></p>
 <p>如果不是Java8，参考常规下载包安装或命令安装「若原本有更高级或别的java版本在进行其余开发，不用卸载修改路径即可，请自寻Google」</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install java8</span><br></pre></td></tr></table></figure>
 <h3 id="配置ssh-key"><a href="#配置ssh-key" class="headerlink" title="配置ssh key"></a>配置ssh key</h3><p>使用下面命令查看ssh是否可用</p>
@@ -506,13 +436,13 @@
 <p><code>ssh：connect to host localhost port 22: COnnection refused</code></p>
 <p>使用下面命令，授权SSH登陆。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -P <span class="string">&#x27;&#x27;</span> -f ~/.ssh/id_rsa</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod 0600 ~/.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p5.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p5.png" alt="p1"></p>
 <p>然后在系统System Preferences -&gt; Sharing下的Remote Login中国中选择All users允许接入。</p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p4.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p4.png" alt="p1"></p>
 <p>再次执行<code>ssh localhost</code>看是否成功。若依旧失败请Google解决。</p>
 <h3 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Brew install hadoop</span><br></pre></td></tr></table></figure>
 <p>Brew会安装最新的稳定版本，截止2020年2月23日，版本为<code>hadoop-3.2.1</code> </p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p12.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p12.png" alt="p1"></p>
 <p>Mac下的安装目录：<code>/usr/local/Cellar/hadoop</code></p>
 <blockquote>
 <p>In normal circumstances, brew would have automatically created a symlink from <code>/usr/local/opt/hadoop</code> to <code>/usr/local/Celler/hadoop/</code></p>
@@ -543,7 +473,7 @@
 <p>在官方文档下，伪分布模式只需要配置<code>fs.defaultFS</code>与<code>dfs.replication</code>就可。但我们需要配置<code>hadoop.tmp.dir、dfs.namenode.name.dir、dfs.datenode.data.dir</code>指定使用的目录，默认目录重启时会被清理，所以需要进行配置。</p>
 <h3 id="hadoop-env-sh"><a href="#hadoop-env-sh" class="headerlink" title="hadoop-env.sh"></a>hadoop-env.sh</h3><p>在此文件对hadoop进行配置。使用命令找到mac下的Java_Home路径<code>/usr/libexec/java_home -V</code></p>
 <p>在<code>/usr/local/Cellar/hadoop/3.2.1/libexec/etc/hadoop/hadoop-env.sh</code>下寻找export JAVA_HOME，修改配置如下：</p>
-<p>!<img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p6.png" alt="p1"></p>
+<p>!<img src="/2020/02/25/01-Hadoop-Configuration/p6.png" alt="p1"></p>
 <h3 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h3><p>在core-site.xml下配置HDFS 地址和端口号，写入下面配置「注意所有端口号不要与你正在使用的<strong>端口号</strong>冲突，冲突请更换空闲端口」</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Put site-specific property overrides in this file. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>A base for other temporary directories<span class="tag">&lt;/<span class="name">description</span>&gt;</span>             </span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.default.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
@@ -557,23 +487,23 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:8021<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="初始化HDFS"><a href="#初始化HDFS" class="headerlink" title="初始化HDFS"></a>初始化HDFS</h2><p>下面命令初始化分布式文件，收到”successfully formatted”即配置ok。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/opt/hadoop</span><br><span class="line">hdfs namenode -format</span><br></pre></td></tr></table></figure>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p7.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p7.png" alt="p1"></p>
 <h3 id="启动命令介绍"><a href="#启动命令介绍" class="headerlink" title="启动命令介绍"></a>启动命令介绍</h3><p>进入以下目录<code>/usr/local/opt/hadoop/sbin</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./start-dfs.sh # 开启HDFS服务命令</span><br><span class="line">./stop-dfs.sh  # 停止HDFS服务命令</span><br><span class="line">./start-all.sh # 开启所有命令</span><br><span class="line">./stop-all.sh # 停止所有命令</span><br></pre></td></tr></table></figure>
 <p>开启完毕后使用<code>jps</code>命令查看服务状态</p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p8.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p8.png" alt="p1"></p>
 <p>按照上述配置，且没有更换端口，通过下面网址接入Hadoop的网页</p>
 <p><strong>Resource Manager： <a target="_blank" rel="noopener" href="http://localhost:9780">http://localhost:9780</a></strong></p>
 <blockquote>
 <p><strong>2.x版本默认为<a target="_blank" rel="noopener" href="http://localhost:50070">http://localhost:50070</a></strong></p>
 </blockquote>
 <p>NameNode Info：</p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p9.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p9.png" alt="p1"></p>
 <p><strong>JobTracker：<a target="_blank" rel="noopener" href="http://localhost:8088/">http://localhost:8088/</a></strong></p>
 <p>MapReduce Info：</p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p10.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p10.png" alt="p1"></p>
 <p><strong>Node Specific Info: <a target="_blank" rel="noopener" href="http://localhost:8042/">http://localhost:8042/</a></strong></p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p11.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p11.png" alt="p1"></p>
 <h2 id="Shell-配置（optional）"><a href="#Shell-配置（optional）" class="headerlink" title="Shell 配置（optional）"></a>Shell 配置（optional）</h2><p>相较于每次都进入目录<code>/usr/local/Cellar/hadoop/3.2.1/sbin</code>，在shell中配置全局<code>PATH</code>会方面很多，这样我们就可以在shell或terminal任意地方使用hadoop相关命令。</p>
 <p>不同的shell配置目录不同，<code>`/etc/profile</code>, <code>~/.bashrc</code>, <code>~/.bash_profile</code>, <code>~/.profile</code>, <code>~/.zshrc</code>… `</p>
 <p>我使用zsh，所以打开<code>~/.zshrc</code>下添加</p>
@@ -586,7 +516,7 @@
 <ol>
 <li>开启所有服务后，发现有些服务没有开启</li>
 </ol>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p15.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p15.png" alt="p1"></p>
 <p>Answer：未能开启其余模块，主要是Java版本不兼容，我使用的是Java11进行安装，出现如上错误，下载Java 8 后问题Fix。</p>
 <ol>
 <li>进行单机伪分布测试时，出现如下问题「unFixed」不影响正常使用</li>
@@ -621,10 +551,10 @@
 <p>接下来运行MapReduce作业。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hadoop jar ./libexec/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output &#x27;dfs[a-z.]+&#x27;</span><br></pre></td></tr></table></figure>
 <p>运行结果截图如下：</p>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p13.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p13.png" alt="p1"></p>
 <p>查看命令运行结果：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -cat output/*</span><br></pre></td></tr></table></figure>
-<p><img src="https://superming.life/2020/02/25/01-Hadoop-Configuration/p14.png" alt="p1"></p>
+<p><img src="/2020/02/25/01-Hadoop-Configuration/p14.png" alt="p1"></p>
 <p>或把文件存入本地再查看</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -r ./output    # 先删除本地的 output 文件夹（如果存在）</span><br><span class="line">./bin/hdfs dfs -get output ./output     # 将 HDFS 上的 output 文件夹拷贝到本机</span><br><span class="line">cat ./output/*</span><br></pre></td></tr></table></figure>
 <p>提示：Hadoop运行文件时，输出的目录Hadoop会给你创建，否则会导致冲突。若原本存在或要重新执行以上测试，先删除目标文件</p>
@@ -638,543 +568,286 @@
 <p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html#Required_Software">Hadoop: Setting up a Single Node Cluster.</a></p>
 <p>[Complete Guide to Install and Configure Apache Hadoop 3 on MacOS](</p>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/03/24/03-Hbase/" rel="bookmark">HBase</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/05/12/Hadoop集群配置安装--MacOS+Ubuntu尝试/" rel="bookmark">Hadoop集群配置安装：MacOS+Ubuntu尝试</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/14/NoSQL/" rel="bookmark">NoSQL</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/03/20/02-分布式文件系统HDFS/" rel="bookmark">02-分布式文件系统HDFS</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/20/MongoDB/" rel="bookmark">MongoDB</a></div>
+    </li>
+  </ul>
+
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="https://superming.life/tags/BigData/" rel="tag"># BigData</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="https://superming.life/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" rel="next" title="Hexo 个人博客高级配置">
-                <i class="fa fa-chevron-left"></i> Hexo 个人博客高级配置
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/BigData/" rel="tag"># BigData</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="https://superming.life/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" rel="prev" title="Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解">
-                Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解 <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" rel="prev" title="Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解">
+                  <i class="fa fa-chevron-left"></i> Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/01/21/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" rel="next" title="Hexo 个人博客高级配置">
+                  Hexo 个人博客高级配置 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
+</div>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
 
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="https://superming.life/[object%20Object]"
-                alt="" />
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="https://superming.life/archives/">
-              
-                  <span class="site-state-item-count">29</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="https://superming.life/categories/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="https://superming.life/tags/index.html">
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="https://superming.life/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/AlenZhang-Dev" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-fab fa-github"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:supermingzero@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-fa fa-envelope"></i></a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop-%E9%85%8D%E7%BD%AE%E3%80%90%E4%B8%80%E3%80%91%EF%BC%9AmacOS-10-15-3-Hadoop-3-2-1"><span class="nav-number">1.</span> <span class="nav-text">Hadoop 配置【一】：macOS 10.15.3 + Hadoop 3.2.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.1.</span> <span class="nav-text">云计算平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%96%99%E9%80%89%E6%8B%A9"><span class="nav-number">1.2.</span> <span class="nav-text">资料选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.3.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%9E%B6%E6%9E%84Hadoop-%E9%9C%80%E6%8B%93%E5%B1%95"><span class="nav-number">1.4.</span> <span class="nav-text">处理架构Hadoop[需拓展]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MacOS-Hadoop-%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97"><span class="nav-number">2.</span> <span class="nav-text">MacOS Hadoop 配置及入坑指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WHY"><span class="nav-number">2.1.</span> <span class="nav-text">WHY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">2.2.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Homebrew"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装Homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Java8"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装Java8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEssh-key"><span class="nav-number">2.2.3.</span> <span class="nav-text">配置ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hadoop"><span class="nav-number">2.2.4.</span> <span class="nav-text">安装Hadoop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">相关配置参考：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">2.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-site-xml"><span class="nav-number">2.3.2.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">2.3.3.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">2.3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96HDFS"><span class="nav-number">2.4.</span> <span class="nav-text">初始化HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.1.</span> <span class="nav-text">启动命令介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-%E9%85%8D%E7%BD%AE%EF%BC%88optional%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">Shell 配置（optional）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troble-shooting"><span class="nav-number">2.6.</span> <span class="nav-text">Troble shooting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E8%BF%90%E8%A1%8CMapReduce%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.7.</span> <span class="nav-text">Hadoop伪分布式运行MapReduce实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.8.</span> <span class="nav-text">1
-2
-.&#x2F;sbin&#x2F;stop-dfs.sh  # 停止HDFS服务命令
-.&#x2F;sbin&#x2F;stop-all.sh  # 停止所有hadoop服务
-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">2.9.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
+  <footer class="footer">
+    <div class="footer-inner">
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-[object Object]"></i>
+    <i class="fa fa-alien"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">AlenZhang</span>
-
-  
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">200k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:02</span>
+  </span>
 </div>
 
+    </div>
+  </footer>
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
 
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
-
-
-
-
-
-
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.7k字</span>
-</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
 
   
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+
+
+
+
+
+  
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            const target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz","app_key":"GvmFzmeE5nuRcXTSQNH3icVD","server_url":null,"security":true};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+    <div class="pjax">
+
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
   }
 </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="https://superming.life/js/src/utils.js?v="></script>
-
-  <script type="text/javascript" src="https://superming.life/js/src/motion.js?v="></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="https://superming.life/js/src/scrollspy.js?v="></script>
-<script type="text/javascript" src="https://superming.life/js/src/post-details.js?v="></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="https://superming.life/js/src/bootstrap.js?v="></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz',
-        appKey: 'GvmFzmeE5nuRcXTSQNH3icVD',
-        placeholder: '',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'5' || 10,
-    });
-  </script>
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz", "GvmFzmeE5nuRcXTSQNH3icVD");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    </div>
 </body>
 </html>

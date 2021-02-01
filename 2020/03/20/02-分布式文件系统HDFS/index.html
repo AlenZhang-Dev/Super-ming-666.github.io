@@ -1,82 +1,28 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="https://superming.life/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="https://superming.life/css/main.css?v=" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="https://superming.life/images/apple-touch-icon.png?v=">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="https://superming.life/images/favicon-32x32.png?v=">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="https://superming.life/images/favicon-16x16.png?v=">
-
-
-  <link rel="mask-icon" href="https://superming.life/images/safari-pinned-tab.svg?v=" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="BigData," />
-
-
-
-
-
-  <link rel="alternate" href="https://superming.life/atom.xml" title="AlenZhang's Blog" type="application/atom+xml" />
-
-
-
-
-
-
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
 <meta name="description" content="分布式文件系统HDFS1. HDFS概述：HDFS（Hadoop Distributed File Syetem），Hadoop框架的核心组件之一。HDFS是为以流式数据访问模式存储超大文件而设计的文件系统。主要解决数据分布式存储问题。 HDFS是个高度容错性的系统，适合部署在廉价的机器上，能提供高吞吐量的数据访问，非常适合大规模数据集上的应用。 1.1 设计目标设计目标即设计初衷，理解其为何诞生">
 <meta property="og:type" content="article">
 <meta property="og:title" content="02-分布式文件系统HDFS">
@@ -105,297 +51,277 @@
 <meta name="twitter:image" content="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/分布式文件系统HDFS.gif">
 
 
+<link rel="canonical" href="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/">
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Mist',
-    version: '',
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12},
-    fancybox: false,
-    tabs: ,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},
-    duoshuo: {
-      userId: 'undefined',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: ""
-    }
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
-
-
-
-
-
-
-
-  <title>02-分布式文件系统HDFS | AlenZhang's Blog</title>
+<title>02-分布式文件系统HDFS | AlenZhang's Blog</title>
   
 
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '[object Object]', 'auto');
-  ga('send', 'pageview');
-</script>
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
 
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
+</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="https://superming.life/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">AlenZhang's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">AlenZhang's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="https://superming.life/" rel="section">
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="https://superming.life/about/" rel="section">
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="https://superming.life/tags/" rel="section">
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="https://superming.life/categories/" rel="section">
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="https://superming.life/archives/" rel="section">
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a></li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS"><span class="nav-number">1.</span> <span class="nav-text">分布式文件系统HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-HDFS%E6%A6%82%E8%BF%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1. HDFS概述：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 设计目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-HDFS%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%8A%A3"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 HDFS设计优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-HDFS%E6%9E%B6%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">2. HDFS架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E7%BB%84%E7%BB%87"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 数据存储与组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Namenode-%E5%92%8C-Datanode"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 Namenode 和 Datanode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-HDFS-%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88-HDFS-High-Avaiability%EF%BC%89"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 HDFS 高可用架构（ HDFS High Avaiability）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-HDFS-Federation"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 HDFS Federation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HDFS%E5%AD%98%E5%82%A8"><span class="nav-number">1.3.</span> <span class="nav-text">3. HDFS存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%95%B0%E6%8D%AE%E5%86%97%E4%BD%99%EF%BC%88Data-redundancy%EF%BC%89%E5%AD%98%E5%82%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 数据冗余（Data redundancy）存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AD%96%E7%95%A5"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 数据存储策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-%E6%95%B0%E6%8D%AE%E5%AD%98%E6%94%BE"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">3.2.1 数据存放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">3.2.2 数据读取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-3-%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E4%B8%8E%E5%A4%8D%E5%88%B6"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">3.2.3 数据写入与复制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E6%95%B0%E6%8D%AE%E9%94%99%E8%AF%AF%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 数据错误与恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-Namenode%E5%87%BA%E9%94%99"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">3.3.1 Namenode出错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-2-Datanode%E5%87%BA%E9%94%99"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">3.3.2 Datanode出错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-3-%E6%95%B0%E6%8D%AE%E9%94%99%E8%AF%AF"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">3.3.3 数据错误</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-HDFS-%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.4.</span> <span class="nav-text">4. HDFS 实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-Shell-%E5%91%BD%E4%BB%A4"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">4.1 Shell 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E5%A6%82%E4%BD%95%E5%9C%A8Mac%E4%BD%BF%E7%94%A8Eclipse%E8%BF%9B%E8%A1%8CHDFS%E7%BC%96%E5%86%99%EF%BC%9A"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">4.2 如何在Mac使用Eclipse进行HDFS编写：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-1-%E4%B8%8B%E8%BD%BDHadoop-Eclipse%E6%8F%92%E4%BB%B6"><span class="nav-number">1.4.0.2.1.</span> <span class="nav-text">4.2.1 下载Hadoop Eclipse插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-2-%E5%88%9B%E5%BB%BAHadoop-HDFS%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.0.2.2.</span> <span class="nav-text">4.2.2 创建Hadoop HDFS程序</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.5.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AlenZhang"
+      src="/images/ninja2.jpg">
+  <p class="site-author-name" itemprop="name">AlenZhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://superming.lifehttps://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
+      <meta itemprop="image" content="/images/ninja2.jpg">
+      <meta itemprop="name" content="AlenZhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://superming.life/[object%20Object]">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="AlenZhang's Blog">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          02-分布式文件系统HDFS
+        </h1>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">02-分布式文件系统HDFS</h1>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-20T20:57:26+08:00">
-                2020-03-20
-              </time>
-            
+      <time title="Created: 2020-03-20 20:57:26" itemprop="dateCreated datePublished" datetime="2020-03-20T20:57:26+08:00">2020-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+    </span>
 
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2021-01-19T12:22:07+08:00">
-                2021-01-19
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="https://superming.life/categories/CS/" itemprop="url" rel="index">
-                    <span itemprop="name">CS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/" class="leancloud_visitors" data-flag-title="02-分布式文件系统HDFS">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+  
+    <span id="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/" class="post-meta-item leancloud_visitors" data-flag-title="02-分布式文件系统HDFS" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>10k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>9 mins.</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <h1 id="分布式文件系统HDFS"><a href="#分布式文件系统HDFS" class="headerlink" title="分布式文件系统HDFS"></a>分布式文件系统HDFS</h1><h2 id="1-HDFS概述："><a href="#1-HDFS概述：" class="headerlink" title="1. HDFS概述："></a>1. HDFS概述：</h2><p>HDFS（Hadoop Distributed File Syetem），Hadoop框架的核心组件之一。<strong>HDFS是为以流式数据访问模式存储超大文件而设计的文件系统。</strong>主要解决数据分布式存储问题。</p>
 <p>HDFS是个高度容错性的系统，适合部署在廉价的机器上，能提供高吞吐量的数据访问，非常适合大规模数据集上的应用。</p>
 <h3 id="1-1-设计目标"><a href="#1-1-设计目标" class="headerlink" title="1.1 设计目标"></a>1.1 设计目标</h3><p>设计目标即设计初衷，理解其为何诞生对我们掌握并使用它具有很大帮助。</p>
@@ -404,7 +330,7 @@
 <h3 id="1-2-HDFS设计优劣"><a href="#1-2-HDFS设计优劣" class="headerlink" title="1.2 HDFS设计优劣"></a>1.2 HDFS设计优劣</h3><p>优点：高容错性、适合大量数据批处理、模型简单、成本低…</p>
 <p>缺点：流式数据读取拥有很高的数据吞吐率，但导致了很高的延时，不适合低延时数据访问；不适合大量小文件存储，过多小文件会严重影响系统性能；不支持多用户并发写入及修改文件。</p>
 <!------more -------->
-<h2 id="2-HDFS架构"><a href="#2-HDFS架构" class="headerlink" title="2. HDFS架构"></a>2. HDFS架构</h2><p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/分布式文件系统HDFS.gif" alt="分布式文件系统HDFS"></p>
+<h2 id="2-HDFS架构"><a href="#2-HDFS架构" class="headerlink" title="2. HDFS架构"></a>2. HDFS架构</h2><p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/分布式文件系统HDFS.gif" alt="分布式文件系统HDFS"></p>
 <h3 id="2-1-数据存储与组织"><a href="#2-1-数据存储与组织" class="headerlink" title="2.1 数据存储与组织"></a>2.1 数据存储与组织</h3><p>HDFS采用块作为存储单位，默认为128MB，是HDFS读写数据数据的最小单位。注意：<strong>HDFS中小于一个块大小的文件不会占据整个块的空间。</strong></p>
 <p><strong>为什么分布式文件系统中采用抽象块来存储数据？</strong></p>
 <ol>
@@ -427,7 +353,7 @@
 <p>Edits文件记录所有针对目录、文件的创建、删除、重命 名等的操作日志。</p>
 </blockquote>
 <p>Namenode工作机制：</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Namenodeworkflow.png" alt="Namenodeworkflow"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Namenodeworkflow.png" alt="Namenodeworkflow"></p>
 <p><strong>Datanode</strong>负责它所在的节点上的存储，处理客户端的读写请求，在Namenode的统一调度下进行数据块的创建和、删除和复制。</p>
 <p>如果没有Namenode，那么文件系统将无法使用，因为我们无法知道如何通过数据节点上的块来重建文件，故Namenode是HDFS集群中的单点故障(Single point of failure)所在。对于名称节点的保护机制时非常重要的。Hadoop提供了两种方法。</p>
 <ol>
@@ -437,7 +363,7 @@
 <p>Secondarynode执行过程：</p>
 </li>
 </ol>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/SecondaryNodeworkflow.png" alt="SecondaryNode workflow"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/SecondaryNodeworkflow.png" alt="SecondaryNode workflow"></p>
 <h3 id="2-3-HDFS-高可用架构（-HDFS-High-Avaiability）"><a href="#2-3-HDFS-高可用架构（-HDFS-High-Avaiability）" class="headerlink" title="2.3 HDFS 高可用架构（ HDFS High Avaiability）"></a>2.3 HDFS 高可用架构（ HDFS High Avaiability）</h3><p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html">HDFS High Availability Using the Quorum Journal Manager</a></p>
 <p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithNFS.html">HDFS High Availability With NFS</a></p>
 <p>[后续补充]</p>
@@ -456,7 +382,7 @@
 <p>FileSystem的open( )方法返回一个输入流FSDataInputStream对象，create（）方法返回一个输出流FSDataOutputStream对象。「即HDFS文件系统中的具体输入输出流」</p>
 <p>Hadoop文件API的起点是FileSysem类，可以通过调用FileSystem.get(Configuration conf)来得到所需的FileSystem实例。</p>
 <p>Configuration类的默认实例化方法是以HDFS系统的资源配置为基础。</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/HadoopFilesystem.png" alt="Hadoop Filesystem"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/HadoopFilesystem.png" alt="Hadoop Filesystem"></p>
 </blockquote>
 <h4 id="3-2-1-数据存放"><a href="#3-2-1-数据存放" class="headerlink" title="3.2.1 数据存放"></a>3.2.1 数据存放</h4><p>HDFS默认每个数据节点都是在不同的机架上，会带来一个问题：<strong>写入数据时不能充分利用同一机架内部机器之间的带宽</strong>。但更容易实现系统内部的负载均衡和错误处理。</p>
 <p>HDFS默认冗余复制因子为3，每一个文件块被同时保存到三个地方，两个副本放在同一机架不同机器上，第三个副本放在不同机架的机器上面。可以保证机架发生异常时的数据恢复，也可以提高读写性能。</p>
@@ -464,12 +390,12 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="3-2-2-数据读取"><a href="#3-2-2-数据读取" class="headerlink" title="3.2.2 数据读取"></a>3.2.2 数据读取</h4><p>HDFS提供了一个API可以确定一个数据节点所属的机架ID，客户端也可以调用API获取自己所属的机架ID。</p>
 <p>利用Java API读数据过程：</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/JavaApiRead.png" alt="Java Api Read"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/JavaApiRead.png" alt="Java Api Read"></p>
 <h4 id="3-2-3-数据写入与复制"><a href="#3-2-3-数据写入与复制" class="headerlink" title="3.2.3 数据写入与复制"></a>3.2.3 数据写入与复制</h4><p>HDFS采用流水线复制的策略。</p>
 <p>当客户端要向HDFS写入文件时，这个文件首先根据块大小划分成若干块并写入本地，每个块都向HDFS集群中的Namenode发起写请求，Namenode返回一个最佳数据节点返回客户端，客户端把数据写入第一个数据节点，同时把列表传给第一个数据节点，第一个数据节点将数据写入本地，同时向第二个数据节点发送数据和列表，以此类推。</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/HDFSDataWrite.png" alt="HDFS DataWriteIn"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/HDFSDataWrite.png" alt="HDFS DataWriteIn"></p>
 <p>使用Java API写数据：</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/JavaApiWrite.png" alt="Java Api Write"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/JavaApiWrite.png" alt="Java Api Write"></p>
 <h3 id="3-3-数据错误与恢复"><a href="#3-3-数据错误与恢复" class="headerlink" title="3.3 数据错误与恢复"></a>3.3 数据错误与恢复</h3><h4 id="3-3-1-Namenode出错"><a href="#3-3-1-Namenode出错" class="headerlink" title="3.3.1 Namenode出错"></a>3.3.1 Namenode出错</h4><p>Namenode保存了所有元数据信息，若文件损坏，整个系统宕机。HDFS的两种补救措施在2.2.2 Namenode 和 Datanode 中已提到。</p>
 <h4 id="3-3-2-Datanode出错"><a href="#3-3-2-Datanode出错" class="headerlink" title="3.3.2 Datanode出错"></a>3.3.2 Datanode出错</h4><p>每个Datanode会定期向Namenode发送“心跳”，向Namenode报告“我还活着”。一旦Namenode没有接收到定期的心跳信息，默认该Datanode宕机，不会对其进行任何读写等操作。同时Namenode会定期检查Datanode数据块副本数量，若小于冗余因子，则启动数据的冗余复制。</p>
 <h4 id="3-3-3-数据错误"><a href="#3-3-3-数据错误" class="headerlink" title="3.3.3 数据错误"></a>3.3.3 数据错误</h4><p>数据错误主要集中在网络传输和磁盘错误。客户端采用md5和sha1对数据块进行校验，确保读取到正确的数据。</p>
@@ -492,9 +418,9 @@
 <p>以下步骤为Hadoop单机伪分布环境下Eclipse HDFS 配置。</p>
 <h5 id="4-2-1-下载Hadoop-Eclipse插件"><a href="#4-2-1-下载Hadoop-Eclipse插件" class="headerlink" title="4.2.1 下载Hadoop Eclipse插件"></a>4.2.1 下载Hadoop Eclipse插件</h5><p><a target="_blank" rel="noopener" href="https://people.apache.org/~srimanth/hadoop-eclipse/">官网地址</a>，需要Eclipse版本3.6以上。</p>
 <p>将插件放到Eclipse Plugins下，然后重启Eclipse，在Preferences下按如下配置，Hadoop安装目录根据自己情况配置。</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/HDFSEclipseConfig1.png" alt="HDFS Eclipse Config1"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/HDFSEclipseConfig1.png" alt="HDFS Eclipse Config1"></p>
 <h5 id="4-2-2-创建Hadoop-HDFS程序"><a href="#4-2-2-创建Hadoop-HDFS程序" class="headerlink" title="4.2.2 创建Hadoop HDFS程序"></a>4.2.2 创建Hadoop HDFS程序</h5><p>New一个Map/Reduce Project</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Eclipse.png" alt="Eclipse"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Eclipse.png" alt="Eclipse"></p>
 <p>项目创建完毕后，重点是配置Hadoop Location。</p>
 <p>在<code>Windows -&gt; show view -&gt; Other -&gt; MapReduce Location</code>下配置：</p>
 <p>其中</p>
@@ -506,19 +432,19 @@
 <p>Host：就是namenode所在的集群机器，这里写localhost</p>
 <p>Port：就是namenode的port，这里写9000</p>
 <p><strong>这两个参数就是core-site.xml里面fs.default.name里面的ip和port</strong>，根据自己情况修改。</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Config.png" alt="Config"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Config.png" alt="Config"></p>
 <p>修改完成，就可以去搞了，项目运行时选择<code>Run On Hadoop</code>运行即可。</p>
 <p>举个例子吧：</p>
 <p>编程实现一个类“MyFSDataInputStream”，该类继承“org.apache.hadoop.fs.FSDataInputStream”，要求如下：实现按行读取HDFS中指定文件的方法“readLine()”，如果读到文件末尾，则返回空，否则返回文件一行的文本。</p>
 <p>准备：</p>
 <p>使用JavaApi在superming目录下写入test文件，文件内容为“Hello World”，代码截图如下：</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/FileWrite.png" alt="FileWrite"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/FileWrite.png" alt="FileWrite"></p>
 <p>在Hadoop下运行代码将文件写入。</p>
 <p>执行：</p>
 <p>使用JavaApi读取刚创建的test文件，代码截图如下：</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/MyFDSDATAInputStream.png" alt="MyFDSDATAInputStream"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/MyFDSDATAInputStream.png" alt="MyFDSDATAInputStream"></p>
 <p>在Hadoop下执行如下：</p>
-<p><img src="https://superming.life/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Result.png" alt="Result"></p>
+<p><img src="/2020/03/20/02-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS/Result.png" alt="Result"></p>
 <p>显示HDFS中指定文件的读写权限、大小、创建时间、路径等</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.apache.hadoop.examples;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.conf.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.*;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FileSystem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 显示HDFS中指定文件的读写权限，大小，创建时间，路径等信息 </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">fileList</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">list</span><span class="params">(Configuration conf, String remoteFilePath)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span>(FileSystem fs = FileSystem.get(conf))&#123;</span><br><span class="line">      Path remotePath = <span class="keyword">new</span> Path(remoteFilePath);</span><br><span class="line">      FileStatus[] fileStatus = fs.listStatus(remotePath);</span><br><span class="line">      <span class="keyword">for</span>(FileStatus s : fileStatus) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Path: &quot;</span> + s.getPath().toString());</span><br><span class="line">        System.out.println(<span class="string">&quot;Access: &quot;</span> + s.getPermission().toString());</span><br><span class="line">        System.out.println(<span class="string">&quot;Size: &quot;</span> + s.getLen());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">long</span> timeStamp = s.getModificationTime();</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line">        String date = format.format(timeStamp);</span><br><span class="line">        System.out.println(<span class="string">&quot;时间：&quot;</span> + date);</span><br><span class="line">        fs.close();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">    conf.set(<span class="string">&quot;fs.default&quot;</span>, <span class="string">&quot;hdfs://localhost:8888&quot;</span>);</span><br><span class="line">    conf.set(<span class="string">&quot;fs.hdfs.impl&quot;</span>,<span class="string">&quot;org.apache.hadoop.hdfs.DistributedFileSystem&quot;</span>);</span><br><span class="line">    String remoteFilePath = <span class="string">&quot;/user/superming/hello.txt&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;File Information:&quot;</span> + remoteFilePath);</span><br><span class="line">      fileList.list(conf, remoteFilePath);</span><br><span class="line">      System.out.println(<span class="string">&quot;\n Read Done&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>判断本地路径是否已存在，如果存在则自动更名</p>
@@ -527,539 +453,286 @@
 <p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html">HDFS command 官方文档</a></p>
 <p><a target="_blank" rel="noopener" href="http://hadoop.apache.org/docs/stable/api/">Hadoop Api</a></p>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/02/25/01-Hadoop-Configuration/" rel="bookmark">01-Hadoop Configuration</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/03/24/03-Hbase/" rel="bookmark">HBase</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/05/12/Hadoop集群配置安装--MacOS+Ubuntu尝试/" rel="bookmark">Hadoop集群配置安装：MacOS+Ubuntu尝试</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/14/NoSQL/" rel="bookmark">NoSQL</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/20/MongoDB/" rel="bookmark">MongoDB</a></div>
+    </li>
+  </ul>
+
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="https://superming.life/tags/BigData/" rel="tag"># BigData</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="https://superming.life/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" rel="next" title="Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解">
-                <i class="fa fa-chevron-left"></i> Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/BigData/" rel="tag"># BigData</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="https://superming.life/2020/03/24/03-Hbase/" rel="prev" title="HBase">
-                HBase <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/24/03-Hbase/" rel="prev" title="HBase">
+                  <i class="fa fa-chevron-left"></i> HBase
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/03/18/Java-Web-HttpServletRequest%E5%AF%B9%E8%B1%A1%E5%92%8CHttpServeltRespnse%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/" rel="next" title="Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解">
+                  Java Web: HttpServletRequest对象和HttpServeltRespnse对象详解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
+</div>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
 
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="https://superming.life/[object%20Object]"
-                alt="" />
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="https://superming.life/archives/">
-              
-                  <span class="site-state-item-count">29</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="https://superming.life/categories/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="https://superming.life/tags/index.html">
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="https://superming.life/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/AlenZhang-Dev" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-fab fa-github"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:supermingzero@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-fa fa-envelope"></i></a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS"><span class="nav-number">1.</span> <span class="nav-text">分布式文件系统HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-HDFS%E6%A6%82%E8%BF%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1. HDFS概述：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 设计目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-HDFS%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%8A%A3"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 HDFS设计优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-HDFS%E6%9E%B6%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">2. HDFS架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E7%BB%84%E7%BB%87"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 数据存储与组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Namenode-%E5%92%8C-Datanode"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 Namenode 和 Datanode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-HDFS-%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88-HDFS-High-Avaiability%EF%BC%89"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 HDFS 高可用架构（ HDFS High Avaiability）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-HDFS-Federation"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 HDFS Federation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HDFS%E5%AD%98%E5%82%A8"><span class="nav-number">1.3.</span> <span class="nav-text">3. HDFS存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%95%B0%E6%8D%AE%E5%86%97%E4%BD%99%EF%BC%88Data-redundancy%EF%BC%89%E5%AD%98%E5%82%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 数据冗余（Data redundancy）存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%AD%96%E7%95%A5"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 数据存储策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-%E6%95%B0%E6%8D%AE%E5%AD%98%E6%94%BE"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">3.2.1 数据存放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">3.2.2 数据读取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-3-%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E4%B8%8E%E5%A4%8D%E5%88%B6"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">3.2.3 数据写入与复制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E6%95%B0%E6%8D%AE%E9%94%99%E8%AF%AF%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 数据错误与恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-Namenode%E5%87%BA%E9%94%99"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">3.3.1 Namenode出错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-2-Datanode%E5%87%BA%E9%94%99"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">3.3.2 Datanode出错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-3-%E6%95%B0%E6%8D%AE%E9%94%99%E8%AF%AF"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">3.3.3 数据错误</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-HDFS-%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.4.</span> <span class="nav-text">4. HDFS 实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-Shell-%E5%91%BD%E4%BB%A4"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">4.1 Shell 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E5%A6%82%E4%BD%95%E5%9C%A8Mac%E4%BD%BF%E7%94%A8Eclipse%E8%BF%9B%E8%A1%8CHDFS%E7%BC%96%E5%86%99%EF%BC%9A"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">4.2 如何在Mac使用Eclipse进行HDFS编写：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-1-%E4%B8%8B%E8%BD%BDHadoop-Eclipse%E6%8F%92%E4%BB%B6"><span class="nav-number">1.4.0.2.1.</span> <span class="nav-text">4.2.1 下载Hadoop Eclipse插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-2-%E5%88%9B%E5%BB%BAHadoop-HDFS%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.0.2.2.</span> <span class="nav-text">4.2.2 创建Hadoop HDFS程序</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.5.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
+  <footer class="footer">
+    <div class="footer-inner">
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-[object Object]"></i>
+    <i class="fa fa-alien"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">AlenZhang</span>
-
-  
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">200k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:02</span>
+  </span>
 </div>
 
+    </div>
+  </footer>
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
 
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
-
-
-
-
-
-
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.7k字</span>
-</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
 
   
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+
+
+
+
+
+  
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            const target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz","app_key":"GvmFzmeE5nuRcXTSQNH3icVD","server_url":null,"security":true};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+    <div class="pjax">
+
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
   }
 </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://superming.life//velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="https://superming.life/js/src/utils.js?v="></script>
-
-  <script type="text/javascript" src="https://superming.life/js/src/motion.js?v="></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="https://superming.life/js/src/scrollspy.js?v="></script>
-<script type="text/javascript" src="https://superming.life/js/src/post-details.js?v="></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="https://superming.life/js/src/bootstrap.js?v="></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz',
-        appKey: 'GvmFzmeE5nuRcXTSQNH3icVD',
-        placeholder: '',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'5' || 10,
-    });
-  </script>
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz", "GvmFzmeE5nuRcXTSQNH3icVD");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    </div>
 </body>
 </html>
