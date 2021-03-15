@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://superming.life/2021/01/31/Weekly-Report-1/Screen_Shot_2021-01-18_at_3.57.37_PM.png">
 <meta property="og:image" content="https://superming.life/2021/01/31/Weekly-Report-1/Screen_Shot_2021-01-18_at_3.40.57_PM.png">
 <meta property="article:published_time" content="2021-01-31T14:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-04T16:23:16.091Z">
+<meta property="article:modified_time" content="2021-03-15T06:15:31.542Z">
 <meta property="article:author" content="AlenZhang">
 <meta property="article:tag" content="Weekly-Report">
 <meta name="twitter:card" content="summary">
@@ -280,13 +280,6 @@
     </span>
 
   
-    <span id="/2021/01/31/Weekly-Report-1/" class="post-meta-item leancloud_visitors" data-flag-title="Weekly Report 1" title="Views">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
     <span class="post-meta-item" title="Symbols count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -404,7 +397,7 @@
 <p>书本封皮异常朴实，内容分为六篇，记载了曹总的成长环境，处世哲学，人生足够精彩。</p>
 <blockquote>
 <p>“信是一种信念，也是一种信任，不仅对自己要有自信，对他人也要有信任，这叫互信。如果一个人什么都不信，那肯定会一事无成。”</p>
-<p>”模具的事，让我认识到，人，不一定要多伟大，才值得学习。也许，从我们身边走过的随便一个人，他们的身上就有值得我们学习的地方，只是我们不知道罢了。“</p>
+<p>“模具的事，让我认识到，人，不一定要多伟大，才值得学习。也许，从我们身边走过的随便一个人，他们的身上就有值得我们学习的地方，只是我们不知道罢了。”</p>
 <p>“思前想后，最后决定：往前走，但永远不改变行走策略 — 听党的话，严格按政府政策规定办事；按章纳税；尊重所有官员，但保持一定距离；一起吃饭可以，但仅限于吃饭，绝不涉及财务往来；如有盈利分红，除用于家庭和自身生活费用之外，皆用于社会捐赠。”</p>
 <p>“古人说穷炫耀，就是说没有钱的人才爱炫耀，为什么？缺乏素质，虚荣心使然。不珍惜粮食，乱扔馒头蒂包子皮行为十分不雅，这不能证明你家富有。恰恰相反，从这里可能暴露出你家的贫穷与你内心的自卑。”</p>
 <p>“人的时间、精力、经验都是有限的；如何把有限的时间、资金、精力和经验发挥出最大的效率，就得像小朋友手中的镜子，将发散的太阳聚集威力无比的光束一样，集中精力、集中资金、集中时间，如拳头一般，专打一点。这就是专业化。”</p>
@@ -456,6 +449,12 @@
     
     
       
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/03/14/Weekly-Report-2/" rel="bookmark">Weekly Report 2</a></div>
+    </li>
+  </ul>
 
 
     <footer class="post-footer">
@@ -467,6 +466,9 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2021/03/14/Weekly-Report-2/" rel="prev" title="Weekly Report 2">
+                  <i class="fa fa-chevron-left"></i> Weekly Report 2
+                </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2021/01/28/SSD-Notes/" rel="next" title="Dive into SSD">
@@ -525,13 +527,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">204k</span>
+    <span title="Symbols count total">208k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:06</span>
+    <span title="Reading time total">3:09</span>
   </span>
 </div>
 
@@ -586,92 +588,6 @@ document.addEventListener('pjax:success', () => {
   
 
 
-<script data-pjax>
-  (function() {
-    function leancloudSelector(url) {
-      url = encodeURI(url);
-      return document.getElementById(url).querySelector('.leancloud-visitors-count');
-    }
-
-    function addCount(Counter) {
-      const visitors = document.querySelector('.leancloud_visitors');
-      const url = decodeURI(visitors.id);
-      const title = visitors.dataset.flagTitle;
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            const counter = results[0];
-            leancloudSelector(url).innerText = counter.time + 1;
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .catch(error => {
-                console.error('Failed to save visitor count', error);
-              });
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    function showTime(Counter) {
-      const visitors = document.querySelectorAll('.leancloud_visitors');
-      const entries = [...visitors].map(element => {
-        return decodeURI(element.id);
-      });
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          for (let url of entries) {
-            const target = results.find(item => item.url === url);
-            leancloudSelector(url).innerText = target ? target.time : 0;
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    const { app_id, app_key, server_url } = {"enable":true,"app_id":"qwoVwWOTHdN9LlXpTz7BojRm-gzGzoHsz","app_key":"GvmFzmeE5nuRcXTSQNH3icVD","server_url":null,"security":true};
-    function fetchData(api_server) {
-      const Counter = (method, url, data) => {
-        return fetch(`${api_server}/1.1${url}`, {
-          method,
-          headers: {
-            'X-LC-Id'     : app_id,
-            'X-LC-Key'    : app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        if (CONFIG.hostname !== location.hostname) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    }
-
-    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(response => response.json())
-        .then(({ api_server }) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
 
     <div class="pjax">
 
