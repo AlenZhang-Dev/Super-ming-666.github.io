@@ -238,6 +238,104 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superming.life/2021/05/07/Heapsort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlenZhang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/07/Heapsort/" class="post-title-link" itemprop="url">HeapSort</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-07 10:48:56" itemprop="dateCreated datePublished" datetime="2021-05-07T10:48:56+08:00">2021-05-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>6.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Heapsort"><a href="#Heapsort" class="headerlink" title="Heapsort"></a>Heapsort</h1><h2 id="堆-Heaps"><a href="#堆-Heaps" class="headerlink" title="堆(Heaps)"></a>堆(Heaps)</h2><p>（二叉）堆数据结构是一个数组，且需要满足完全二叉树的性质，也就是除最底层之外，树是完全充满的，而且从左向右填充的。</p>
+<p>用于表示堆的数组A一般有两个属性：<code>A.length</code>表示数组元素的个数。<code>A.heap-size</code>表示堆元素在数组中的元素个数，即有效数组元素。</p>
+<p>如下图所示，数组长度可以为100，但用于存储堆的有效数组长度为10。</p>
+<p><img src="/2021/05/07/Heapsort/Screen_Shot_2021-05-06_at_3.40.43_PM.png" alt="Heapsort%20/Screen_Shot_2021-05-06_at_3.40.43_PM.png"></p>
+<p>如果数组的index从1开始，元素i的parent表示为$\left \lfloor i/2 \right \rfloor$，元素i的左孩子为<code>2 * i</code>；元素的右孩子为<code>2 * i + 1</code>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/07/Heapsort/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://superming.life/2021/04/26/The%20analysis%20of%20algorithms/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,178 +398,14 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="The-analysis-of-algorithms"><a href="#The-analysis-of-algorithms" class="headerlink" title="The analysis of algorithms"></a>The analysis of algorithms</h1><p><img src="/2021/04/26/The%20analysis%20of%20algorithms/Untitled.png" alt="The%20analysis%20of%20algorithms/Untitled.png"></p>
 <h2 id="Brief"><a href="#Brief" class="headerlink" title="Brief."></a>Brief.</h2><p>Analyzing an algorithms algorithm has come to mean predicting the resources that the algorithms requires. Occasionally, resources such as memory, communication, bandwidth, or computer hardware are of primary concern, but most often it’s <strong>computational time</strong> that we want to measure.</p>
-<!--  more  --->
-<p><strong>System independent effects.</strong></p>
-<ul>
-<li>Algorithm.</li>
-<li>Input data.</li>
-</ul>
-<p><strong>System dependent effects.</strong></p>
-<ul>
-<li>Hardware: CPU, memory, cache.</li>
-<li>Software: compiler, interpreter, garbage collector…</li>
-<li>System: operating system, network, other apps…</li>
-</ul>
-<p><strong>Reasons to analyze algorithms.</strong></p>
-<ol>
-<li>Predict performance.</li>
-<li>Compare algorithms.</li>
-<li>Provide guarantees.</li>
-<li>Understand theoretical basis.</li>
-</ol>
-<p><strong>Running time.</strong></p>
-<p>“ As soon as an Analytic Engine exists, it will necessarily guide the future course of the science. Whenever any result is sought by its aid, the question will arise—By what course of calculation can these results be arrived at by the machine in the shortest time? ”  — Charles Babbage (1864)</p>
-<p>Total running time: <strong>sum of cost x frequency for all operations.</strong></p>
-<ul>
-<li>Need to analyze program to determine set of operations.</li>
-<li>Cost depends on machine compiler.</li>
-<li>Frequency depends on algorithm, input data.</li>
-</ul>
-<p><strong>Simplifying the calculations.</strong></p>
-<p>“ It is convenient to have a measure of the amount of work involved in a computing process, even though it be a very crude one. We may count up the number of times that various elementary operations are applied in the whole process and then given them various weights. We might, for instance, count the number of additions, subtractions, multiplications, divisions, recording of numbers, and extractions of figures from tables. In the case of computing with matrices most<br>of the work consists of multiplications and writing down numbers, and we shall therefore only attempt to count the number of multiplications and recordings. ” — Alan Turing</p>
-<p><strong>Why analysis the algorithms are so important?</strong></p>
-<p>With all these data we consume and generate every day, algorithms must be good enough to handle operations in large volumes of data.</p>
-<p>The basic theory of algorithms. </p>
-<h2 id="Frequency-count-method"><a href="#Frequency-count-method" class="headerlink" title="Frequency count method."></a>Frequency count method.</h2><p><strong>Take some examples.</strong></p>
-<p>eg.1</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Sum (A,n) &#123;</span><br><span class="line">    S = <span class="number">0</span>;              ---&gt; <span class="number">1</span> time</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)&#123; ---&gt; n + <span class="number">1</span> times</span><br><span class="line">        S = S + A[i];   ---&gt; n times</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> S;           ---&gt;  <span class="number">1</span> time</span><br><span class="line">&#125;</span><br><span class="line">Total time: f(n) = <span class="number">2</span>n + <span class="number">1</span> times   =&gt; O(n)</span><br><span class="line">Space: </span><br><span class="line">A n </span><br><span class="line">n <span class="number">1</span></span><br><span class="line">s <span class="number">1</span></span><br><span class="line">i <span class="number">1</span></span><br><span class="line">----</span><br><span class="line">Total space time: s(n) = n + <span class="number">3</span>  =&gt; O(n)</span><br></pre></td></tr></table></figure>
-<p>eg.2</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Add (A, B, n) &#123;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)         ---&gt; n + <span class="number">1</span> times</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; n; j++)      ---&gt; n * (n + <span class="number">1</span>) times</span><br><span class="line">            C[i,j] = A[i,j] + B[i,j];--&gt; n * n times</span><br><span class="line">&#125;</span><br><span class="line">Total time: f(n) = <span class="number">2</span>n^<span class="number">2</span> + <span class="number">2</span>n + <span class="number">2</span>  =&gt; O(n^<span class="number">2</span>)</span><br><span class="line">Space:</span><br><span class="line">A  n^<span class="number">2</span></span><br><span class="line">B  n^<span class="number">2</span></span><br><span class="line">C  n^<span class="number">2</span></span><br><span class="line">n  <span class="number">1</span></span><br><span class="line">i  <span class="number">1</span></span><br><span class="line">j  <span class="number">1</span></span><br><span class="line">Total space: s(n) = <span class="number">3</span> n^<span class="number">2</span> + <span class="number">3</span>  =&gt; O(n^<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>eg.3</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Multiply(A, B, n)&#123;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)    ---&gt; n + <span class="number">1</span> times</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; n; j++)&#123; --&gt; n (n + <span class="number">1</span>) times</span><br><span class="line">            c[i,j] = <span class="number">0</span>;         --&gt; n * n times</span><br><span class="line">            <span class="keyword">for</span>(k = <span class="number">0</span>; k &lt; n; k++) -&gt; n * n * (n + <span class="number">1</span>) times  </span><br><span class="line">                c[i,j] = c[i,j] + A[i,k] * B[k,j] -&gt; n * n * n times  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Total time: f(n) = <span class="number">2</span>n^<span class="number">3</span> + <span class="number">3</span>n^<span class="number">2</span> + <span class="number">2</span>n + <span class="number">1</span> =&gt; O(n^<span class="number">3</span>)</span><br><span class="line">Space:</span><br><span class="line">A n^<span class="number">2</span></span><br><span class="line">B n^<span class="number">2</span></span><br><span class="line">C n^<span class="number">2</span></span><br><span class="line">n <span class="number">1</span></span><br><span class="line">i <span class="number">1</span></span><br><span class="line">j <span class="number">1</span></span><br><span class="line">k <span class="number">1</span></span><br><span class="line">Total spcae: s(n) = <span class="number">3</span> * n^<span class="number">2</span> + <span class="number">4</span>  =&gt; O(n^<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>Worst-case and average-case analysis.</strong></p>
-<ul>
-<li>The worst-case running time of an algorithm gives us an upper bound on the running time for any input. It provides a guarantee that the algorithms will never take any longer.</li>
-<li>For some algorithms, the worst case occurs fairly often.</li>
-<li>The “average case” if often roughly as bad as the worst case.</li>
-</ul>
-<p><strong>Time complexity.</strong></p>
-<p>In computer science, the <strong>time complexity</strong> is the terminology that describes the amount of computer time it takes to run an algorithms. </p>
-<p>The <strong>time complexity</strong> is the number of operations an algorithms performs to complete its task. The algorithm that performs the task in smallest number of operations is considered the most efficient one in terms of the time complexity.</p>
-<p>The time complexity is commonly expressed by using <strong>big O notation</strong>, where <strong>n</strong> is the input size of units of bits needed to represent the input.</p>
-<p>不同参考书中对于时间复杂度的概念。</p>
-<ul>
-<li><p><strong>《算法导论》</strong></p>
-<p>  2.2 &amp; 3.1 &amp; 3.2</p>
-<p>  分析算法的结果意味着预测算法所需要的资源。一般来说度量的是计算时间。</p>
-<p>  一般来说，算法需要的时间与输入规模同步增长，所以通常把一个程序的运行时间描述成其输入规模的函数。</p>
-<p>  <strong>输入规模</strong>的最佳概念依赖于研究的问题。</p>
-<p>  一个算法在特定输入上的<strong>运行时间</strong>是指执行的基本操作或步数。</p>
-</li>
-<li><p><strong>《王道》</strong></p>
-<p>  一个语句的频度是指该语句在算法中被重复执行的次数。算法中所有语句的频度之和记为T(n)，它是该算法<strong>问题规模</strong>n的函数，时间复杂度主要分析T(n)的数量级。算法中基本运算的频度与T(N)同数量级，因此通常采用算法中基本运算频度f(n)来分析算法的时间复杂度。 <code>T(n) = O(f(n))</code></p>
-</li>
-<li><p><strong>《算法基础》</strong></p>
-<p>  一般情况下，算法的时间复杂度分析就是针对输入规模的每个取值，计算该算法执行来多少次<strong>基本运算</strong>。 因此可以某些基本运算的执行次数，将其表示为输入规模的函数，来分析算法的效率。</p>
-<p>  在某些情况下，基本运算的执行次数不仅取决于输入规模，还与输入值有关。</p>
-<p>  T(n)定义为：对输入规模n的一个具体取值，该算法执行基本运算的次数。T(n)称算法所有情况时间复杂度(every-case time complexity)，对T(n)的计算称为所有情况时间复杂度分析。</p>
-<p>  对于给定算法，W(n)定义为：当输入规模为n时，该算法执行基本运算的最大次数。所以W(n)为算法最差时间复杂度，W(n)计算称为最差情况时间复杂度分析。</p>
-<p>  B(n)定义为：对于输入规模n，该算法执行基本运算的最小次数。为算法的最佳情况时间复杂度，对B(n)的求解称为最佳情况时间复杂度分析。</p>
-</li>
-</ul>
-<p><strong>Take some examples</strong></p>
-<p>eg.1</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)  -&gt; n + <span class="number">1</span> times</span><br><span class="line">    excute. -&gt; n times</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i = n; i &gt; <span class="number">0</span>; i--)  -&gt; n + <span class="number">1</span> times</span><br><span class="line">    excute. -&gt; n times</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; n; i+<span class="number">2</span>)  -&gt; n / <span class="number">2</span> times</span><br><span class="line">    excute. -&gt; n / <span class="number">2</span> times</span><br><span class="line"></span><br><span class="line">Formular above  =&gt; O(n)</span><br></pre></td></tr></table></figure>
-<p>eg.2</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)  -&gt; n + <span class="number">1</span> times</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n; j++) -&gt; n * (n + <span class="number">1</span>) times</span><br><span class="line">        excute. -&gt; n * n times</span><br><span class="line">Total: f(n) = <span class="number">2</span>n^<span class="number">2</span> + <span class="number">2</span>n + <span class="number">1</span>  =&gt; O(n^<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)  -&gt; n + <span class="number">1</span> times</span><br><span class="line">    <span class="keyword">for</span>(j = i; j &lt; n; j++) -&gt; n * ∑&#123;i=<span class="number">1</span>, i=n&#125;n times</span><br><span class="line">        excute.  -&gt; n * ∑&#123;i=<span class="number">1</span>, i=n&#125;n - <span class="number">1</span> times</span><br></pre></td></tr></table></figure>
-<p>eg.3</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">P = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; P &lt;= n; i++) &#123;</span><br><span class="line">    P = P + i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Analog.</span><br><span class="line">i  P </span><br><span class="line"><span class="number">1</span>  <span class="number">0</span>+<span class="number">1</span>=<span class="number">1</span></span><br><span class="line"><span class="number">2</span>  <span class="number">1</span>+<span class="number">2</span>=<span class="number">3</span></span><br><span class="line"><span class="number">3</span>  <span class="number">3</span>+<span class="number">3</span> =<span class="number">6</span></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">. </span><br><span class="line">K  <span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>+...K = K(<span class="number">1</span>+K)/<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>Assume the program stops when P &gt; n.</p>
-<p>$P = k * (1 + k) &gt; n;<br>k &gt; \sqrt(n) \Rightarrow   O(\sqrt(n))$ </p>
-<p>eg.4</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; n; i = i * <span class="number">2</span>) </span><br><span class="line">    excute.</span><br><span class="line">----</span><br><span class="line">i </span><br><span class="line"><span class="number">2</span>^<span class="number">1</span></span><br><span class="line"><span class="number">2</span>^<span class="number">2</span></span><br><span class="line"><span class="number">2</span>^<span class="number">3</span></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line"><span class="number">2</span>^k</span><br><span class="line">---</span><br><span class="line">same <span class="keyword">if</span> </span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; n; i = i / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>Assume the program stops when i ≥ n.</p>
-<p> $i = 2^k\geq n \Rightarrow O(\log_{2}n)$</p>
-<p>eg.5</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">P = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; n; i = i * <span class="number">2</span>)</span><br><span class="line">    P++;    -&gt; <span class="built_in">log</span>(n)</span><br><span class="line"><span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; P; j = j * <span class="number">2</span>)</span><br><span class="line">    excute.   -&gt; <span class="built_in">log</span>(P)</span><br><span class="line">P = <span class="built_in">log</span>(n)</span><br><span class="line">f(n) = <span class="built_in">log</span>(<span class="built_in">log</span>(n)) =&gt; O(<span class="built_in">log</span>(<span class="built_in">log</span>(n))</span><br></pre></td></tr></table></figure>
-<p>eg.6</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)   -&gt; n + <span class="number">1</span> times</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">1</span>; j &lt; n; j = j + <span class="number">2</span>) -&gt; n * (logn) times </span><br><span class="line">        excute. -&gt; n * (logn) times</span><br><span class="line">Total time. f(n) = <span class="number">2</span>n * logn + n times =&gt; O(nlogn)</span><br></pre></td></tr></table></figure>
-<h2 id="Asymptotic-notation"><a href="#Asymptotic-notation" class="headerlink" title="Asymptotic notation."></a><strong>Asymptotic notation.</strong></h2><p>The examples above give us a simple characterization of algorithm’s efficiency and allow us to compare the relative performance of alternative algorithms. For large enough inputs, the multiplicative constants and lower-order terms of an exact running time are <strong>dominated</strong> by the input of the input size itself. So when the input sizes large enough to make only the order of growth of the running relevant,  we need Asymptotic efficiency to describe an algorithms.</p>
-<p><u>Intuitive picture of functions f(n) and g(n).</u></p>
-<p><img src="/2021/04/26/The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_10.55.37_AM.png" alt="The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_10.55.37_AM.png"></p>
-<p><strong>Overview</strong></p>
-<p>Big O notation  = &gt; upper bound.</p>
-<p>Big Ω notation = &gt; lower bound.</p>
-<p>Θ notation = &gt; average bound.</p>
-<p><strong>Best case</strong>. Lower bound on cost.</p>
-<ul>
-<li>Determined by “easiest” input.</li>
-<li>Provides a goal for all inputs.</li>
-</ul>
-<p><strong>Worst case.</strong> Upper bound on cost</p>
-<ul>
-<li>Determined by “most difficult” input.</li>
-<li>Provides a guarantee for all input.</li>
-</ul>
-<p><strong>Average case.</strong> Expected cost for random input.</p>
-<ul>
-<li>Need a model for “random” input.</li>
-<li>Provides a way to predict performance.</li>
-</ul>
-<p><strong>Big O notation:</strong> </p>
-<p>O notation have an <strong>asymptotic upper bound.</strong> </p>
-<blockquote>
-<p>$O(g(n)) = f(n):$  </p>
-<p>there exist positive constants  $c$  and  $n_{0}$  </p>
-<p>such that  $0\leq f(n) \leq cg(n)$  for all  $n \geq n_{0}$.</p>
-</blockquote>
-<p><strong>Big Ω notation:</strong></p>
-<p>Ω notation provides an <strong>asymptotic lower bound</strong>.</p>
-<blockquote>
-<p>$\Omega(g(n)) = f(n):$</p>
-<p>there exist positive constants $c$ and $n_{0}$ </p>
-<p>such that $0\leq cg(n)\leq f(n)$for all $n \geq n_{0}$.</p>
-</blockquote>
-<p><strong>$\Theta$ notation:</strong></p>
-<p>$\Theta$ notation asymptotically bounds a function from <strong>above and below.</strong></p>
-<blockquote>
-<p>$\Theta(g(n)) = f(n):$</p>
-<p>there exist positive constants $c$ and $n_{0}$ </p>
-<p>such that $0\leq c<em>{1}g(n)\leq f(n) \leq c</em>{2}g(n)$ for all $n \geq n_{0}$.</p>
-</blockquote>
-<h2 id="Properities-of-Asymptotic-notations"><a href="#Properities-of-Asymptotic-notations" class="headerlink" title="Properities of Asymptotic notations."></a><strong>Properities of Asymptotic notations.</strong></h2><p><strong>Theorem</strong>.</p>
-<p>For any two functions $f(n)$ and $g(n)$, we have $f(n)=\Theta(g(n))$ if and only if $f(n) = \Omega(g(n))$ and $f(n) = O(g(n))$ .</p>
-<p><strong>Transitivity</strong>.</p>
-<p><img src="/2021/04/26/The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_12.31.56_PM.png" alt="The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_12.31.56_PM.png"></p>
-<p><strong>Reflexivity</strong>.</p>
-<p>$f(n) = \Theta(f(n))$ </p>
-<p>$f(n) = O(f(n))$</p>
-<p>$f(n) = \Omega(f(n))$</p>
-<p><strong>Symmetry</strong></p>
-<p>$f(n)=O(g(n))$ if and only if $g(n)=\Theta(f(n))$,</p>
-<p><strong>Transpose sysmmetric</strong></p>
-<p>$f(n)=O(g(n))$ if and only if $g(n)=\Omega(f(n))$,</p>
-<p>we can draw an analogy below:</p>
-<p><img src="/2021/04/26/The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_12.39.34_PM.png" alt="The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_12.39.34_PM.png"></p>
-<h2 id="Comparison-of-function"><a href="#Comparison-of-function" class="headerlink" title="Comparison of function."></a><strong>Comparison of function.</strong></h2><p>Method: Apply log on both sides.</p>
-<p>Take below formulas for examples.</p>
-<ol>
-<li>$logn^{2}$   and $logn^{^3}$</li>
-<li>$f(n)=3n^{\sqrt(n)}$ and  $g(n) = 2 ^{\sqrt(n)}logn$</li>
-<li>$f(n)=n^{logn}$ and $g(n)=2^{\sqrt{n}}$</li>
-<li>$f(n)=2^{logn}$ and $g(n)=n^{\sqrt n}$</li>
-<li>$f(n)=2^{n}$ and $g(n) = 2^{2n}$</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://www.notion.so/926ae6d72805493b888269b5f00d1fc0">Table of common  time compliexities</a></p>
-<p><img src="/2021/04/26/The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_2.51.59_PM.png" alt="The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_2.51.59_PM.png"></p>
-<h2 id="Big-O-cheat-sheet"><a href="#Big-O-cheat-sheet" class="headerlink" title="Big-O cheat sheet"></a>Big-O cheat sheet</h2><p>The Big-O complexity chart.</p>
-<p><a target="_blank" rel="noopener" href="https://www.bigocheatsheet.com/">Know Thy Complexities!</a></p>
-<p><img src="/2021/04/26/The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_2.10.14_PM.png" alt="The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_2.10.14_PM.png"></p>
-<p><img src="/2021/04/26/The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_2.10.24_PM.png" alt="The%20analysis%20of%20algorithms/Screen_Shot_2021-04-26_at_2.10.24_PM.png"></p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>Books:<br><a target="_blank" rel="noopener" href="https://algs4.cs.princeton.edu/home/">Algorithms Fourth Edition</a> </p>
-<ul>
-<li>1.4 Analysis of algorithms.</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">Introduction to Algorithms</a></p>
-<ul>
-<li>2.2 Analyzing of algorithms</li>
-<li>3 Growth of function</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Category:Analysis_of_algorithms">Category:Analysis of algorithms - Wikipedia</a></p>
-<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Time_complexity">Time complexity - Wikipedia</a></p>
-<p><a target="_blank" rel="noopener" href="https://towardsdatascience.com/understanding-time-complexity-with-python-examples-2bda6e8158a7">Understanding time complexity with Python examples</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/time-complexity-of-algorithms/">An Introduction to the Time Complexity of Algorithms</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/26/The%20analysis%20of%20algorithms/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1294,104 +1228,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superming.life/2020/11/15/Algorithms-StacksandQueues/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja8.jpg">
-      <meta itemprop="name" content="AlenZhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AlenZhang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/15/Algorithms-StacksandQueues/" class="post-title-link" itemprop="url">Algorithms，Part I：Stacks and Queues</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-11-15 21:10:55" itemprop="dateCreated datePublished" datetime="2020-11-15T21:10:55+08:00">2020-11-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>9.8k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>9 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Week-2-Stacks-and-Queues"><a href="#Week-2-Stacks-and-Queues" class="headerlink" title="Week 2-Stacks and Queues"></a>Week 2-Stacks and Queues</h1><p><strong>Generics.</strong> </p>
-<p>An essential characteristic of collection ADTs is that we should be able to use them for any type of data. A specific Java mechanism known as generics enables this capability. The notation <Item> after the class name in each of our APIs defines the name Item as a type parameter, a symbolic placeholder for some concrete type to be used by the client. You can read Stack<Item> as “stack of items.” For example, you can write code such as</Item></Item></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;String&gt; stack = <span class="keyword">new</span> Stack&lt;String&gt;();</span><br><span class="line">stack.push(<span class="string">&quot;Test&quot;</span>);</span><br><span class="line">...</span><br><span class="line">String next = stack.pop();</span><br></pre></td></tr></table></figure>
-<p>to use a stack for String objects.</p>
-<p>Without generics, we would have to define different APIs for each type of data we might need to collect ; with generics, we can use one API for all types of data, even types that are implemented in the future. Generics also lead to clear client code that is easy to understand and debug.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/15/Algorithms-StacksandQueues/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1438,13 +1274,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">230k</span>
+    <span title="Symbols count total">234k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:29</span>
+    <span title="Reading time total">3:33</span>
   </span>
 </div>
 
