@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"superming.life","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="2021.6 Week logBooks平衡的智慧 by Pat Gelsinger 英文书名很直白，The juggling act，每个人都像转盘子的杂技演员一般，需要将各个大大小小的盘子转起来，不让任何一个盘子掉到地上。也如中文翻译那样，是一本关于如何平衡个人信仰、工作和生活的书，活出人生的意义和使命感，并不是生活枯燥，是你不够热爱。 “信仰是我所有一切的基石，包括我的人生、立场，我的梦想、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Weekly Report - Jun">
+<meta property="og:url" content="https://superming.life/2021/06/28/Weekly-Report-21.6.1/index.html">
+<meta property="og:site_name" content="AlenZhang&#39;s Blog">
+<meta property="og:description" content="2021.6 Week logBooks平衡的智慧 by Pat Gelsinger 英文书名很直白，The juggling act，每个人都像转盘子的杂技演员一般，需要将各个大大小小的盘子转起来，不让任何一个盘子掉到地上。也如中文翻译那样，是一本关于如何平衡个人信仰、工作和生活的书，活出人生的意义和使命感，并不是生活枯燥，是你不够热爱。 “信仰是我所有一切的基石，包括我的人生、立场，我的梦想、">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-28T07:16:55.000Z">
+<meta property="article:modified_time" content="2021-06-28T08:35:28.730Z">
+<meta property="article:author" content="AlenZhang">
+<meta property="article:tag" content="Weekly-Report">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://superming.life/2021/06/28/Weekly-Report-21.6.1/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>Weekly Report - Jun | AlenZhang's Blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/custom_css_source.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="AlenZhang's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">AlenZhang's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2021-6-Week-log"><span class="nav-number">1.</span> <span class="nav-text">2021.6 Week log</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Books"><span class="nav-number">1.1.</span> <span class="nav-text">Books</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Explore"><span class="nav-number">1.2.</span> <span class="nav-text">Explore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thoughts"><span class="nav-number">1.3.</span> <span class="nav-text">Thoughts</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AlenZhang"
+      src="/images/ninja8.jpg">
+  <p class="site-author-name" itemprop="name">AlenZhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:supermingzero@gmail.com" title="E-Mail → mailto:supermingzero@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/AlenZhang-Dev" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AlenZhang-Dev" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/alen_zhang_bubble/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;alen_zhang_bubble&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/t.me/AlenZhang" title="Telegram → t.me&#x2F;AlenZhang"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superming.life/2021/06/28/Weekly-Report-21.6.1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlenZhang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Weekly Report - Jun
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-06-28 15:16:55" itemprop="dateCreated datePublished" datetime="2021-06-28T15:16:55+08:00">2021-06-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>5.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="2021-6-Week-log"><a href="#2021-6-Week-log" class="headerlink" title="2021.6 Week log"></a>2021.6 Week log</h1><h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/1283295/">平衡的智慧</a> by <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pat_Gelsinger">Pat Gelsinger</a></p>
+<p>英文书名很直白，The juggling act，每个人都像转盘子的杂技演员一般，需要将各个大大小小的盘子转起来，不让任何一个盘子掉到地上。也如中文翻译那样，是一本关于如何平衡个人信仰、工作和生活的书，活出人生的意义和使命感，并不是生活枯燥，是你不够热爱。</p>
+<p><strong>“信仰是我所有一切的基石，包括我的人生、立场，我的梦想、我努力的方向，也是我个性和个人体验不可或缺的重要因素。“</strong>既然人生的终点是确定无疑、不可更改的，信仰便显得格外重要，支撑着每个人在无意义中寻找意义，端正我们的行为，支撑我们继续生活。小到让家人过上更好的生活，大到造福全人类，是信仰推动着人类向前。Pat通过信仰找到人生意义所在，近乎疯狂的工作时长，在很多人眼里不被理解，但作者认为既然他非常热爱自己的工作和学业，也就没有必要花心思在别的东西上面。大量篇幅关于作者在信仰、家庭和工作之间不断寻找平衡，并不断寻找突破和进步。</p>
+<p>关于作者的成长经历值得一读，年少的时候：“说起那些整天和我混在一起的年轻人，我相信做父母的肯定不愿让自己的孩子和他们混在一起。“，从专科学校偶然进入Intel公司研发电脑行业最重要的芯片，并在Intel的支持下上完大学，并在斯坦福拿下学位。如他所言：“白天在学校学习如何设计芯片，夜间却在英特尔亲手设计整个电脑行业最重要的芯片。“，最后辗转之后，回到梦开始的地方，在2021年2月接任Intel第8任CEO。</p>
+<p>“不要忘记自己犯过的错误，要让它一直驱动我们. 然后找一个好导师“</p>
+<p>“我最近见过某个人，我们在一起时他几乎都在为自己的观点和行为辩护。与他坦率交谈后，我离开了。我相信如果我花更多精力指导他，对我的时间和他的时间都是一种浪费。“ </p>
+<p>嗯，适合打工人学习。</p>
+<a id="more"></a>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/1205456/">未来之路</a> by <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bill_Gates">Bill Gates</a></p>
+<p>Admirable.</p>
+<p>我国在1994年正式接入互联网，1995年互联网在美国正式商业化，本书在1995年出版。Bill Gates在技术诞生之初预见到大部分我们今天的生活，对互联网的发展预测多半实现，时代的天才。像是一个带领读者洞悉技术世界的导游，解释了我们如何从过去走到1995年这个时间节点的，从1995年开始，带你梳理什么是已经发生的事情、可能发生的事情和正在酝酿的事情，从娱乐、教育、商业角度阐述信息高速路带来的可能性和造成的影响。阅读本书很有趣的点在于，从当下的节点审视一本20年前的技术书籍，看看哪些预测正确、哪些出现了偏差。书中还包含了很多商业技巧。</p>
+<p><code>教育</code></p>
+<p>“伟大的教育家都知道，学习不是一个人仅在教室里或老师监督下才做的事情，对一个要满足求知欲或解除疑惑的人来说，现在要找到合适的信息，有时候是困难的。</p>
+<p>信息高速公路不会取代或贬低人类所需要的任何教育人才，因为它面临种种挑战：受托付的老师，有创造性的管理人员，有关的父母，当然还有勤奋的学生。但是未来的老师将扮演什么样的角色，技术，这方面将起关键作用。</p>
+<p>无论访问不受限制的信息会带来什么问题，但它带来的益处远远可以来弥补其不足。我喜欢学校，但我却在教师以外追求我最感兴趣的事业。我仅能想象出，与这么多信息相通会怎样改变我自己的学校经验。信息高速公路价格能从结构到个人地改变教育的重点。教育的最终目标会改变，不是未来一纸文凭，而是未来终身受到教育。“</p>
+<p>“一种强调通用的解决问题的技巧的教育制度将比以往任何时候更重要。在一个不断变化着的世界上，接受教育是为了能适应社会所能做的最好准备。每当经济转型，那些受到来适当教育的人们和社会总是表现最出色。社会给予有技能的人的奖赏越来越高，因此我建议大家要接受一个良好的正规教育，并且这之后还要不断学习。穷此一生，都要不断发展新的兴趣，新的技能。“</p>
+<p><code>成瘾性</code></p>
+<p>”一个人过度沉迷于信息高速公路更严重的问题是：当社会过于依赖信息高速公路时，可能导致它很容易就陷入困境。</p>
+<p>这个网络，以及与它相连的以计算机为基础的种种机器，将形成新的游乐场，新的工地和新的教师。它将取代有形的货币。它将吞并绝大多数现存的通信形式。它将成为我们的影集、我们的日记、我们到闹钟。它的多功能性就是它的力量所在，但这也意味着我们将极度依赖它。“</p>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35479741/">阅后即焚 Snapchat传</a></p>
+<p>介绍Snapchat从创立初至今的故事。如作者在结尾所写：从根本上讲，Snapchat是对21世纪第一个十年社交网络现状的反抗。更实时，更真实，更私密。</p>
+<p>“在互联网发展之初，每个人都认为每个事物都应该永远存在，这看起来很怪异。”创始人埃文说，“我认为我们的应用会让交流变得更加人性化，也更加自然。”</p>
+<p>”如果说Instagram占据了世界上最精美的1%的照片，那么Snapchat想要占据剩余的99%。“</p>
+<p>Snapchat通过阅后即焚功能这一反主流的创意在占领了大批用户，并仍在持续进化迭代。Snapchat CEO 埃文总会让我联想到另一个逆行者Telegram CEO Pavel Durov，在各科技巨头贪婪地收集用户数据的时代背景下，前者删除一切数据，后者用技术保护用户隐私，支撑着未盈利的产品。掀起了一场数字时代的革命。</p>
+<p>跺脚赞同书中对传统社交媒体的一段描述，分享出来：</p>
+<p>“对一个社交账户来说，最重要的特征或许就是它的公共性。每个用户心里都清楚，自创建账户起，一切都是为了大众消费。但我们可能夸大了这种公共性的影响。如果说私下里，我们大多数人允许自己说一些在公共场合不会说的话，写一些公共场合不会写的东西，那么反过来，在这种公共场合可能同样适用。在公共场合，我们可能会分享私下里不愿分享的东西。如果我们认为在私下里是不同的，那么我们在公共场合，难道不也是不同的吗？私下里的我们和公共场所的我们，哪一个更真实呢？</p>
+<p>作为年轻人，我们试图找到自己的声音。我们一次又一次地确认我们是谁，直到我们有了比以前更准确的感觉为止。我们相信眼见为实，我们不相信自己没有看到的。我们是如此轻信，我们认为其他所有人在公共场所的样子就是他们真实的样子，而实际上，即便是我们自己，也很难将真实的自我呈现给他人。</p>
+<p>我们之所以把时间投入社交媒体，是因为我们相信这是塑造自我身份的独特机会。我们之所以在意我们发布的图片、在意我们在这些图片下写下的文字，是因为它们反映了我们是谁，它们构建了我们想要的自己。如果你知道某个帖子是你的最后一个帖子，你会话更多还是更少时间在上面？你会希望这张图片及感想文字是完美的，是理想的、持久的化身吗？或者，你会很快认识到这种追求是徒劳的，这一切都是海市蜃楼，无非是一个真实世界的失真反映。这样以来，你会把时间用于展示真实自我吗？“</p>
+<p>也就是说，<strong>传统的社交媒体给了我们一个塑造自我身份的独特机会</strong>，每一个Post都在有意的构建我们想要的自己，线上地你是你所发布的所有内容的总和，这种身份观是相对激进的，<strong>我们不断捕捉这个世界，在社交媒体上重塑这个世界，然而这种重塑往往是失真的。</strong>在线上和线下二元体验中，“个人资料”这个概念就很有意义。它的目的是让人重建一个线上的自己，逐渐脱离真实的自己。而Snapchat与传统社交媒体最大的区别便是抛弃内容，通过内容交谈，而不是围绕内容进行交谈，将时间放在当下，我们分享的就是今天的我们，此刻的我们，一个通过镜头记录下更真实的我。这是一个极度保守的想法，旨在构建一个对话完整性与语境的高度透明的反应。多么真实而伟大的愿景！</p>
+<p>【减少内容不够精致带来的创作压力】</p>
+<p>我个人也在逐渐逃离各类社交媒体，在线上所创造出的形象像是不断累积的“形象债“，直白点即社交压力，大家喜欢、点赞的是你在线上创造出的另一个我，这种虚伪与不真实令我感到不适与做作，我渐渐逃离… 这也是我维护blog的主要动机之一，说自己想说，尽量展现自己最真实的想法，贴近于更真实的自己。</p>
+<p>Snapchat的成长是个很好的商业案例，从用户、产品等各方面都值得学习推敲。</p>
+<p>关于社交媒体的不断迭代成长，逐渐让我们失去当下，当你看到美妙的时刻 ，会停下来，拍照录视频，而这个场景的乐趣在逐渐溜走，更重要的是，此刻你的小伙伴们都在拍照，原本美妙的时刻就变得丑陋了。</p>
+<h2 id="Explore"><a href="#Explore" class="headerlink" title="Explore"></a>Explore</h2><p><code>Apple</code></p>
+<p><a target="_blank" rel="noopener" href="https://www.nytimes.com/2021/05/17/technology/apple-china-censorship-data.html">Censorship, Surveillance and Profits: A Hard Bargain for Apple in China</a></p>
+<p>纽约时报对Apple 在中国的境遇及采取的举措，令人失望但并不意外。大公司和政府之间博弈很好的案例。“Big tech companies often choose profits over freedoms.“ </p>
+<p>两边相互博弈利用，Apple在大中华区的利润占1/5，这也使得Apple在很多方便做出妥协，尤其是在其引以为傲的隐私方面。<br>”But just as Mr. Cook figured out how to make China work for Apple, China is making Apple work for the Chinese government.“</p>
+<p>“Golden Gate“计划的落地，关于密钥的存储问题Apple做了一定的斗争，但最终还是将密钥送到了中国。这个举动对于中国的消费者是异常危险的，iCloud几乎存储了iPhone用户的所有隐私数据。这也直接导致大批Apple Fans出走国区，做起了所谓“数字移民“。</p>
+<blockquote>
+<p>With the keys in China, the government has two avenues to the data, security experts said: demand it — or take it without asking.</p>
+</blockquote>
+<p>Apple become Chapple. </p>
+<p><code>We...chat or not</code></p>
+<p>微信从诞生到现在，从聊天工具进化成了“基础设施”。关于这个问题，能够抛出很多有价值的问题和思考。</p>
+<p>有个很奇怪的现象，很多中国互联网公司在收获稳定流量后，都会倾向与把自己做成“平台型“的产品，MeituanOS、WeChatOS、TaobaoOS…从大到出行交友，支付充值，小到快递外卖、市政民生。从公司角度，增加用户粘性，漂亮的数据，漂亮的估值，美其名曰可为用户提供更多的方便，足不出app便可以拥有全世界。从用户角度，将隐私和数据双手奉上，公司借助技术勾勒出完美的用户画像，肆意审查监控。这种方便真的是你需要的吗。“我们掌握了几乎每个中国人十几年来的脸部变化” - 马化腾，平台可以肆意读取保存客户照片并习以为常，甚至引以为傲…技术的力量让我们离奥维尔的世界更近了一步。</p>
+<p>我们很难离开它，像是一份你不得不去做的工作，但我们还可以选择，选择属于你的生活方式。</p>
+<p>方便真的是我们人生的唯一价值吗？所谓精神生活并不是指向专家学习审美或是艺术创作，那其实是把精神生活变成了世俗生活。微信越是一种生活方式，我们就越有必要对其严阵以待。 - 李如一</p>
+<p>【<a target="_blank" rel="noopener" href="https://retompi.com/stay-away-from-wechat/">人生苦短，远离微信</a>】</p>
+<p><a target="_blank" rel="noopener" href="https://balajis.com/the-purpose-of-technology/">The Purpose of Technology</a></p>
+<p>If the proximate purpose of technology is to reduce scarcity, the ultimate purpose of technology is to eliminate mortality.</p>
+<p>If we had infinite time, we would be less concerned with whether something was faster. The reason speed has value is because time has value; the reason time has value is because human life has value, and lifespans are finite. If you made lifespans much longer, you’d reduce the effective cost of everything.</p>
+<p><strong>Life extension is the most important thing we can invent.</strong></p>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p><code>感恩</code></p>
+<p>很多小事都能触动我愈加敏感的神经，尤其是对家人。对此问题进行不断的自我检查、复查…我恨自己曾经缺少感知爱的能力，活的过于抽象。每次和爷爷奶奶视频，溢出屏幕的关切和担忧，像根神奇的绳子挂在我们之间。表达爱的形式很多样，但爱的本质总是那么真诚无私。</p>
+<p>“有的时候人容易满足于自己对知识的优越感和所谓的怜悯心、同情心。因为人越是喜欢讨论抽象的概念，越是觉得自己崇高。你越是觉得抽象的人可爱，就越觉得身边的人不可爱。忙着爱人类，以至于没有时间爱具体的人。“</p>
+<p><code>杂乱</code></p>
+<p>最近生活已经混乱到我所能接受的极限了，一个个严肃又沉重的思考，从纷乱复杂的人际关系到过去，当下、未来的思考…十分珍视人生中的这些时刻，我所理解的人生，很重要的部分是一段不断认识、更新自己的过程，痛苦的思考和决策是系统升级不可或缺的过程。</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/04/19/Weekly-Report-3/" rel="bookmark">Weekly Report 3</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/31/Weekly-Report-1/" rel="bookmark">Weekly Report 1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/03/14/Weekly-Report-2/" rel="bookmark">Weekly Report 2</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Weekly-Report/" rel="tag"># Weekly-Report</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/05/13/quicksort/" rel="next" title="QuickSort">
+                  QuickSort <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-alien"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlenZhang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">241k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:39</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+    <div class="pjax">
+
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+    </div>
+</body>
+</html>
