@@ -173,7 +173,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -232,128 +232,6 @@
 
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superming.life/2022/02/19/Hashing%20Technology/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ninja8.jpg">
-      <meta itemprop="name" content="AlenZhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AlenZhang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/19/Hashing%20Technology/" class="post-title-link" itemprop="url">Hashing Technology</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-02-19 21:30:00" itemprop="dateCreated datePublished" datetime="2022-02-19T21:30:00+08:00">2022-02-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.7k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Hashing"><a href="#Hashing" class="headerlink" title="Hashing"></a>Hashing</h1><h3 id="Why-Hashing"><a href="#Why-Hashing" class="headerlink" title="Why Hashing?"></a>Why Hashing?</h3><p>Hashing is mainly to improve the search time lower than $Log(n)$ time, and approaching to the constant time.</p>
-<p>Coz we have O(n) time for <strong>linear Search</strong> and O(logN) time for <strong>binary search</strong>, but we have to spend more time on sorting if the array is unordered.</p>
-<h3 id="Drawback"><a href="#Drawback" class="headerlink" title="Drawback?"></a>Drawback?</h3><p>The ideal hashing tech, $h(x)=x$, the length of the array should be larger than the biggest number.</p>
-<h3 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions?"></a>Solutions?</h3><p>if we smaller the length of the table, it has to encounter the collusion. So how to avoid the collision is essential.</p>
-<p><strong>Open Hashing</strong> </p>
-<ul>
-<li>Chaining</li>
-</ul>
-<p><strong>Closed Hashing</strong></p>
-<ul>
-<li>Linear Probing </li>
-<li>Quadric Probing</li>
-<li>Double Hashing</li>
-</ul>
-<p>About Load Factor, $\lambda=n/size$, n means the number of keys, and size is the number of the table.</p>
-<p>The most important thing in Hashing is that the Load factor has to be smaller than 0.5. $\lambda\leq0.5$.</p>
-<h3 id="Chaining"><a href="#Chaining" class="headerlink" title="Chaining"></a>Chaining</h3><p>Chaining is a technology used for avoiding collision in hash tables.</p>
-<p>In the Chaining approach, the hash table is an array of LinkedList, each index has its own linked list.</p>
-<p>All the key-value pairs will be stored in the linked list of that index.</p>
-<p><strong>Analysis.</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> m &#x3D; Number of slots in hash table</span><br><span class="line"> n &#x3D; Number of keys to be inserted in hash table</span><br><span class="line"> </span><br><span class="line"> Load factor α &#x3D; n&#x2F;m </span><br><span class="line">  </span><br><span class="line"> Expected time to search &#x3D; O(1 + α)</span><br><span class="line"> </span><br><span class="line"> Expected time to delete &#x3D; O(1 + α)</span><br><span class="line"></span><br><span class="line">Time to insert &#x3D; O(1)</span><br><span class="line"></span><br><span class="line"> Time complexity of search insert and delete is </span><br><span class="line"> O(1) if  α is O(1)</span><br></pre></td></tr></table></figure>
-<p><strong>Benefits</strong>.</p>
-<p>Through chaining, insertion in a hash table will occur in O(1) since linked lists allow insertion in constant time.</p>
-<p>A chained hash table will never be resized and it can grow infinitely if space is enough.</p>
-<p><img src="/2022/02/19/Hashing%20Technology/Chaining.png" alt></p>
-<h3 id="Linear-Probing"><a href="#Linear-Probing" class="headerlink" title="Linear Probing"></a>Linear Probing</h3><p>The Linear Probing’s solution. </p>
-<p>$h’(x)=(h(x)+f(i))\%10,f(i)=i,h(x)=x$</p>
-<p><strong>Search,</strong> search until the stack is null.</p>
-<p><img src="/2022/02/19/Hashing%20Technology/Linear.png" alt></p>
-<h3 id="Quadric-Probing"><a href="#Quadric-Probing" class="headerlink" title="Quadric Probing"></a>Quadric Probing</h3><p>$h’(x)=(h(x)+f(x))\%10, h(x)=x\%10, f(i) = i^2$</p>
-<p><img src="/2022/02/19/Hashing%20Technology/Quadric.png" alt></p>
-<h3 id="Double-Hashing"><a href="#Double-Hashing" class="headerlink" title="Double Hashing"></a>Double Hashing</h3><p>$h’(x)=(h<em>{1}(x)+i*h</em>{2}(x)\%table size),h<em>{1}=x\%table size,h</em>{2}=7-(x\%7)$</p>
-<p>It’s one of the best form of probing, producing a uniform distribution of records throughout a hash table.</p>
-<p>The tech doesn’t yield any clusters.</p>
-<p>It’s one of effective methods for resolving collisions.</p>
-<p><img src="/2022/02/19/Hashing%20Technology/Double.png" alt></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
@@ -1226,6 +1104,107 @@
 
 
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superming.life/2021/01/28/SSD-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ninja8.jpg">
+      <meta itemprop="name" content="AlenZhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlenZhang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/28/SSD-Notes/" class="post-title-link" itemprop="url">Dive into SSD</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-01-28 20:30:00" itemprop="dateCreated datePublished" datetime="2021-01-28T20:30:00+08:00">2021-01-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>6.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="SSD-论文学习笔记"><a href="#SSD-论文学习笔记" class="headerlink" title="SSD 论文学习笔记"></a>SSD 论文学习笔记</h1><blockquote>
+<p>知乎：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347860986">https://zhuanlan.zhihu.com/p/347860986</a></p>
+</blockquote>
+<h2 id="Single-Shot-MultiBox-Detector"><a href="#Single-Shot-MultiBox-Detector" class="headerlink" title="Single Shot MultiBox Detector"></a>Single Shot MultiBox Detector</h2><p><strong>Single Shot</strong>：表示物体的分类和定位在网络的一次前向传递的完成。【The tasks of object localization and classification are done in a <em>single forward pass</em> of the network.】</p>
+<p><strong>MultiBox</strong>：可扩展、高质量的目标检测，<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1412.1441">论文地址</a>。可以理解为在多个feature map上进行多尺度（multi-scale）预测。</p>
+<p><strong>Detector</strong>：网络是一个Object Detector。</p>
+<p><img src="/2021/01/28/SSD-Notes/Untitled.png" alt="Fig.1 详细SSD模型1"></p>
+<p>Fig.1 详细SSD模型1</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/28/SSD-Notes/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1272,13 +1251,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">248k</span>
+    <span title="Symbols count total">246k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:45</span>
+    <span title="Reading time total">3:44</span>
   </span>
 </div>
 
